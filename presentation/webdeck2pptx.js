@@ -164,9 +164,12 @@ async function main() {
           text: it.transform === "uppercase" ? r.text.toUpperCase() : r.text,
           options: { bold: !!r.bold, underline: r.underline ? { style: "sng" } : undefined, italic: !!r.italic, color: r.color },
         });
-        // PowerPoint wraps a little earlier than Chromium: give wrapping boxes 2% slack on the open side.
+        // PowerPoint measures text slightly differently from Chromium. A line that fits in the
+        // browser is kept on one line (no wrap), and wrapping paragraphs get 4% slack on the open side
+        // so a word does not drop to an extra line and push the block down.
         let x = it.x, w = it.w;
-        if (!it.nowrap && !it.oneLine) { const d = w * 0.02; w += d; if (it.align === "right") x -= d; else if (it.align === "center") x -= d / 2; }
+        const single = it.nowrap || it.oneLine;
+        if (!single) { const d = w * 0.04; w += d; if (it.align === "right") x -= d; else if (it.align === "center") x -= d / 2; }
         slide.addText(runs, {
           x: x * IN, y: it.y * IN, w: w * IN, h: it.h * IN,
           fontFace: it.font, fontSize: +(it.size * PT).toFixed(2), lineSpacing: +(it.lh * PT).toFixed(2), // exact spacing = CSS line-height
@@ -174,7 +177,7 @@ async function main() {
           align: it.align === "start" ? "left" : it.align, valign: it.oneLine || it.cell ? "middle" : "top",
           // pptxgenjs margin order is [left, right, bottom, top]; CSS pad is [top, right, bottom, left]
           margin: [it.pad[3] * PT, it.pad[1] * PT, it.oneLine || it.cell ? 0 : it.pad[2] * PT, it.oneLine || it.cell ? 0 : it.pad[0] * PT],
-          wrap: !it.nowrap, isTextBox: true, autoFit: false, objectName: name,
+          wrap: !single, isTextBox: true, autoFit: false, objectName: name,
         });
       }
     }
