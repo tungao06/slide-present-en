@@ -32,13 +32,13 @@ function label(text) {
   return new Paragraph({ children: [run(text, { bold: true, size: 26, color: TEAL, characterSpacing: 20 })], spacing: { before: 200, after: 80 }, keepNext: true });
 }
 function body(text, o = {}) {
-  return new Paragraph({ children: [run(text, o)], alignment: AlignmentType.LEFT, spacing: { after: 140, line: 320 }, widowControl: true });
+  return new Paragraph({ children: [run(text, o)], alignment: AlignmentType.LEFT, spacing: { after: 160, line: 360 }, widowControl: true });
 }
 function runIn(labelText, text) {
   // structured abstract item: bold run-in label, then text
   return new Paragraph({
     children: [run(labelText + ": ", { bold: true, color: NAVY }), run(text)],
-    alignment: AlignmentType.LEFT, spacing: { after: 120, line: 320 }, indent: { left: 360 }, widowControl: true,
+    alignment: AlignmentType.LEFT, spacing: { after: 140, line: 360 }, indent: { left: 360 }, widowControl: true,
   });
 }
 
