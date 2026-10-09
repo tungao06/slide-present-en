@@ -25,7 +25,7 @@ const deck = JSON.parse(fs.readFileSync(path.join(ROOT, "project/deck.json"), "u
 // Uploaded images (/_blob/<id>) → files in webdeck/art
 const BLOB = {
   "8ada14a1e08ee53503caf08625840538": "bg-dark.jpg", "de347ea5e94ba2d7b60f2a0c0e60a463": "robot-wave-dark.png",
-  "222883d00c94b6d75131da1e14b01ef1": "robot-search.png", "0dbf1fe15003e89aa3818ba1f28ff5ca": "frontier.png",
+  "222883d00c94b6d75131da1e14b01ef1": "robot-search.png", "0dbf1fe15003e89aa3818ba1f28ff5ca": "frontier.png", "9cc554ad2af7c9380693452508edf208": "frontier-wide.png",
   "ffe0d3f5833d4c5170e92c88aa542a85": "robot-confused-dark.png", "9b8fbdf71fc1c7ef03a6c1c7038e3f9d": "centaur.png",
   "7072166c40fc18173b318d9467b09ef4": "cyborg.png", "31650c3a8cab2ac19be1654f82be2bdd": "robot-shop-dark.png",
   "191bfff74ac551d5ab38e6c4a6054bda": "human-phone.png", "43b562a7979c6b397832a355410a1bc3": "human-shake-teal.png",
@@ -138,7 +138,9 @@ async function main() {
   for (const sid of deck.order) {
     const html = fs.readFileSync(path.join(ROOT, "project/slides", sid + ".html"), "utf8").replace(/\/_blob\/([0-9a-f]{32})/g, (m, id) => "file://" + path.join(ROOT, "art", BLOB[id]));
     await page.setContent(`<!doctype html><html><head><meta charset="utf-8"><style>${BASE_CSS}</style></head><body>${html}</body></html>`);
-    await page.waitForTimeout(300);
+    await page.evaluate(() => Promise.all([...document.images].map((im) => im.complete ? null : new Promise((r) => { im.onload = im.onerror = r; }))));
+    await page.evaluate(() => document.fonts.ready);
+    await page.waitForTimeout(200);
     const data = await page.evaluate(extract);
     if (sectionStarts[sid]) pres.addSection({ title: sectionStarts[sid] });
     const slide = pres.addSlide({ sectionTitle: Object.values(deck.sections).find((s) => deck.order.indexOf(s.start) <= deck.order.indexOf(sid))?.description });
