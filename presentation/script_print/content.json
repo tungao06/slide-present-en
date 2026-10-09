@@ -1,0 +1,3624 @@
+{
+ "title": "Presentation\nScript — AI and Work Performance (ENG 501)",
+ "sections": [
+  {
+   "h": "Overview · ภาพรวม",
+   "items": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "This script runs about 8½ minutes for one language (slides 1–5 in English or slides 6–10 in Thai), plus 3–5 minutes of Q&A. Every slide builds click by click, so each row below pairs one click with what appears on screen and the exact words to say. Say the sentence, then click: the audience hears the idea a beat before they read it.",
+       "b": false,
+       "i": false
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "สคริปต์นี้ใช้เวลาประมาณ 8 นาทีครึ่งต่อหนึ่งภาษา (สไลด์ 1–5 ภาษาอังกฤษ หรือสไลด์ 6–10 ภาษาไทย) บวกช่วงถาม-ตอบ 3–5 นาที ทุกสไลด์เปิดเนื้อหาทีละคลิก แต่ละแถวจึงจับคู่ หนึ่งคลิก = สิ่งที่ปรากฏบนจอ = คำพูด หลักคือ พูดก่อน แล้วค่อยคลิก ให้ผู้ฟังได้ยินประเด็นก่อนเห็นตัวอักษร",
+       "b": false,
+       "i": false
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "t": "Slide · สไลด์",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Clicks · คลิก",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Time · เวลา",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Job of the slide · หน้าที่ของสไลด์",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "1 / 6 Title",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "4",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "1:00",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Pose the one question and introduce the two studies · ตั้งคำถามเดียวและแนะนำสองงานวิจัย",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "2 / 7 Method",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "6",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "1:30",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Explain the BCG experiment and the jagged frontier · อธิบายการทดลอง BCG และพรมแดนที่ไม่สม่ำเสมอ",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "3 / 8 Findings",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "11",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "2:30",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Deliver the numbers inside and outside the frontier · นำเสนอตัวเลขภายในและภายนอกพรมแดน",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "4 / 9 Entrepreneurs",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "8",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "2:00",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Show the uneven effect on real businesses · แสดงผลที่ไม่เท่ากันต่อธุรกิจจริง",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "5 / 10 Discussion",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "3",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "1:30",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Compare, conclude, invite questions · เปรียบเทียบ สรุป เปิดรับคำถาม",
+         "b": false,
+         "i": false
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "All figures are quoted exactly as the two articles report them: 12.2%, 25.1%, more than 40%, 43%, 17%, 19 percentage points, nearly 10% worse, more than 15%, and a null hypothesis that could not be rejected. Do not round or restate them in other units on stage.",
+       "b": false,
+       "i": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "h": "Script · สคริปต์ (TH / EN side by\nside)",
+   "items": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Slides 1–5 (English) and 6–10 (Thai) carry the same content and the same clicks, so each slide below is one table: what appears on screen, the Thai line, and the English line for the same click. Say the line, then click. Speak Thai at about 150–170 words a minute and English at about 130. Pause for one breath at ",
+       "b": false,
+       "i": false
+      },
+      {
+       "t": "(หยุด)",
+       "b": false,
+       "i": true
+      },
+      {
+       "t": " / ",
+       "b": false,
+       "i": false
+      },
+      {
+       "t": "(pause)",
+       "b": false,
+       "i": true
+      },
+      {
+       "t": ", and look at the audience, not the screen, while a block animates in.",
+       "b": false,
+       "i": false
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "สไลด์ 1–5 (อังกฤษ) และ 6–10 (ไทย) มีเนื้อหาและลำดับคลิกเหมือนกัน ตารางของแต่ละสไลด์จึงรวมสองภาษาไว้ด้วยกัน สิ่งที่ปรากฏบนจอ คำพูดไทย และคำพูดอังกฤษของคลิกเดียวกัน พูดจบประโยคก่อน แล้วค่อยคลิก",
+       "b": false,
+       "i": false
+      }
+     ]
+    },
+    {
+     "type": "h3",
+     "h": "Slide 1 / 6 · Title · หน้าปก\n(1:00)"
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Stand centre, smile, and wait for the room to settle before the first word. · ยืนกลางเวที ยิ้ม รอให้ห้องเงียบก่อนพูดคำแรก",
+       "b": false,
+       "i": false
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "t": "คลิก",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บนจอ (TH)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "พูด (TH)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Say (EN)",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "เปิดหน้า",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ชื่อเรื่อง คำโปรย ชื่อผู้นำเสนอ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "สวัสดีครับทุกท่าน ผม Chayanun Sungsa-ard รหัสนักศึกษา 691401708 หลักสูตร MBA วันนี้ผมขอนำเสนอสิ่งที่การทดลองภาคสนามสองชิ้นล่าสุดบอกเราเกี่ยวกับปัญญาประดิษฐ์ในการทำงาน",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Good morning, everyone. My name is Chayanun Sungsa-ard, student ID 691401708, from the MBA programme. Today I would like to share what two recent field experiments tell us about artificial intelligence at work.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "1",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "มาสคอตหุ่นยนต์โบกมือ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "เกือบทุกคนในห้องนี้เคยขอให้ AI ช่วยทำงานบางอย่างแล้ว คำถามจริงคือ ความช่วยเหลือนั้นสะท้อนออกมาเป็นผลลัพธ์หรือไม่ ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(หยุด)",
+         "b": false,
+         "i": true
+        }
+       ],
+       [
+        {
+         "t": "Almost everyone in this room has already asked an AI for help with something. The real question is whether that help shows up in results. ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(pause)",
+         "b": false,
+         "i": true
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "2",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "คำถามหลักปรากฏ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "นี่คือคำถามเดียวที่ผมจะตอบในวันนี้ AI ส่งผลต่อผลิตภาพ คุณภาพงาน และผลการดำเนินธุรกิจอย่างไร",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "So this is the one question I want to answer today: how does AI affect productivity, work quality, and business performance?",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "3",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "การ์ดบทความสองใบ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ผมจะใช้งานวิจัยสองชิ้น บทความที่ 2 โดย Dell'Acqua และคณะ จาก Harvard Business School ปี 2023 เป็นการทดลองภาคสนามกับที่ปรึกษาของ BCG ที่ใช้ GPT-4 ส่วนบทความที่ 5 โดย Otis และคณะ ตีพิมพ์ใน Management Science ปี 2026 เป็นการทดลองภาคสนามกับผู้ประกอบการรายย่อยในเคนยาที่ได้รับผู้ช่วยธุรกิจ GPT-4",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "I will draw on two studies. Article 2, by Dell'Acqua and colleagues at Harvard Business School in 2023, is a field experiment with consultants at BCG working with GPT-4. Article 5, by Otis and colleagues in Management Science, 2026, is a field experiment with small-business entrepreneurs in Kenya who received a GPT-4 business assistant.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "4",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ป้ายส่งต่อ ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "การทดลองที่ 1: BCG",
+         "b": true,
+         "i": false
+        },
+        {
+         "t": " / ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "Field experiment 1: BCG",
+         "b": true,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "เราจะเริ่มจากในสำนักงาน ไปสู่ตลาดจริง แล้วปิดท้ายด้วยสิ่งที่สองงานบอกเราร่วมกัน เริ่มที่การทดลองแรก ที่ BCG ครับ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "We will start in the office, move to the marketplace, and finish with what the two studies tell us together. Let us begin with field experiment one, at BCG.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "h3",
+     "h": "Slide 2 / 7 · Method · วิธีวิจัย\n(1:30)"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "t": "คลิก",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บนจอ (TH)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "พูด (TH)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Say (EN)",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "เปิดหน้า",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ชื่อเรื่อง ป้าย ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "การทดลองที่ 1: BCG",
+         "b": true,
+         "i": false
+        },
+        {
+         "t": " ลอยมาอยู่มุมขวาบน",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บทความที่ 2 ชื่อว่า Navigating the Jagged Technological Frontier หรือการนำทางในพรมแดนเทคโนโลยีที่ไม่สม่ำเสมอ และวลีนี้คือกุญแจของทุกอย่างที่จะตามมา",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Article 2 is titled Navigating the Jagged Technological Frontier, and that phrase is the key to everything that follows.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "1",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "องค์กรที่ร่วมวิจัย ผู้เข้าร่วม ประเด็นที่ศึกษา",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ผู้วิจัยทำการทดลองภาคสนามร่วมกับ Boston Consulting Group มีที่ปรึกษาเข้าร่วม 758 คน และศึกษาผลิตภาพ คุณภาพงาน และขอบเขตความสามารถของ AI",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "The researchers ran a field experiment with Boston Consulting Group. Seven hundred and fifty-eight consultants took part, and the study measured productivity, work quality, and the limits of what AI can do.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "2",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "การ์ดเงื่อนไขสามกลุ่ม",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ที่ปรึกษาถูกสุ่มเข้าสามกลุ่ม คือไม่ใช้ AI ใช้ GPT-4 และใช้ GPT-4 พร้อมคำแนะนำสั้นๆ เรื่องการเขียน prompt ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(หยุด)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " การสุ่มนี้เองที่ทำให้เราเรียกความแตกต่างที่พบว่าเป็นผลเชิงสาเหตุได้",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Consultants were randomly assigned to one of three groups: no AI access, GPT-4 access, or GPT-4 plus a short guide on prompt engineering. ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(pause)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " Random assignment is what lets us call the differences a causal effect.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "3",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "กล่องแนวคิด Jagged Technological Frontier",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ต่อไปคือแนวคิดหลัก ผู้เขียนเรียกมันว่าพรมแดนเทคโนโลยีที่ไม่สม่ำเสมอ AI ทำงานบางอย่างได้ดีมาก แต่ทำงานอื่นที่ดูยากพอกันได้ไม่ดี เส้นแบ่งนี้ไม่สม่ำเสมอ และที่สำคัญคือมองเห็นได้ยากจากมุมของผู้ใช้",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Now the concept. The authors describe a jagged technological frontier. AI performs some tasks very well, yet struggles with others that look equally difficult. The boundary is uneven, and, importantly, it is hard to see from the inside.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "4",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "หุ่นยนต์ถือแว่นขยาย",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แม้ผู้ใช้ที่มีประสบการณ์ก็ไม่สามารถบอกได้เสมอว่างานชิ้นนี้อยู่ฝั่งไหนของเส้น",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Even experienced users cannot always tell which side of the line a task sits on.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "5",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แผนภาพพรมแดนพร้อมคำอธิบาย",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ลองดูภาพนี้ครับ แต่ละจุดคืองานที่ดูยากพอๆ กัน ใต้เส้นหยักในพื้นที่ระบายสี คืองานที่ AI ทำได้ดี เหนือเส้นคืองานที่ AI ทำได้ไม่ดี ขอให้จำภาพนี้ไว้ เพราะผลการศึกษาจะแยกตามเส้นนี้พอดี",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Think of it this way. Each dot is a task of similar apparent difficulty. Below the jagged line, in the shaded area, AI performs well. Above the line, AI struggles. Hold this picture in mind, because the results split exactly along it.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "6",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ข้อความ ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "ถัดไป",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " ตามด้วยป้าย ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "พรมแดนที่ไม่สม่ำเสมอ",
+         "b": true,
+         "i": false
+        },
+        {
+         "t": " / ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "The jagged frontier",
+         "b": true,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แล้วเมื่อที่ปรึกษา 758 คนใช้ GPT-4 จริง เกิดอะไรขึ้น",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "So what happened when 758 consultants actually used GPT-4?",
+         "b": false,
+         "i": false
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "h3",
+     "h": "Slide 3 / 8 · Findings ·\nผลการศึกษา (2:30)"
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "The slide with the most numbers: slow down and let each bar land before the next figure. · สไลด์นี้มีตัวเลขมากที่สุด พูดให้ช้าลง และปล่อยให้แต่ละแท่งปรากฏเต็มก่อนพูดตัวเลขถัดไป",
+       "b": false,
+       "i": false
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "t": "คลิก",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บนจอ (TH)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "พูด (TH)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Say (EN)",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "เปิดหน้า",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ชื่อเรื่อง ป้าย ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "พรมแดนที่ไม่สม่ำเสมอ",
+         "b": true,
+         "i": false
+        },
+        {
+         "t": " มุมขวาบน",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ภายในพรมแดน ผลดีมีขนาดใหญ่มาก",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Inside the frontier, the gains were large.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "1",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ป้ายผลการวิจัยและชื่อกราฟ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "นี่คือการเปลี่ยนแปลงของที่ปรึกษาที่ใช้ AI ในงานภายในพรมแดน เทียบกับกลุ่มควบคุม",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "These are the changes for consultants using AI on tasks inside the frontier, compared with the control group.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "2–6",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แท่งกราฟทีละแท่ง: +12.2%, +25.1%, มากกว่า +40%, +43%, +17% (คลิกหนึ่งครั้งต่อแท่ง)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ที่ปรึกษาที่ใช้ AI ทำงานเสร็จเพิ่มขึ้น 12.2 เปอร์เซ็นต์ ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(คลิก)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " ทำงานเร็วขึ้น 25.1 เปอร์เซ็นต์ ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(คลิก)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " และคุณภาพงานได้รับการประเมินสูงกว่ามากกว่า 40 เปอร์เซ็นต์ ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(หยุด คลิก)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " กลุ่มที่ผลงานต่ำกว่าค่าเฉลี่ยดีขึ้น 43 เปอร์เซ็นต์เทียบกับคะแนนเดิมของตนเอง ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(คลิก)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " และกลุ่มสูงกว่าค่าเฉลี่ยดีขึ้น 17 เปอร์เซ็นต์ AI ช่วยทุกคน และช่วยคนที่อ่อนกว่ามากที่สุด",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Consultants with AI completed 12.2 percent more tasks. ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(click)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " They worked 25.1 percent faster. ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(click)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " And the quality of their work was rated more than 40 percent higher. ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(pause, click)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " Below-average performers improved by 43 percent against their own baseline, ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(click)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " and above-average performers by 17 percent. AI helped everyone, and it helped the weaker performers most.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "7",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "หมายเหตุใต้กราฟ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "หมายเหตุเล็กน้อยครับ ตัวเลขคุณภาพรายงานว่ามากกว่า 40 เปอร์เซ็นต์ กราฟจึงแสดงที่ 40",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "One small note: the quality figure is reported as more than 40 percent, so the bar is plotted at 40.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "8",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "กล่องสีน้ำเงินเข้ม ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "−19 จุดร้อยละ",
+         "b": true,
+         "i": false
+        },
+        {
+         "t": " พร้อมหุ่นยนต์งง",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ทีนี้มาดูอีกฝั่งของเส้น สำหรับงานที่ผู้วิจัยเลือกให้อยู่นอกพรมแดน ที่ปรึกษาที่ใช้ AI มีโอกาสได้คำตอบที่ถูกต้องน้อยกว่าผู้ไม่ใช้ AI อยู่ 19 จุดร้อยละ ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(หยุด)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " เครื่องมือที่เพิ่งช่วยพวกเขาเมื่อครู่ กลับพาพวกเขาหลงทาง",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Now the other side of the line. For a task the researchers chose to sit outside the frontier, consultants using AI were 19 percentage points less likely to produce a correct solution than consultants without AI. ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(pause)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " The tool that boosted them a moment ago now led them astray.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "9",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "หมายเหตุเรื่องหน่วย",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "สังเกตหน่วยด้วยครับ นี่คือส่วนต่างของอัตราความถูกต้องสองกลุ่ม ไม่ใช่ร้อยละการเปลี่ยนแปลง",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Please notice the unit. That is a gap between two success rates, not a percentage change.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "10",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "สองรูปแบบ Centaurs และ Cyborgs",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ที่ปรึกษาที่ทำได้ดีใช้ AI สองแบบ Centaurs หรือเซนทอร์ แบ่งงานว่าส่วนไหนทำเอง ส่วนไหนให้ AI ทำ ส่วน Cyborgs หรือไซบอร์ก ผสาน AI เข้าไปในทุกขั้นตอนของงาน ทั้งสองแบบได้ผล",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "The consultants who did well used AI in two ways. Centaurs divided tasks: some for themselves, some for the AI. Cyborgs integrated AI into every step of their work. Both approaches worked.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "11",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ข้อความ ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "ถัดไป",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " ตามด้วยป้าย ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "ธุรกิจขนาดเล็กจริง",
+         "b": true,
+         "i": false
+        },
+        {
+         "t": " / ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "Real small businesses",
+         "b": true,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ผลในสำนักงานชัดเจน แต่ผลแบบนี้จะเป็นจริงกับธุรกิจขนาดเล็กจริงหรือไม่",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "The office result is clear. But does this hold for real small businesses?",
+         "b": false,
+         "i": false
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "h3",
+     "h": "Slide 4 / 9 ·\nEntrepreneurs · ผู้ประกอบการ (2:00)"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "t": "คลิก",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บนจอ (TH)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "พูด (TH)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Say (EN)",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "เปิดหน้า",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ชื่อเรื่อง ป้าย ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "ธุรกิจขนาดเล็กจริง",
+         "b": true,
+         "i": false
+        },
+        {
+         "t": " มุมขวาบน",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บทความที่ 5 พาเราจากที่ปรึกษาไปสู่ผู้ประกอบการ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Article 5 takes us from consultants to entrepreneurs.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "1",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บริบท สิ่งที่ทดลอง ตัวแปรผลลัพธ์",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บริบทคือประเทศเคนยา กับเจ้าของธุรกิจขนาดเล็ก ครึ่งหนึ่งได้รับผู้ช่วยธุรกิจ AI ที่ขับเคลื่อนด้วย GPT-4 ซึ่งให้คำแนะนำทางธุรกิจ ตัวแปรผลลัพธ์คือสิ่งที่เจ้าของทุกคนสนใจ นั่นคือรายได้และกำไร",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "The setting is Kenya, with small-business owners. Half of them received a GPT-4-powered AI business assistant that gave business advice. The outcomes were the ones that matter to any owner: revenue and profit.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "2",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "กล่องสีน้ำเงินเข้ม ผลโดยเฉลี่ย พร้อมหุ่นยนต์ถือโทรศัพท์",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แล้วโดยเฉลี่ยเป็นอย่างไร ผู้วิจัยไม่สามารถปฏิเสธสมมติฐานว่างที่ว่าไม่มีผลเฉลี่ยต่อรายได้และกำไร ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(หยุด)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " พูดง่ายๆ คือ เมื่อดูทั้งกลุ่ม ผู้ช่วย AI ไม่ได้สร้างความแตกต่างที่ตรวจพบได้",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "And on average? The researchers could not reject the null hypothesis of no average treatment effect on revenue and profits. ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(pause)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " In plain words, across the whole group, the assistant made no detectable difference.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "3",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ป้ายผลการวิจัย แยกตามผลงานตั้งต้น และผู้ประกอบการถือโทรศัพท์",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แต่ค่าเฉลี่ยซ่อนสองเรื่องไว้ เมื่อผู้วิจัยแยกเจ้าของธุรกิจตามผลงานก่อนเริ่มการศึกษา",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "But the average hides two stories. When the researchers split the owners by how their businesses were performing before the study...",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "4",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แท่ง กลุ่มผลงานต่ำ แย่ลงเกือบ 10%",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ผู้ประกอบการที่ผลงานต่ำตั้งแต่ต้น แย่ลงเกือบ 10 เปอร์เซ็นต์เมื่อใช้ผู้ช่วย AI",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "...entrepreneurs who were low performers at baseline did nearly 10 percent worse with the assistant.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "5",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แท่ง กลุ่มผลงานสูง มากกว่า 15%",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ขณะที่กลุ่มผลงานสูงอาจได้ประโยชน์มากกว่า 15 เปอร์เซ็นต์ เครื่องมือเดียวกันดึงสองกลุ่มไปคนละทิศ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "While high performers may have benefited by more than 15 percent. The same tool pulled the two groups in opposite directions.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "6",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "กลไกและข้อควรระวัง",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "เพราะอะไร คำถามที่ถามและคำแนะนำที่ได้รับใกล้เคียงกัน ความต่างอยู่ที่คำแนะนำที่ผู้ประกอบการเลือกนำไปปฏิบัติ ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(หยุด)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " และขอเตือนไว้ว่า นี่คือค่าเฉลี่ยของกลุ่มย่อย ไม่ใช่ว่าคนเก่งทุกคนจะได้ประโยชน์ หรือคนอ่อนทุกคนจะเสียประโยชน์",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Why? The questions they asked and the advice they received were similar. The difference lay in which advice the entrepreneurs chose to implement. ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(pause)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " And a word of caution: these are subgroup averages. Not every high performer gained, and not every low performer lost.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "7",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ข้อความ ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "ถัดไป",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " ตามด้วยป้าย ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "วิจารณญาณของมนุษย์",
+         "b": true,
+         "i": false
+        },
+        {
+         "t": " / ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "Human judgment",
+         "b": true,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "สองงานวิจัย บทเรียนเดียว ผมขอวางทั้งสองเคียงกันครับ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Two studies, one lesson. Let me put them side by side.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "h3",
+     "h": "Slide 5 / 10 · Discussion ·\nอภิปรายผล (1:30)"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "t": "คลิก",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บนจอ (TH)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "พูด (TH)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Say (EN)",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "เปิดหน้า",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ชื่อเรื่อง ป้าย ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "วิจารณญาณของมนุษย์",
+         "b": true,
+         "i": false
+        },
+        {
+         "t": " มุมขวาบน",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "หัวข้อของผมวันนี้คือ AI เป็นเครื่องมือ ไม่ใช่หลักประกันความสำเร็จ และนี่คือเหตุผล",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "My title today is that AI is a tool, not a guarantee of success. Here is why.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "1",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ตารางเปรียบเทียบ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บทความที่ 2 กับพนักงานความรู้ที่ BCG พบว่าผลิตภาพและคุณภาพสูงขึ้นภายในพรมแดนความสามารถของ AI แต่ความถูกต้องลดลงในงานนอกพรมแดน บทความที่ 5 กับธุรกิจขนาดเล็กในเคนยา ไม่พบผลเฉลี่ยต่อรายได้และกำไรอย่างชัดเจน ผลขึ้นกับผลงานตั้งต้นและคำแนะนำที่เลือกนำไปใช้ ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(หยุด)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " คนต่างกลุ่ม ประเทศต่างกัน แต่รูปแบบเดียวกัน ประโยชน์ขึ้นอยู่กับว่าใช้เครื่องมือกับงานใดและใช้อย่างไร",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Article 2, with knowledge workers at BCG, found higher productivity and quality inside AI's capability frontier, and lower correctness on a task outside it. Article 5, with small businesses in Kenya, found no established average effect on revenue and profit; outcomes depended on baseline performance and on which advice was implemented. ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(pause)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " Different people, different countries, the same pattern: the benefit depends on where and how the tool is used.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "2",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แถบสีเขียวอมฟ้า บทสรุป ข้อคิดสามข้อ ภาพจับมือ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "การตีความของผมคือ AI ส่งผลต่อผลการทำงานจริงได้ แต่ผลกระทบขึ้นอยู่กับความเหมาะสมของงาน พฤติกรรมของผู้ใช้ และวิจารณญาณของมนุษย์ จึงมีข้อคิดสามข้อ เลือกงานให้ตรงกับจุดแข็งของ AI ประเมินคำแนะนำของ AI อย่างมีวิจารณญาณ และให้มนุษย์ตัดสินใจขั้นสุดท้าย",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "So my interpretation is this. AI can influence real-world performance, but its impact depends on task suitability, user behaviour, and human judgment. Three practical takeaways follow. Match the task to AI's strengths. Evaluate AI advice critically. And keep human judgment in the loop.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "3",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ข้อความ ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "ขอบคุณครับ",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " / ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "Thank you",
+         "b": false,
+         "i": true
+        }
+       ],
+       [
+        {
+         "t": "ขอบคุณทุกท่านที่ตั้งใจฟังครับ ยินดีรับคำถาม",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Thank you very much for your attention. I would be happy to take your questions.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "h": "Fast version ·\nฉบับนำเสนอไว (ประมาณ 4 นาที)",
+   "items": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "About four and a half minutes, same clicks as the full script, one short line per click: say the line, click, keep moving. Every figure is kept. Where several clicks share a line, click on each ",
+       "b": false,
+       "i": false
+      },
+      {
+       "t": "(click)",
+       "b": false,
+       "i": true
+      },
+      {
+       "t": ".",
+       "b": false,
+       "i": false
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "ประมาณสี่นาทีครึ่ง คลิกเหมือนฉบับเต็มทุกคลิก แต่พูดสั้นลงเหลือคลิกละประโยค พูดจบ คลิก แล้วไปต่อทันที ตัวเลขครบทุกตัว แถวที่รวมหลายคลิก ให้คลิกตรงคำว่า ",
+       "b": false,
+       "i": false
+      },
+      {
+       "t": "(คลิก)",
+       "b": false,
+       "i": true
+      }
+     ]
+    },
+    {
+     "type": "h3",
+     "h": "Slide 1 / 6 · 0:35"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "t": "คลิก",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บนจอ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "พูด (TH)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Say (EN)",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "เปิดหน้า",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ชื่อเรื่อง",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "สวัสดีครับ ผม Chayanun Sungsa-ard รหัส 691401708 หลักสูตร MBA",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Good morning. I am Chayanun Sungsa-ard, ID 691401708, MBA.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "1",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "มาสคอต",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "เราทุกคนใช้ AI กันแล้ว แต่มันช่วยผลงานจริงไหม",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "We all use AI now, but does it actually improve results?",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "2",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "คำถามหลัก",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "คำถามเดียวของวันนี้ AI ส่งผลต่อผลิตภาพ คุณภาพงาน และผลการดำเนินธุรกิจอย่างไร",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "One question today: how does AI affect productivity, work quality, and business performance?",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "3",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "การ์ดสองบทความ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "สองการทดลองภาคสนาม บทความที่ 2 ที่ปรึกษา BCG กับ GPT-4 (Dell'Acqua และคณะ 2023) บทความที่ 5 ผู้ประกอบการในเคนยากับผู้ช่วยธุรกิจ GPT-4 (Otis และคณะ 2026)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Two field experiments: Article 2, BCG consultants with GPT-4 (Dell'Acqua et al., 2023); Article 5, Kenyan entrepreneurs with a GPT-4 business assistant (Otis et al., 2026).",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "4",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ป้าย ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "การทดลองที่ 1: BCG",
+         "b": true,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "เริ่มที่การทดลองแรก ที่ BCG",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Field experiment one: BCG.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "h3",
+     "h": "Slide 2 / 7 · 0:45"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "t": "คลิก",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บนจอ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "พูด (TH)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Say (EN)",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "เปิดหน้า",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ชื่อเรื่อง",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บทความที่ 2 การนำทางในพรมแดนเทคโนโลยีที่ไม่สม่ำเสมอ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Article 2: Navigating the Jagged Technological Frontier.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "1",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "องค์กร ผู้เข้าร่วม ประเด็น",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ทดลองกับ BCG ที่ปรึกษา 758 คน วัดผลิตภาพ คุณภาพ และขอบเขตของ AI",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "A field experiment with BCG: 758 consultants; productivity, quality, and the limits of AI.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "2",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "เงื่อนไขสามกลุ่ม",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "สุ่มเข้าสามกลุ่ม ไม่ใช้ AI ใช้ GPT-4 หรือ GPT-4 พร้อมคำแนะนำการเขียน prompt สุ่มจริง ผลจึงเป็นผลเชิงสาเหตุ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Randomly assigned: no AI, GPT-4, or GPT-4 plus prompt guidance, so the results are causal.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "3",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แนวคิดพรมแดน",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แนวคิดหลักคือพรมแดนที่ไม่สม่ำเสมอ AI ทำบางงานได้ดีมาก แต่งานที่ดูยากพอกันกลับทำไม่ดี",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "The key idea: a jagged frontier. AI excels at some tasks and fails at others that look equally hard.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "4",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "หุ่นยนต์แว่นขยาย",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "และเส้นนี้มองเห็นได้ยาก",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "And that line is hard to see.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "5",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แผนภาพ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ใต้เส้น AI ทำได้ดี เหนือเส้นทำได้ไม่ดี จำภาพนี้ไว้",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Below the line AI performs well; above it, AI struggles. Keep this picture.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "6",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ป้าย ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "พรมแดนที่ไม่สม่ำเสมอ",
+         "b": true,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แล้ว 758 คนใช้ GPT-4 จริง เกิดอะไรขึ้น",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "So what happened when 758 consultants used GPT-4?",
+         "b": false,
+         "i": false
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "h3",
+     "h": "Slide 3 / 8 · 1:15"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "t": "คลิก",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บนจอ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "พูด (TH)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Say (EN)",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "เปิดหน้า · 1",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ชื่อเรื่อง ป้ายผลการวิจัย",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ภายในพรมแดน ผลดีมาก ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(คลิก)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " นี่คือผู้ใช้ AI เทียบกลุ่มควบคุม",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Inside the frontier, big gains. ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(click)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " AI users versus the control group.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "2–6",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แท่งกราฟทีละแท่ง",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "เสร็จเพิ่ม 12.2% ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(คลิก)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " เร็วขึ้น 25.1% ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(คลิก)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " คุณภาพสูงขึ้นมากกว่า 40% ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(คลิก)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " กลุ่มต่ำกว่าค่าเฉลี่ยดีขึ้น 43% ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(คลิก)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " กลุ่มสูงกว่าค่าเฉลี่ย 17% เทียบคะแนนเดิมของตน",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "12.2% more tasks completed. ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(click)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " 25.1% faster. ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(click)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " Quality more than 40% higher. ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(click)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " Below-average performers up 43%, ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(click)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " above-average up 17%, each against their own baseline.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "7",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "หมายเหตุกราฟ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "คุณภาพรายงานว่ามากกว่า 40% กราฟจึงแสดงที่ 40",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Quality is reported as more than 40%, so the bar sits at 40.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "8",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "กล่อง ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "−19",
+         "b": true,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "นอกพรมแดน ผู้ใช้ AI ตอบถูกน้อยกว่าผู้ไม่ใช้ 19 จุดร้อยละ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Outside the frontier, AI users were 19 percentage points less likely to be correct.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "9",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "หมายเหตุหน่วย",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "คือส่วนต่างของอัตราความถูกต้อง ไม่ใช่ร้อยละการเปลี่ยนแปลง",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "A gap between two success rates, not a percentage change.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "10",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Centaurs / Cyborgs",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "คนที่ทำได้ดี คือ Centaurs แบ่งงานกับ AI และ Cyborgs ผสาน AI ทุกขั้นตอน",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Successful users were Centaurs, who split tasks with AI, and Cyborgs, who wove AI into every step.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "11",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ป้าย ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "ธุรกิจขนาดเล็กจริง",
+         "b": true,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แล้วกับธุรกิจขนาดเล็กจริงล่ะ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Does this hold for real small businesses?",
+         "b": false,
+         "i": false
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "h3",
+     "h": "Slide 4 / 9 · 1:00"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "t": "คลิก",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บนจอ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "พูด (TH)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Say (EN)",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "เปิดหน้า · 1",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ชื่อเรื่อง บริบท",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บทความที่ 5 ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(คลิก)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " ผู้ประกอบการในเคนยาได้ผู้ช่วยธุรกิจ GPT-4 วัดรายได้และกำไร",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Article 5. ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(click)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " Kenyan entrepreneurs received a GPT-4 business assistant; the outcomes were revenue and profit.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "2",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "กล่องผลเฉลี่ย",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "โดยเฉลี่ย ปฏิเสธสมมติฐานว่างไม่ได้ คือไม่พบผลที่ชัดเจน",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "On average, the null hypothesis of no effect could not be rejected.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "3 · 4",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ป้ายแยกตามผลงาน ผู้ประกอบการ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แต่ค่าเฉลี่ยซ่อนสองเรื่อง ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(คลิก)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " เมื่อแยกตามผลงานตั้งต้น",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "But the average hides two stories. ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(click)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " Split by baseline performance...",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "5",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แท่งกลุ่มต่ำ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "กลุ่มผลงานต่ำแย่ลงเกือบ 10%",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "...low performers did nearly 10% worse.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "6",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แท่งกลุ่มสูง",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "กลุ่มผลงานสูงอาจได้ประโยชน์มากกว่า 15%",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "High performers may have benefited by more than 15%.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "7",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "กลไก ข้อควรระวัง",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "คำแนะนำใกล้เคียงกัน ต่างกันที่คำแนะนำที่เลือกนำไปปฏิบัติ และนี่คือค่าเฉลี่ยของกลุ่มย่อย ไม่ใช่กฎสำหรับทุกคน",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Similar advice; the difference was which advice they chose to implement. These are subgroup averages, not a rule for everyone.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "8",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ป้าย ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "วิจารณญาณของมนุษย์",
+         "b": true,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "สองงานวิจัย บทเรียนเดียว",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Two studies, one lesson.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "h3",
+     "h": "Slide 5 / 10 · 0:50"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "t": "คลิก",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บนจอ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "พูด (TH)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Say (EN)",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "เปิดหน้า · 1",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ชื่อเรื่อง ตาราง",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "AI เป็นเครื่องมือ ไม่ใช่หลักประกันความสำเร็จ ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(คลิก)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " บทความที่ 2 ผลิตภาพและคุณภาพสูงขึ้นในพรมแดน แต่ความถูกต้องลดลงนอกพรมแดน บทความที่ 5 ไม่พบผลเฉลี่ยที่ชัดเจน ผลขึ้นกับผลงานตั้งต้นและคำแนะนำที่นำไปใช้",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "AI is a tool, not a guarantee of success. ",
+         "b": false,
+         "i": false
+        },
+        {
+         "t": "(click)",
+         "b": false,
+         "i": true
+        },
+        {
+         "t": " Article 2: higher productivity and quality inside the frontier, lower correctness outside. Article 5: no established average effect; outcomes depended on baseline performance and the advice implemented.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "2",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "แถบบทสรุป",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "AI ส่งผลต่อผลงานจริงได้ แต่ขึ้นกับความเหมาะสมของงาน พฤติกรรมผู้ใช้ และวิจารณญาณของมนุษย์ เลือกงานให้ตรงจุดแข็ง AI ประเมินคำแนะนำอย่างมีวิจารณญาณ ให้มนุษย์ตัดสินใจขั้นสุดท้าย",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "AI can influence real performance, but it depends on task suitability, user behaviour, and human judgment: match the task, evaluate the advice, keep a human deciding.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "3",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ขอบคุณ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ขอบคุณครับ ยินดีรับคำถาม",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Thank you; I welcome your questions.",
+         "b": false,
+         "i": false
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "If you have only two minutes, use slides 1, 3 and 5: the question, the numbers, the conclusion. · ถ้ามีเวลาแค่สองนาที ใช้เฉพาะสไลด์ 1, 3 และ 5 คือคำถาม ตัวเลข และบทสรุป",
+       "b": false,
+       "i": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "h": "Hand-off keywords ·\nคำส่งต่อระหว่างสไลด์",
+   "items": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Each slide ends with a teal chip that carries one phrase into the next slide. Say the phrase out loud as the chip appears, click once more, and the same chip lands at the top right of the next slide: the audience hears the word, then sees it travel. In the Thai half the chips carry the same four ideas.",
+       "b": false,
+       "i": false
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "ทุกสไลด์จบด้วยป้ายสีเขียวอมฟ้าที่หิ้วหนึ่งวลีไปยังสไลด์ถัดไป พูดวลีนั้นออกเสียงขณะที่ป้ายปรากฏ คลิกอีกครั้ง ป้ายจะลอยไปอยู่มุมขวาบนของหน้าถัดไป ผู้ฟังได้ยินคำก่อน แล้วเห็นคำเดินทางตามไป",
+       "b": false,
+       "i": false
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "t": "From → To",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Chip (EN)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ป้าย (TH)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Closing line to say before the click · ประโยคปิดก่อนคลิก",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "1 → 2",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Field experiment 1: BCG",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "การทดลองที่ 1: BCG",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "\"Let us begin with field experiment one, at BCG.\" · \"เริ่มที่การทดลองแรก ที่ BCG ครับ\"",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "2 → 3",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "The jagged frontier",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "พรมแดนที่ไม่สม่ำเสมอ",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "\"So what happened when 758 consultants actually used GPT-4?\" · \"แล้วเมื่อที่ปรึกษา 758 คนใช้ GPT-4 จริง เกิดอะไรขึ้น\"",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "3 → 4",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Real small businesses",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ธุรกิจขนาดเล็กจริง",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "\"But does this hold for real small businesses?\" · \"ผลแบบนี้จะเป็นจริงกับธุรกิจขนาดเล็กจริงหรือไม่\"",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "4 → 5",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Human judgment",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "วิจารณญาณของมนุษย์",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "\"Two studies, one lesson. Let me put them side by side.\" · \"สองงานวิจัย บทเรียนเดียว ผมขอวางทั้งสองเคียงกันครับ\"",
+         "b": false,
+         "i": false
+        }
+       ]
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Three habits make the transitions feel seamless. Finish the sentence before you click, never during it. Turn your body slightly toward the screen as the chip travels, then back to the audience as the new title appears. Repeat the chip's phrase in the first sentence of the new slide, so the thread is audible as well as visible.",
+       "b": false,
+       "i": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "h": "Anticipated Q&A ·\nคำถามที่คาดว่าจะเจอ",
+   "items": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Answer every question in three moves: thank or acknowledge, answer in one or two sentences, then anchor the answer to a slide. If you do not know, say so and name what the articles do and do not report. Never add a figure the articles did not give.",
+       "b": false,
+       "i": false
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "ตอบทุกคำถามด้วยสามขั้น ขอบคุณหรือรับคำถาม ตอบในหนึ่งถึงสองประโยค แล้วโยงกลับไปที่สไลด์ ถ้าไม่ทราบ ให้บอกตรงๆ และระบุว่าบทความรายงานอะไรและไม่รายงานอะไร ห้ามเพิ่มตัวเลขที่บทความไม่ได้ให้ไว้",
+       "b": false,
+       "i": false
+      }
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       [
+        {
+         "t": "Question · คำถาม",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Answer (EN)",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "คำตอบ (TH)",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "Why did the two studies find such different results?",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "The populations and tasks differed. The consultants worked on tasks the researchers had placed inside AI's frontier, so gains were large. The entrepreneurs ran whole businesses, where outcomes depend on which advice they chose to implement. The frontier concept from slide 2 explains both.",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "กลุ่มตัวอย่างและงานต่างกัน ที่ปรึกษาทำงานที่ผู้วิจัยจัดให้อยู่ภายในพรมแดนของ AI ผลดีจึงใหญ่ ส่วนผู้ประกอบการบริหารธุรกิจทั้งระบบ ผลขึ้นกับคำแนะนำที่เลือกนำไปใช้ แนวคิดพรมแดนในสไลด์ 2 อธิบายได้ทั้งสองกรณี",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "What does \"19 percentage points\" mean, exactly?",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "It is the difference between two success rates: the share of AI users who got the task right was 19 points lower than the share of non-users. It is not a 19 percent decline in performance.",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "คือส่วนต่างของอัตราความถูกต้องสองกลุ่ม สัดส่วนของผู้ใช้ AI ที่ตอบถูกต่ำกว่าผู้ไม่ใช้อยู่ 19 จุด ไม่ใช่ผลงานลดลง 19 เปอร์เซ็นต์",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "Why did low performers in Kenya do worse?",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "The articles report that questions and advice were similar across groups, so the gap lay in which advice was implemented. The paper does not give a single confirmed mechanism beyond that, so I would not speculate further.",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บทความรายงานว่าคำถามและคำแนะนำใกล้เคียงกันทุกกลุ่ม ความต่างจึงอยู่ที่คำแนะนำที่เลือกนำไปปฏิบัติ บทความไม่ได้ยืนยันกลไกเดียวที่ชัดเจนกว่านั้น ผมจึงไม่ขอเดาเพิ่ม",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "Can we trust the results? Were they causal?",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Both are randomized field experiments: participants were randomly assigned to receive AI or not, so the comparisons are causal, not just correlations. The limits are external: one firm's consultants, one country's small businesses, and GPT-4 at the time of each study.",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ทั้งสองเป็นการทดลองภาคสนามแบบสุ่ม ผู้เข้าร่วมถูกสุ่มให้ได้หรือไม่ได้ใช้ AI การเปรียบเทียบจึงเป็นผลเชิงสาเหตุ ไม่ใช่แค่ความสัมพันธ์ ข้อจำกัดอยู่ที่การขยายผล คือที่ปรึกษาบริษัทเดียว ธุรกิจขนาดเล็กประเทศเดียว และ GPT-4 ในช่วงเวลาของการศึกษา",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "What does this mean for a Thai SME or a new shop owner?",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "Use AI for tasks that sit inside its frontier, such as drafting, summarizing and generating options, and treat its business advice as a proposal to evaluate, not an instruction to follow. The Kenya study suggests the judgment to pick the right advice is what separates gains from losses.",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "ใช้ AI กับงานที่อยู่ภายในพรมแดนของมัน เช่น ร่างข้อความ สรุป และสร้างทางเลือก และมองคำแนะนำทางธุรกิจของ AI เป็นข้อเสนอที่ต้องประเมิน ไม่ใช่คำสั่งที่ต้องทำตาม งานวิจัยในเคนยาชี้ว่าวิจารณญาณในการเลือกคำแนะนำที่ถูกต้องคือสิ่งที่แยกกำไรจากขาดทุน",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "Which is better, Centaur or Cyborg?",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "The article describes both as patterns observed among successful users; it does not rank them. The common point is that both keep a human deciding how AI fits the task.",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บทความอธิบายทั้งสองแบบว่าเป็นรูปแบบที่พบในผู้ใช้ที่ประสบความสำเร็จ ไม่ได้จัดอันดับว่าแบบไหนดีกว่า จุดร่วมคือทั้งสองแบบให้มนุษย์เป็นผู้ตัดสินว่า AI ควรเข้ามาในงานอย่างไร",
+         "b": false,
+         "i": false
+        }
+       ]
+      ],
+      [
+       [
+        {
+         "t": "Why is the quality bar plotted at 40?",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "The article reports quality as \"more than 40 percent\" higher without a single point figure, so I plotted the lower bound and said so on the slide.",
+         "b": false,
+         "i": false
+        }
+       ],
+       [
+        {
+         "t": "บทความรายงานคุณภาพว่าสูงขึ้น \"มากกว่า 40 เปอร์เซ็นต์\" โดยไม่ระบุตัวเลขเดียว ผมจึงแสดงค่าขั้นต่ำและระบุไว้ในสไลด์",
+         "b": false,
+         "i": false
+        }
+       ]
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "h": "Delivery checklist ·\nเช็กลิสต์ก่อนนำเสนอ",
+   "items": [
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Rehearse the full run three times with a timer. The first run is for words, the second for clicks, the third standing up with the clicker in hand. Record the third run on your phone and watch it once.",
+       "b": false,
+       "i": false
+      }
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "ซ้อมเต็มรอบสามครั้งพร้อมจับเวลา รอบแรกเน้นคำพูด รอบสองเน้นจังหวะการคลิก รอบสามยืนพูดจริงพร้อมรีโมต อัดวิดีโอรอบสามด้วยโทรศัพท์แล้วดูย้อนหนึ่งครั้ง",
+       "b": false,
+       "i": false
+      }
+     ]
+    },
+    {
+     "type": "h3",
+     "h": "The day before · วันก่อนนำเสนอ"
+    },
+    {
+     "type": "list",
+     "items": [
+      [
+       {
+        "t": "Decide which version you will present: the web deck in Present mode (animations and travelling chips, needs internet) or the PowerPoint file (click animations, works offline). · ตัดสินใจว่าจะใช้เวอร์ชันเว็บในโหมด Present (มีป้ายลอยข้ามหน้า ต้องมีอินเทอร์เน็ต) หรือไฟล์ PowerPoint (ใช้ออฟไลน์ได้)",
+        "b": false,
+        "i": false
+       }
+      ],
+      [
+       {
+        "t": "Install the Poppins and Prompt fonts on the presenting computer, or the layout will shift. · ติดตั้งฟอนต์ Poppins และ Prompt บนเครื่องที่ใช้นำเสนอ",
+        "b": false,
+        "i": false
+       }
+      ],
+      [
+       {
+        "t": "Open the PowerPoint file, press F5, and click through all 10 slides once to confirm every animation fires. · เปิดไฟล์ กด F5 แล้วคลิกดูทั้ง 10 หน้าว่า animation ทำงานครบ",
+        "b": false,
+        "i": false
+       }
+      ],
+      [
+       {
+        "t": "Save a PDF copy as a fallback in case the projector computer cannot open the file. · เก็บ PDF สำรองไว้เผื่อเครื่องหน้าห้องเปิดไฟล์ไม่ได้",
+        "b": false,
+        "i": false
+       }
+      ],
+      [
+       {
+        "t": "Print this script, or load it on a tablet, with the click numbers visible. · พิมพ์สคริปต์หรือเปิดบนแท็บเล็ต ให้เห็นเลขคลิกชัด",
+        "b": false,
+        "i": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "h3",
+     "h": "In the room · ในห้องนำเสนอ"
+    },
+    {
+     "type": "list",
+     "items": [
+      [
+       {
+        "t": "Arrive early, connect, and check the first slide from the back row: the dark title slide should read clearly. · มาก่อนเวลา ต่อสาย และเช็กสไลด์แรกจากแถวหลังสุด",
+        "b": false,
+        "i": false
+       }
+      ],
+      [
+       {
+        "t": "Use Presenter View so the speaker notes stay on your screen only. · ใช้ Presenter View ให้โน๊ตอยู่บนจอของคุณเท่านั้น",
+        "b": false,
+        "i": false
+       }
+      ],
+      [
+       {
+        "t": "Hold the clicker still in one hand; the other hand is free to gesture toward the frontier line and the bars. · ถือรีโมตมือเดียว อีกมือใช้ชี้เส้นพรมแดนและแท่งกราฟ",
+        "b": false,
+        "i": false
+       }
+      ],
+      [
+       {
+        "t": "Say every number slowly and once; if you misspeak a figure, correct it immediately and move on. · พูดตัวเลขช้าๆ ครั้งเดียว ถ้าพูดผิดให้แก้ทันทีแล้วไปต่อ",
+        "b": false,
+        "i": false
+       }
+      ],
+      [
+       {
+        "t": "Running long? Drop the chart note (slide 3, click 3) and the caution line (slide 4, click 7); never drop a hand-off chip. · เวลาเกิน ตัดหมายเหตุใต้กราฟและข้อควรระวังได้ แต่อย่าตัดป้ายส่งต่อ",
+        "b": false,
+        "i": false
+       }
+      ],
+      [
+       {
+        "t": "After the last slide, stay on it during Q&A: the title is your conclusion. · ช่วงถาม-ตอบให้ค้างสไลด์สุดท้ายไว้ ชื่อเรื่องคือบทสรุปของคุณ",
+        "b": false,
+        "i": false
+       }
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "runs": [
+      {
+       "t": "Sources: Dell'Acqua et al. (2023), Harvard Business School Working Paper 24-013 · Otis et al. (2026), Management Science 72(7), doi.org/10.1287/mnsc.2024.06909.",
+       "b": false,
+       "i": false
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
