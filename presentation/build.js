@@ -30,6 +30,7 @@ const THEME = {
 };
 const HEX = THEME.colors;
 const ART = { navy: "#1B2A4A", navyDeep: "#0E3340", teal: "#2E8B86", mint: "#BFE6E0", body: "#F3F5F8", skin: "#F1CFAF", shirt: "#2E8B86", gray: "#6B7280" };
+const ART_DARK = { ...ART, navy: "#C9D6E2", body: "#FFFFFF", screen: "#1B2A4A" }; // mascot variant for dark backgrounds
 let BUMP = 0; // +1pt on small text for Thai slides
 const fz = (n) => n + (n <= 11.5 ? BUMP : 0);
 
@@ -44,8 +45,9 @@ async function icon(name, hex) {
   return cache.get(key);
 }
 async function drawing(key, svg, width) { if (!cache.has(key)) cache.set(key, await art.png(svg, width)); return cache.get(key); }
-const robot = (pose) => drawing("robot" + pose, art.robotSvg(pose, ART), 700);
-const human = (pose) => drawing("human" + pose, art.humanSvg(pose, ART), 600);
+const robot = (pose, variant) => drawing("robot" + pose + (variant || ""), art.robotSvg(pose, variant === "dark" ? ART_DARK : variant === "teal" ? ART_TEAL : ART), 700);
+const ART_TEAL = { ...ART, body: "#FFFFFF", shirt: "#1B2A4A", teal: "#BFE6E0" }; // characters on the teal band
+const human = (pose, teal) => drawing("human" + pose + (teal ? "T" : ""), art.humanSvg(pose, teal ? ART_TEAL : ART), 600);
 
 // ---- Geometry (LAYOUT_16x9 = 10in x 5.625in) ------------------------------
 const W = 10, M = 0.55;
@@ -133,7 +135,7 @@ async function main() {
     const s = pres.addSlide({ masterName: "TITLE_DARK_" + lang.toUpperCase(), sectionTitle: section });
     s.addText(T.s1.title, { placeholder: "title" });
     s.addText(T.s1.subtitle, { placeholder: "body" });
-    s.addImage({ data: await robot("wave"), x: 7.5, y: 0.35, w: 2.1, h: 1.82, objectName: "mascot waving" });
+    s.addImage({ data: await robot("wave", "dark"), x: 7.5, y: 0.35, w: 2.1, h: 1.82, objectName: "mascot waving" });
     s.addText(T.s1.question, { x: M, y: 2.12, w: W - 2 * M, h: 0.4, fontSize: fz(13), bold: true, color: "FFFFFF", margin: 0, valign: "middle", isTextBox: true, fontFace: FONT, objectName: "central question" });
     const cw = (W - 2 * M - 0.3) / 2;
     T.s1.articles.forEach((a, i) => {
@@ -211,7 +213,7 @@ async function main() {
     s.addText(T.s3.outsideHead, { x: rx + 0.25, y: 1.64, w: rw - 0.5, h: 0.24, fontSize: fz(9), bold: true, color: HEX.accent4, charSpacing: 1, margin: 0, isTextBox: true, fontFace: FONT, objectName: "outside head" });
     s.addText(T.s3.outsideStat, { x: rx + 0.25, y: 1.88, w: 1.6, h: 0.56, fontSize: 44, bold: true, color: "FFFFFF", margin: 0, valign: "middle", isTextBox: true, fontFace: FONT, objectName: "outside stat" });
     s.addText(T.s3.outsideUnit, { x: rx + 0.25, y: 2.44, w: rw - 1.4, h: 0.22, fontSize: fz(8.5), color: HEX.accent4, margin: 0, valign: "middle", isTextBox: true, fontFace: FONT, objectName: "outside unit" });
-    s.addImage({ data: await robot("confused"), x: rx + rw - 1.25, y: 1.74, w: 1.1, h: 0.95, objectName: "mascot confused" });
+    s.addImage({ data: await robot("confused", "dark"), x: rx + rw - 1.25, y: 1.74, w: 1.1, h: 0.95, objectName: "mascot confused" });
     s.addText(T.s3.outsideBody, { x: rx + 0.25, y: 2.72, w: rw - 0.5, h: 0.7, fontSize: fz(9), color: "FFFFFF", margin: 0, valign: "top", isTextBox: true, fontFace: FONT, objectName: "outside body" });
     s.addText(T.s3.unitNote, { x: rx, y: 3.56, w: rw, h: 0.34, fontSize: fz(8), color: HEX.dk2, margin: 0, valign: "top", isTextBox: true, fontFace: FONT, objectName: "unit note" });
     rule(s, rx, 4.0, rw);
@@ -239,7 +241,7 @@ async function main() {
     tag(s, "finding", T.tags.finding, M + 0.22, 3.76);
     s.addText(T.s4.mainHead, { x: M + 0.22, y: 4.0, w: leftW - 1.4, h: 0.22, fontSize: fz(9), bold: true, color: HEX.accent4, charSpacing: 1, margin: 0, isTextBox: true, fontFace: FONT, objectName: "main head" });
     s.addText(T.s4.mainBody, { x: M + 0.22, y: 4.2, w: leftW - 1.4, h: 0.56, fontSize: fz(9), color: "FFFFFF", margin: 0, valign: "top", isTextBox: true, fontFace: FONT, objectName: "main body" });
-    s.addImage({ data: await robot("shop"), x: M + leftW - 1.2, y: 3.78, w: 1.05, h: 0.9, objectName: "mascot with phone" });
+    s.addImage({ data: await robot("shop", "dark"), x: M + leftW - 1.2, y: 3.78, w: 1.05, h: 0.9, objectName: "mascot with phone" });
     const rx = M + leftW + 0.5, rw = W - M - rx;
     s.addShape(pres.shapes.LINE, { x: rx - 0.25, y: 1.62, w: 0, h: 3.1, line: { color: HEX.accent5, width: 0.75 }, objectName: "column divider" });
     tag(s, "finding", T.tags.finding, rx, 1.62);
@@ -284,8 +286,8 @@ async function main() {
       s.addImage({ data: await icon("FiCheck", "FFFFFF"), x: tx, y: y + 0.04, w: 0.18, h: 0.18, objectName: "icon check" });
       s.addText(T.s5.takeaways[i], { x: tx + 0.28, y, w: tw - 0.28, h: 0.26, fontSize: fz(8.5), color: "FFFFFF", margin: 0, valign: "middle", isTextBox: true, fontFace: FONT, objectName: "takeaway " + (i + 1) });
     }
-    s.addImage({ data: await human("shake"), x: W - M - 1.72, y: cy + 0.1, w: 0.82, h: 0.86, objectName: "human handshake" });
-    s.addImage({ data: await robot("shake"), x: W - M - 0.98, y: cy + 0.1, w: 0.9, h: 0.86, objectName: "mascot handshake" });
+    s.addImage({ data: await human("shake", true), x: W - M - 1.72, y: cy + 0.1, w: 0.82, h: 0.86, objectName: "human handshake" });
+    s.addImage({ data: await robot("shake", "teal"), x: W - M - 0.98, y: cy + 0.1, w: 0.9, h: 0.86, objectName: "mascot handshake" });
     await bottomRow(s, T, T.s5.refs.join("   ·   "), T.s5.closing);
     s.addNotes(T.s5.notes);
   }

@@ -12,7 +12,7 @@ async function png(svg, width) {
 // ---- Robot mascot ----------------------------------------------------------
 // pose: "wave" | "search" | "chart" | "confused" | "shop" | "shake" | "idea"
 function robotSvg(pose, c) {
-  const { navy, teal, body, mint } = c;
+  const { navy, teal, body, mint } = c; const screen = c.screen || navy;
   const eyes = {
     happy: `<path d="M78 86 q12 -14 24 0" stroke="${teal}" stroke-width="6" fill="none" stroke-linecap="round"/>
             <path d="M118 86 q12 -14 24 0" stroke="${teal}" stroke-width="6" fill="none" stroke-linecap="round"/>`,
@@ -73,7 +73,7 @@ function robotSvg(pose, c) {
   <circle cx="110" cy="13" r="9" fill="${teal}"/>
   <rect x="33" y="70" width="14" height="30" rx="6" fill="${teal}"/><rect x="173" y="70" width="14" height="30" rx="6" fill="${teal}"/>
   <rect x="45" y="36" width="130" height="98" rx="30" fill="${body}" stroke="${navy}" stroke-width="6"/>
-  <rect x="62" y="54" width="96" height="64" rx="18" fill="${navy}"/>
+  <rect x="62" y="54" width="96" height="64" rx="18" fill="${screen}"/>
   ${eyes[P.eye]}${mouths[P.mouth]}
   <rect x="98" y="132" width="24" height="12" fill="${navy}"/>
   ${arm("L", P.armL)}
