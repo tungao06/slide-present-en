@@ -17,5 +17,8 @@ npm install pptxgenjs react-icons react react-dom sharp   # once
 node build.js                                            # writes AI_Work_Performance_ENG501.pptx
 ```
 
-Fonts: the deck uses **Tahoma** (ships with Windows and macOS Office, supports Thai and English).
-To switch to another Thai-capable font such as Sarabun or Leelawadee UI, change `FONT` at the top of `build.js`.
+## Fonts (install before opening)
+
+- English slides: **Poppins** · Thai slides: **Prompt** (both free, SIL Open Font License, from Google Fonts).
+- Install the `.ttf` files in `fonts/` (double-click → Install) on the computer that will present, otherwise PowerPoint substitutes another font and the layout shifts.
+- To change fonts, edit `FONT_EN` / `FONT_TH` at the top of `build.js` and rebuild.

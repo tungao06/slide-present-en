@@ -52,10 +52,10 @@ const EN = {
     kicker: "Article 2  |  Key findings",
     chartTitle: "Percentage change for consultants using AI (tasks within the frontier)",
     chart: {
-      labels: ["Tasks completed", "Task speed", "Quality vs. control", "Below-average performers", "Above-average performers"],
+      labels: ["Tasks completed", "Task speed", "Quality", "Below-average", "Above-average"],
       values: [12.2, 25.1, 40, 43, 17],
     },
-    chartNote: "Quality is reported as \"more than 40%\" higher; the bar is plotted at 40. Performer figures are each group's improvement over its own baseline score.",
+    chartNote: "Quality is reported as \"more than 40%\" higher than the control group; the bar is plotted at 40. Below-/above-average rows are performer groups, each improving against its own baseline score.",
     outsideHead: "Outside the frontier",
     outsideStat: "−19",
     outsideUnit: "percentage points",
