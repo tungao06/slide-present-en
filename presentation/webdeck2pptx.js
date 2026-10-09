@@ -114,9 +114,15 @@ function extract() {
   return { bg: hex(getComputedStyle(sec).backgroundColor) || "FFFFFF", transition: sec.dataset.transition || "fade", notes: aside ? aside.textContent.trim() : "", items: out };
 }
 
-function objectName(it, suffix) {
-  const b = it.build ? (() => { const m = /^(\w+)\s+(\d+)/.exec(it.build); return m ? `b${m[2]}:${m[1]}` : "static"; })() : "static";
-  return (it.chip ? `!!${it.chip}-${suffix} ` : "") + b;
+const buildTag = (it) => { const m = it.build && /^(\w+)\s+(\d+)/.exec(it.build); return m ? `b${m[2]}:${m[1]}` : "static"; };
+// Shapes of a hand-off chip are named "!!<chip id>-<n>" on BOTH slides (identical names are how
+// PowerPoint's Morph pairs them); their build step is passed to animate.js separately.
+function objectName(it, chipCounter, chipBuilds) {
+  if (!it.chip) return buildTag(it);
+  chipCounter[it.chip] = (chipCounter[it.chip] || 0) + 1;
+  const name = `!!${it.chip}-${chipCounter[it.chip]}`;
+  chipBuilds[name] = buildTag(it);
+  return name;
 }
 
 async function main() {
@@ -127,7 +133,7 @@ async function main() {
   pres.title = deck.title;
   pres.author = "Chayanun Sungsa-ard";
   const sectionStarts = Object.fromEntries(Object.values(deck.sections).map((s) => [s.start, s.description]));
-  const transitions = [];
+  const transitions = [], chipBuilds = [];
 
   for (const sid of deck.order) {
     const html = fs.readFileSync(path.join(ROOT, "project/slides", sid + ".html"), "utf8").replace(/\/_blob\/([0-9a-f]{32})/g, (m, id) => "file://" + path.join(ROOT, "art", BLOB[id]));
@@ -138,11 +144,11 @@ async function main() {
     const slide = pres.addSlide({ sectionTitle: Object.values(deck.sections).find((s) => deck.order.indexOf(s.start) <= deck.order.indexOf(sid))?.description });
     slide.background = { color: data.bg };
     transitions.push(data.transition);
-    let k = 0;
+    const chipCounter = {}, builds = {};
+    chipBuilds.push(builds);
     for (const it of data.items) {
-      k += 1;
       const g = { x: it.x * IN, y: it.y * IN, w: Math.max(it.w, 1) * IN, h: Math.max(it.h, 1) * IN };
-      const name = objectName(it, k);
+      const name = objectName(it, chipCounter, builds);
       if (it.kind === "rect") {
         const radius = Math.min(it.radius, it.h / 2, it.w / 2);
         slide.addShape(radius > 0 ? pres.shapes.ROUNDED_RECTANGLE : pres.shapes.RECTANGLE, {
@@ -186,7 +192,7 @@ async function main() {
   }
   await browser.close();
   await pres.writeFile({ fileName: OUT });
-  await animateAuto(OUT, transitions);
+  await animateAuto(OUT, transitions, chipBuilds);
   console.log("wrote", OUT);
 }
 main().catch((e) => { console.error(e); process.exit(1); });

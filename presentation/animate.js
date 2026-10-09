@@ -166,14 +166,16 @@ async function animate(file = FILE) {
 
 // ---- Auto mode (webdeck2pptx.js) ------------------------------------------------
 // Shapes named "b<order>:<fx>" (e.g. "b3:rise") are grouped into clicks by order;
-// anything else is static. `transitions[i]` is the web deck's data-transition for
-// slide i+1: "magic" becomes Morph (shapes named "!!…" travel between slides), else Fade.
+// anything else is static. Hand-off chips are named "!!…" identically on both slides so
+// Morph pairs them; `chipBuilds[i]` maps those names to their build tag on slide i+1.
+// `transitions[i]` is how web slide i+1 LEAVES; PowerPoint stores the transition on the
+// slide being entered, so slide i+2 gets it: "magic" → Morph, otherwise Fade.
 const MORPH = `<mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"><mc:Choice xmlns:p159="http://schemas.microsoft.com/office/powerpoint/2015/09/main" Requires="p159">` +
   `<p:transition spd="slow" p14:dur="800" xmlns:p14="http://schemas.microsoft.com/office/powerpoint/2010/main"><p159:morph option="byObject"/></p:transition></mc:Choice>` +
   `<mc:Fallback><p:transition spd="med"><p:fade/></p:transition></mc:Fallback></mc:AlternateContent>`;
 const FADE = `<p:transition spd="med"><p:fade/></p:transition>`;
 
-async function animateAuto(file, transitions = []) {
+async function animateAuto(file, transitions = [], chipBuilds = []) {
   const zip = await JSZip.loadAsync(fs.readFileSync(file));
   const n = Object.keys(zip.files).filter((f) => /^ppt\/slides\/slide\d+\.xml$/.test(f)).length;
   for (let i = 1; i <= n; i++) {
@@ -183,7 +185,8 @@ async function animateAuto(file, transitions = []) {
     const r = renumberAndIndex(xml);
     const groups = new Map();
     for (const s of r.shapes) {
-      const m = /\bb(\d+):(fade|rise|pop|left)\b/.exec(s.name);
+      const tag = s.name.startsWith("!!") ? (chipBuilds[i - 1] || {})[s.name] || "" : s.name;
+      const m = /\bb(\d+):(fade|rise|pop|left)\b/.exec(tag);
       if (!m) continue;
       const key = +m[1];
       if (!groups.has(key)) groups.set(key, { fx: m[2], spids: [], shapes: [] });
@@ -191,10 +194,11 @@ async function animateAuto(file, transitions = []) {
     }
     const steps = [...groups.keys()].sort((a, b) => a - b).map((k) => groups.get(k));
     const animated = steps.flatMap((s) => s.shapes);
-    const extra = (transitions[i - 1] === "magic" ? MORPH : FADE) + (steps.length ? timingXml(steps, animated) : "");
+    const enter = i > 1 ? transitions[i - 2] : "fade";
+    const extra = (enter === "magic" ? MORPH : FADE) + (steps.length ? timingXml(steps, animated) : "");
     xml = r.xml.replace("</p:clrMapOvr>", "</p:clrMapOvr>" + extra);
     zip.file(p, xml);
-    console.log(`slide ${i}: ${steps.length} clicks, ${animated.length} animated shapes, ${transitions[i - 1] || "fade"} transition`);
+    console.log(`slide ${i}: ${steps.length} clicks, ${animated.length} animated shapes, enters with ${enter === "magic" ? "Morph" : "Fade"}`);
   }
   fs.writeFileSync(file, await zip.generateAsync({ type: "nodebuffer", compression: "DEFLATE" }));
 }
