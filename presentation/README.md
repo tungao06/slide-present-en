@@ -3,11 +3,11 @@
 Editable 16:9 PowerPoint deck (10 slides: 1–5 English, 6–10 Thai) built from
 Article 2 (Dell'Acqua et al., 2023) and Article 5 (Otis et al., 2026).
 
-- `AI_Work_Performance_ENG501.pptx` — the deck (open in PowerPoint, Keynote, or Google Slides; all text, charts and tables are editable)
-- `content.js` — every word on the slides (English `EN`, Thai `TH`, references, presenter details). Edit text here.
-- `build.js` — theme colors, fonts, layouts and slide composition. Edit styling here.
-- `mascot.js` — the robot mascot, human character, gradient/network backgrounds and small glyphs (generated SVG, rasterised to PNG at build time). Recolour via `ART` in `build.js`.
-- `animate.js` — the click-by-click build order of every slide (PowerPoint entrance animations) and the fade slide transition. `build.js` runs it automatically; edit the `STEPS` table to change what appears on each click.
+- `AI_Work_Performance_ENG501.pptx` — the deck, a one-to-one PowerPoint copy of the web version designed in Claude Slides (same layout, mascots, click order and hand-off chips). Every text box, card and bar is editable.
+- `webdeck/` — the web deck's source (`project/deck.json`, one HTML file per slide in `project/slides/`, artwork in `art/`). This is the single source of truth for the slides.
+- `webdeck2pptx.js` — converts `webdeck/` into the .pptx: lays each slide out in Chromium, copies every element at its rendered position, then hands over to `animate.js`.
+- `animate.js` — PowerPoint click animations and slide transitions. `data-build-in` order from the web deck becomes one click per step; `data-transition="magic"` becomes a Morph transition so the hand-off chips travel between slides.
+- `content.js`, `build.js`, `mascot.js` — the earlier, separately designed deck (`AI_Work_Performance_ENG501_classic.pptx`), kept for reference.
 
 Each slide carries a speaker script in its notes pane (English on 1–5, Thai on 6–10).
 
@@ -15,17 +15,20 @@ Each slide carries a speaker script in its notes pane (English on 1–5, Thai on
 
 Every slide builds in the same order as the web version: each click reveals the next block
 (mascot → question → article cards …). Effects used: Fade, Float In (rise), Zoom (pop) and
-Wipe from left (bars/chart). Slides change with a Fade transition. Open the Animation Pane in
-PowerPoint to see or reorder them; Keynote and Google Slides import them as well, with minor
-differences in timing.
+Wipe from left (bars). Slides with hand-off chips use the Morph transition (PowerPoint 2019 /
+Microsoft 365) so the chip travels to the next slide; older versions fall back to Fade. Open the
+Animation Pane in PowerPoint to see or reorder them.
 
 ## Rebuild after editing
 
+Edit the slide HTML under `webdeck/project/slides/` (or re-download the files from the Claude Slides artifact), then:
+
 ```bash
-npm install pptxgenjs react-icons react react-dom sharp   # once
-node build.js                                            # writes AI_Work_Performance_ENG501.pptx (animations included)
-node animate.js                                          # re-apply animations only, to an already built file
+npm install pptxgenjs playwright react-icons react react-dom sharp jszip   # once; Chromium path via CHROME=… if not the default
+node webdeck2pptx.js                                                       # writes AI_Work_Performance_ENG501.pptx with animations
 ```
+
+`node build.js` still builds the older classic design as a separate file.
 
 ## Fonts (install before opening)
 

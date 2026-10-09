@@ -1,0 +1,16 @@
+{
+  "v": 4,
+  "createdOnFiles": { "v": 1, "at": "2026-10-09T16:10:00Z" },
+  "lists": "css",
+  "title": "AI and Work Performance",
+  "order": ["cover-en", "method-en", "findings-en", "entrepreneurs-en", "discussion-en", "cover-th", "method-th", "findings-th", "entrepreneurs-th", "discussion-th"],
+  "sections": {
+    "en": { "description": "English version: two field experiments on AI, productivity and business performance.", "start": "cover-en" },
+    "th": { "description": "ฉบับภาษาไทย: การทดลองภาคสนามสองชิ้นเรื่อง AI ผลิตภาพ และผลการดำเนินธุรกิจ", "start": "cover-th" }
+  },
+  "faces": {
+    "poppins": { "family": "Poppins", "href": "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" },
+    "prompt": { "family": "Prompt", "href": "https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&display=swap" }
+  },
+  "designSystems": []
+}

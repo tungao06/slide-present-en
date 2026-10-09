@@ -12,7 +12,7 @@ const { EN, TH, PRESENTER } = require("./content");
 const art = require("./mascot");
 
 const APPLY_THEME = process.env.APPLY_THEME_JS; // path to pptx skill's apply_theme.js (optional)
-const OUT = path.join(__dirname, "AI_Work_Performance_ENG501.pptx");
+const OUT = path.join(__dirname, "AI_Work_Performance_ENG501_classic.pptx"); // the earlier, separately designed deck; the main file comes from webdeck2pptx.js
 
 // ---- Fonts & theme ------------------------------------------------------------
 const FONT_EN = "Poppins"; // geometric sans for English slides (Google Fonts, free)
