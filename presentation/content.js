@@ -16,6 +16,8 @@ const PRESENTER = {
 const EN = {
   tags: { finding: "FINDING (reported in the article)", interp: "INTERPRETATION", concept: "CONCEPT" },
   footer: "Chayanun Sungsa-ard  |  691401708  |  MBA  |  ENG 501",
+  steps: ["Introduction", "Article 2: Method", "Article 2: Findings", "Article 5: Entrepreneurs", "Discussion"],
+  nextLabel: "Next",
   s1: {
     title: "Artificial Intelligence and Work Performance",
     subtitle: "Evidence from two recent field experiments",
@@ -24,6 +26,8 @@ const EN = {
       { label: "Article 2", title: "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality", meta: "Fabrizio Dell'Acqua et al.  |  Harvard Business School Working Paper 24-013, 2023" },
       { label: "Article 5", title: "The Uneven Impact of Generative Artificial Intelligence on Entrepreneurial Performance: Evidence from a Field Experiment in Kenya", meta: "Nicholas G. Otis et al.  |  Management Science, Vol. 72, No. 7, 2026  |  DOI 10.1287/mnsc.2024.06909" },
     ],
+    roadmapHead: "Today's path",
+    notes: "Good morning. Today I will look at one question: how does AI affect productivity, work quality and business performance? I will use two recent field experiments. Article 2 studies consultants at BCG working with GPT-4. Article 5 studies small-business entrepreneurs in Kenya who received a GPT-4 business assistant. First the office, then the marketplace, and finally what the two studies tell us together.",
   },
   s2: {
     title: "Navigating the Jagged Technological Frontier",
@@ -39,6 +43,8 @@ const EN = {
     conceptHead: "The \"Jagged Technological Frontier\"",
     conceptBody: "AI can perform some tasks well while struggling with other tasks that appear similarly difficult. The boundary is uneven, so workers cannot assume that a task is \"safe\" for AI just because it looks easy.",
     diagram: { inside: "Inside the frontier: AI performs well", outside: "Outside the frontier: AI struggles", axis: "Tasks of similar apparent difficulty" },
+    bridge: "So what happened when 758 consultants actually used GPT-4?",
+    notes: "Article 2 is a field experiment run with Boston Consulting Group. 758 consultants were randomly assigned to one of three conditions: no AI, GPT-4, or GPT-4 plus a short prompt-engineering overview. The authors study productivity, quality, and where AI's abilities end. They call that boundary the jagged technological frontier: AI handles some tasks well but struggles with others that look equally hard. Keep that picture in mind, because the results split exactly along that line.",
     ref: REFS.a2,
   },
   s3: {
@@ -60,6 +66,8 @@ const EN = {
       { icon: "FiGitBranch", head: "Centaurs", body: "Divide tasks between humans and AI, delegating sub-tasks to whichever is better suited." },
       { icon: "FiRefreshCw", head: "Cyborgs", body: "Integrate AI continuously into the workflow, moving back and forth with the tool." },
     ],
+    bridge: "Does this hold outside the office, for real small businesses?",
+    notes: "Inside the frontier the gains were large: 12.2% more tasks completed, 25.1% faster, and more than 40% higher quality than the control group. Below-average performers improved by 43% and above-average performers by 17%, each against their own baseline. But for a task chosen to sit outside the frontier, AI users were 19 percentage points less likely to produce a correct solution. Note the unit: that is a gap between two success rates, not a percentage change. The consultants who did well used AI in two ways: Centaurs divided tasks between themselves and the AI, and Cyborgs wove AI into every step. The office result is clear. The next study asks whether it survives contact with a real business.",
     ref: REFS.a2,
   },
   s4: {
@@ -81,6 +89,8 @@ const EN = {
     barNote: "Bar lengths are illustrative of the reported figures",
     mechanism: "The difference did not appear to result from differences in the questions asked or the AI advice given, but from the advice entrepreneurs chose to implement.",
     caution: "Caution: these are subgroup averages. They do not show that every high-performing entrepreneur benefits or that every low-performing entrepreneur loses.",
+    bridge: "Two studies, one lesson: what do they tell us together?",
+    notes: "Article 5 moves from consultants to entrepreneurs in Kenya. Half of the small-business owners received a GPT-4-powered business assistant that gave advice; the outcomes were revenue and profit. On average, the researchers could not reject the null hypothesis of no treatment effect. But the average hides two stories. Entrepreneurs who were low performers at baseline did nearly 10% worse with the assistant, while high performers may have benefited by more than 15%. The questions and the AI advice were similar; the difference lay in which advice the entrepreneurs chose to implement. I want to be careful here: these are subgroup averages, not a rule for every individual.",
     ref: REFS.a5,
   },
   s5: {
@@ -95,6 +105,8 @@ const EN = {
     conclusionHead: "Conclusion",
     conclusion: "AI can influence real-world performance, but its impact depends on task suitability, user behavior, and human judgment.",
     takeaways: ["Match the task to what AI does well", "Evaluate AI advice critically before acting", "Keep human judgment in the loop"],
+    closing: "Thank you. Questions are welcome.",
+    notes: "Put the two studies side by side. Article 2 shows higher productivity and quality for knowledge work inside AI's frontier, and lower correctness outside it. Article 5 shows no established average effect on revenue and profit, with outcomes that depended on baseline performance and on which recommendations were implemented. The common thread is the human in the loop. AI can influence real performance, but the impact depends on task suitability, user behavior and human judgment. That is why I framed the title as AI being a tool, not a guarantee of success. Thank you, and I welcome your questions.",
     refs: [SHORT_REFS],
   },
 };
@@ -102,6 +114,8 @@ const EN = {
 const TH = {
   tags: { finding: "ผลการวิจัย (รายงานในบทความ)", interp: "การตีความ", concept: "แนวคิด" },
   footer: "Chayanun Sungsa-ard  |  691401708  |  MBA  |  ENG 501",
+  steps: ["บทนำ", "บทความ 2: วิธีวิจัย", "บทความ 2: ผลการศึกษา", "บทความ 5: ผู้ประกอบการ", "อภิปรายผล"],
+  nextLabel: "ถัดไป",
   s1: {
     title: "ปัญญาประดิษฐ์กับประสิทธิภาพการทำงาน",
     subtitle: "หลักฐานจากการทดลองภาคสนามสองชิ้นล่าสุด",
@@ -110,6 +124,8 @@ const TH = {
       { label: "บทความที่ 2", title: "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality", meta: "Fabrizio Dell'Acqua et al.  |  Harvard Business School Working Paper 24-013, 2023" },
       { label: "บทความที่ 5", title: "The Uneven Impact of Generative Artificial Intelligence on Entrepreneurial Performance: Evidence from a Field Experiment in Kenya", meta: "Nicholas G. Otis et al.  |  Management Science, Vol. 72, No. 7, 2026  |  DOI 10.1287/mnsc.2024.06909" },
     ],
+    roadmapHead: "ลำดับการนำเสนอ",
+    notes: "สวัสดีครับ วันนี้ผมจะตอบคำถามเดียวคือ AI ส่งผลต่อผลิตภาพ คุณภาพงาน และผลการดำเนินธุรกิจอย่างไร โดยใช้การทดลองภาคสนามสองชิ้น บทความที่ 2 ศึกษาที่ปรึกษาของ BCG ที่ใช้ GPT-4 ส่วนบทความที่ 5 ศึกษาผู้ประกอบการรายย่อยในเคนยาที่ได้รับผู้ช่วยธุรกิจ GPT-4 เราจะเริ่มจากในสำนักงาน ไปสู่ตลาดจริง แล้วสรุปสิ่งที่สองงานบอกเราร่วมกัน",
   },
   s2: {
     title: "การนำทางในพรมแดนเทคโนโลยีที่ไม่สม่ำเสมอ",
@@ -122,9 +138,11 @@ const TH = {
     ],
     condHead: "เงื่อนไขการทดลองสามกลุ่ม",
     conditions: ["ไม่สามารถใช้ AI", "ใช้ GPT-4 ได้", "ใช้ GPT-4 ได้ พร้อมคำแนะนำการเขียน prompt"],
-    conceptHead: "แนวคิด \"Jagged Technological Frontier\"",
+    conceptHead: "\"Jagged Technological Frontier\"",
     conceptBody: "AI ทำงานบางอย่างได้ดี แต่กลับทำงานอื่นที่ดูยากพอกันได้ไม่ดี เส้นแบ่งนี้ไม่สม่ำเสมอ ผู้ใช้จึงไม่ควรสรุปว่างานใด \"ปลอดภัย\" ที่จะมอบให้ AI เพียงเพราะงานนั้นดูง่าย",
     diagram: { inside: "ภายในพรมแดน: AI ทำได้ดี", outside: "ภายนอกพรมแดน: AI ทำได้ไม่ดี", axis: "งานที่ดูยากในระดับใกล้เคียงกัน" },
+    bridge: "แล้วเมื่อที่ปรึกษา 758 คนใช้ GPT-4 จริง เกิดอะไรขึ้น?",
+    notes: "บทความที่ 2 เป็นการทดลองภาคสนามร่วมกับ Boston Consulting Group ที่ปรึกษา 758 คนถูกสุ่มเข้าสามกลุ่ม คือไม่ใช้ AI ใช้ GPT-4 และใช้ GPT-4 พร้อมคำแนะนำการเขียน prompt ผู้วิจัยศึกษาผลิตภาพ คุณภาพ และจุดที่ความสามารถของ AI สิ้นสุด ซึ่งเรียกว่า jagged technological frontier คือ AI ทำงานบางอย่างได้ดี แต่ทำงานอื่นที่ดูยากพอกันได้ไม่ดี ขอให้จำภาพนี้ไว้ เพราะผลการศึกษาแยกตามเส้นนี้พอดี",
     ref: REFS.a2,
   },
   s3: {
@@ -146,6 +164,8 @@ const TH = {
       { icon: "FiGitBranch", head: "Centaurs (เซนทอร์)", body: "แบ่งงานระหว่างคนกับ AI โดยมอบงานย่อยให้ฝ่ายที่เหมาะสมกว่า" },
       { icon: "FiRefreshCw", head: "Cyborgs (ไซบอร์ก)", body: "ผสาน AI เข้ากับขั้นตอนการทำงานอย่างต่อเนื่อง สลับไปมากับเครื่องมือตลอดเวลา" },
     ],
+    bridge: "ผลแบบนี้จะยังเป็นจริงนอกสำนักงาน กับธุรกิจขนาดเล็กจริงหรือไม่?",
+    notes: "ภายในพรมแดน ผลดีมีขนาดใหญ่ คือทำงานเสร็จเพิ่มขึ้น 12.2% เร็วขึ้น 25.1% และคุณภาพสูงกว่ากลุ่มควบคุมมากกว่า 40% กลุ่มผลงานต่ำกว่าค่าเฉลี่ยดีขึ้น 43% กลุ่มสูงกว่าค่าเฉลี่ยดีขึ้น 17% เทียบกับคะแนนเดิมของตนเอง แต่สำหรับงานที่เลือกให้อยู่นอกพรมแดน ผู้ใช้ AI มีโอกาสได้คำตอบถูกน้อยกว่า 19 จุดร้อยละ สังเกตหน่วยด้วยครับ นี่คือส่วนต่างของอัตราความถูกต้อง ไม่ใช่ร้อยละการเปลี่ยนแปลง ที่ปรึกษาที่ทำได้ดีใช้ AI สองแบบ คือ Centaurs ที่แบ่งงานระหว่างตัวเองกับ AI และ Cyborgs ที่ผสาน AI เข้าไปทุกขั้นตอน ผลในสำนักงานชัดเจน งานถัดไปถามว่าผลนี้จะอยู่รอดเมื่อเจอธุรกิจจริงหรือไม่",
     ref: REFS.a2,
   },
   s4: {
@@ -167,6 +187,8 @@ const TH = {
     barNote: "ความยาวแท่งเป็นเพียงภาพประกอบของตัวเลขที่รายงาน",
     mechanism: "ความแตกต่างนี้ไม่ได้มาจากคำถามที่ถามหรือคำแนะนำที่ AI ให้ แต่มาจากคำแนะนำที่ผู้ประกอบการเลือกนำไปปฏิบัติ",
     caution: "ข้อควรระวัง: ตัวเลขนี้เป็นค่าเฉลี่ยของกลุ่มย่อย ไม่ได้แสดงว่าผู้ประกอบการที่เก่งทุกคนจะได้ประโยชน์ หรือผู้ประกอบการที่อ่อนทุกคนจะเสียประโยชน์",
+    bridge: "สองงานวิจัย บทเรียนเดียว: เมื่อมองร่วมกันบอกอะไรเรา?",
+    notes: "บทความที่ 5 ย้ายจากที่ปรึกษาไปสู่ผู้ประกอบการในเคนยา เจ้าของธุรกิจขนาดเล็กครึ่งหนึ่งได้รับผู้ช่วยธุรกิจที่ขับเคลื่อนด้วย GPT-4 ซึ่งให้คำแนะนำ ตัวแปรผลลัพธ์คือรายได้และกำไร โดยเฉลี่ยผู้วิจัยไม่สามารถปฏิเสธสมมติฐานว่างที่ว่าไม่มีผลของการทดลอง แต่ค่าเฉลี่ยซ่อนสองเรื่องไว้ ผู้ประกอบการที่ผลงานต่ำตั้งแต่ต้นแย่ลงเกือบ 10% ขณะที่กลุ่มผลงานสูงอาจได้ประโยชน์มากกว่า 15% คำถามและคำแนะนำของ AI ใกล้เคียงกัน ความต่างอยู่ที่คำแนะนำที่ผู้ประกอบการเลือกนำไปปฏิบัติ ขอย้ำว่านี่คือค่าเฉลี่ยของกลุ่มย่อย ไม่ใช่กฎสำหรับทุกคน",
     ref: REFS.a5,
   },
   s5: {
@@ -181,6 +203,8 @@ const TH = {
     conclusionHead: "บทสรุป",
     conclusion: "AI ส่งผลต่อผลการทำงานจริงได้ แต่ผลกระทบขึ้นอยู่กับความเหมาะสมของงาน พฤติกรรมของผู้ใช้ และวิจารณญาณของมนุษย์",
     takeaways: ["เลือกงานให้เหมาะกับสิ่งที่ AI ทำได้ดี", "ประเมินคำแนะนำของ AI อย่างมีวิจารณญาณก่อนนำไปใช้", "ให้มนุษย์เป็นผู้ตัดสินใจขั้นสุดท้าย"],
+    closing: "ขอบคุณครับ ยินดีรับคำถาม",
+    notes: "เมื่อวางสองงานเคียงกัน บทความที่ 2 แสดงว่าผลิตภาพและคุณภาพของงานความรู้สูงขึ้นภายในพรมแดนของ AI แต่ความถูกต้องลดลงนอกพรมแดน บทความที่ 5 ไม่พบผลเฉลี่ยต่อรายได้และกำไรอย่างชัดเจน และผลลัพธ์ขึ้นกับผลงานตั้งต้นและคำแนะนำที่เลือกนำไปใช้ จุดร่วมคือมนุษย์ที่อยู่ในกระบวนการ AI ส่งผลต่อผลการทำงานจริงได้ แต่ขึ้นอยู่กับความเหมาะสมของงาน พฤติกรรมของผู้ใช้ และวิจารณญาณของมนุษย์ นี่คือเหตุผลที่ผมตั้งชื่อว่า AI เป็นเครื่องมือ ไม่ใช่หลักประกันความสำเร็จ ขอบคุณครับ ยินดีรับคำถาม",
     refs: [SHORT_REFS],
   },
 };
