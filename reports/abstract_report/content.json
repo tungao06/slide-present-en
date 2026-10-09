@@ -1,0 +1,266 @@
+{
+ "articles": {
+  "1": {
+   "en": {
+    "fields": [
+     [
+      "Title",
+      "The potential of generative AI for personalized persuasion at scale"
+     ],
+     [
+      "Authors",
+      "S. C. Matz, J. D. Teeny, S. S. Vaid, H. Peters, G. M. Harari, and M. Cerf"
+     ],
+     [
+      "Journal/Issue",
+      "Scientific Reports, Vol. 14, Article No. 4692, 2024"
+     ]
+    ],
+    "abstract": "Matching the language or content of a message to the psychological profile of its recipient (known as \"personalized persuasion\") is widely considered to be one of the most effective messaging strategies. We demonstrate that the rapid advances in large language models (LLMs), like ChatGPT, could accelerate this influence by making personalized persuasion scalable. Across four studies (consisting of seven sub-studies; total N = 1788), we show that personalized messages crafted by ChatGPT exhibit significantly more influence than non-personalized messages. This was true across different domains of persuasion (e.g., marketing of consumer products, political appeals for climate action), psychological profiles (e.g., personality traits, political ideology, moral foundations), and when only providing the LLM with a single, short prompt naming or describing the targeted psychological dimension. Thus, our findings are among the first to demonstrate the potential for LLMs to automate, and thereby scale, the use of personalized persuasion in ways that enhance its effectiveness and efficiency.",
+    "sub": []
+   },
+   "th": {
+    "fields": [
+     [
+      "ชื่อบทความ",
+      "ศักยภาพของ AI เชิงสร้างสรรค์ในการโน้มน้าวใจแบบส่วนบุคคลในวงกว้าง (The potential of generative AI for personalized persuasion at scale)"
+     ],
+     [
+      "ชื่อผู้แต่ง",
+      "S. C. Matz, J. D. Teeny, S. S. Vaid, H. Peters, G. M. Harari, และ M. Cerf"
+     ],
+     [
+      "วารสาร/ฉบับที่",
+      "Scientific Reports, Vol. 14, Article No. 4692, 2024"
+     ]
+    ],
+    "abstract": "การปรับภาษาหรือเนื้อหาของข้อความให้สอดคล้องกับโปรไฟล์ทางจิตวิทยาของผู้รับสาร (การโน้มน้าวใจแบบส่วนบุคคล: Personalized Persuasion) ถือเป็นหนึ่งในกลยุทธ์การสื่อสารที่มีประสิทธิภาพสูงสุด งานวิจัยนี้แสดงให้เห็นว่าความก้าวหน้าของโมเดลภาษาขนาดใหญ่ (LLMs) เช่น ChatGPT สามารถเร่งอิทธิพลนี้ได้โดยการทำให้การโน้มน้าวใจแบบส่วนบุคคลทำได้ในวงกว้าง (Scalable) จากการศึกษา 4 ชุด (ประกอบด้วยการศึกษาย่อย 7 ชุด กลุ่มตัวอย่างรวม N = 1,788 คน) พบว่าข้อความเฉพาะบุคคลที่สร้างโดย ChatGPT มีอิทธิพลโน้มน้าวใจสูงกว่าข้อความทั่วไปอย่างมีนัยสำคัญ ครอบคลุมทั้งมิติด้านการโน้มน้าวใจที่หลากหลาย (เช่น การตลาดสินค้าบริโภค, การรณรงค์ทางการเมืองเรื่องสภาพภูมิอากาศ) โปรไฟล์ทางจิตวิทยาที่ต่างกัน (เช่น บุคลิกภาพ, อุดมการณ์ทางการเมือง, รากฐานทางศีลธรรม) และแม้ว่าจะป้อนคำสั่ง (Prompt) สั้น ๆ เพียงคำสั่งเดียวที่ระบุมิติทางจิตวิทยาเป้าหมายก็ตาม ข้อค้นพบนี้จึงเป็นหลักฐานชิ้นแรก ๆ ที่พิสูจน์ถึงศักยภาพของ LLMs ในการช่วยอัตโนมัติและขยายผลการโน้มน้าวใจแบบส่วนบุคคลเพื่อเพิ่มทั้งประสิทธิภาพและประสิทธิผลอย่างก้าวกระโดด",
+    "sub": []
+   }
+  },
+  "2": {
+   "en": {
+    "fields": [
+     [
+      "Title",
+      "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality"
+     ],
+     [
+      "Authors",
+      "Fabrizio Dell'Acqua, Edward McFowland III, Ethan Mollick, Hila Lifshitz-Assaf, Katherine C. Kellogg, Saran Rajendran, Lisa Krayer, François Candelon, and Karim R. Lakhani"
+     ],
+     [
+      "Journal/Issue",
+      "Harvard Business School Working Paper 24-013, 2023"
+     ]
+    ],
+    "abstract": "The public release of Large Language Models (LLMs) has sparked tremendous interest in how humans will use Artificial Intelligence (AI) to accomplish a variety of tasks. In our study conducted with Boston Consulting Group, a global management consulting firm, we examine the performance implications of AI on realistic, complex, and knowledge-intensive tasks. The pre-registered experiment involved 758 consultants comprising about 7% of the individual contributor-level consultants at the company. After establishing a performance baseline on a similar task, subjects were randomly assigned to one of three conditions: no AI access, GPT-4 AI access, or GPT-4 AI access with a prompt engineering overview. We suggest that the capabilities of AI create a \"jagged technological frontier\" where some tasks are easily done by AI, while others, though seemingly similar in difficulty level, are outside the current capability of AI. For each one of a set of 18 realistic consulting tasks within the frontier of AI capabilities, consultants using AI were significantly more productive (they completed 12.2% more tasks on average, and completed tasks 25.1% more quickly), and produced significantly higher quality results (more than 40% higher quality compared to a control group). Consultants across the skills distribution benefited significantly from having AI augmentation, with those below the average performance threshold increasing by 43% and those above increasing by 17% compared to their own scores. For a task selected to be outside the frontier, however, consultants using AI were 19 percentage points less likely to produce correct solutions compared to those without AI. Further, our analysis shows the emergence of two distinctive patterns of successful AI use by humans along a spectrum of human-AI integration. One set of consultants acted as \"Centaurs,\" like the mythical half-horse/half-human creature, dividing and delegating their solution-creation activities to the AI or to themselves. Another set of consultants acted more like \"Cyborgs,\" completely integrating their task flow with the AI and continually interacting with the technology.",
+    "sub": []
+   },
+   "th": {
+    "fields": [
+     [
+      "ชื่อบทความ",
+      "การนำทางในพรมแดนเทคโนโลยีที่ไม่สม่ำเสมอ: หลักฐานการทดลองภาคสนามเกี่ยวกับผลกระทบของ AI ต่อผลผลิตและคุณภาพงานของผู้ทำงานใช้ความรู้ (Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality)"
+     ],
+     [
+      "ชื่อผู้แต่ง",
+      "Fabrizio Dell'Acqua, Edward McFowland III, Ethan Mollick, Hila Lifshitz-Assaf, Katherine C. Kellogg, Saran Rajendran, Lisa Krayer, François Candelon, และ Karim R. Lakhani"
+     ],
+     [
+      "วารสาร/ฉบับที่",
+      "Harvard Business School Working Paper 24-013, 2023"
+     ]
+    ],
+    "abstract": "การเปิดตัวโมเดลภาษาขนาดใหญ่ (LLMs) ได้จุดประกายความสนใจอย่างมากเกี่ยวกับวิธีการที่มนุษย์จะใช้ปัญญาประดิษฐ์ (AI) ในการปฏิบัติงาน ในการศึกษานี้ซึ่งจัดทำร่วมกับ Boston Consulting Group (BCG) คณะผู้จัดทำได้ตรวจสอบผลกระทบด้านประสิทธิภาพของ AI ต่อการทำงานจริงที่มีความซับซ้อนและต้องใช้ความรู้สูง โดยการทดลองครอบคลุมที่ปรึกษาจำนวน 758 คน (ประมาณ 7% ของที่ปรึกษาระดับปฏิบัติการของบริษัท) ผู้เข้าร่วมถูกสุ่มแบ่งออกเป็น 3 กลุ่ม ได้แก่ ไม่ได้รับสิทธิ์ใช้ AI, ได้รับสิทธิ์ใช้ GPT-4, และได้รับสิทธิ์ใช้ GPT-4 ร่วมกับแนวทางการเขียนคำสั่ง (Prompt Engineering) งานวิจัยชี้ว่าความสามารถของ AI ก่อให้เกิด \"พรมแดนเทคโนโลยีที่ไม่สม่ำเสมอ\" (Jagged Technological Frontier) โดยงานบางอย่าง AI ทำได้อย่างง่ายดาย แต่งานอื่น ๆ ที่ดูซับซ้อนใกล้เคียงกันกลับอยู่นอกเหนือความสามารถของ AI สำหรับงานปรึกษา 18 งานที่อยู่ภายในพรมแดนความสามารถของ AI ที่ปรึกษาที่ใช้ AI มีผลผลิตสูงขึ้นอย่างมีนัยสำคัญ (ทำงานเสร็จมากกว่าเดิมเฉลี่ย 12.2% และเสร็จเร็วขึ้น 25.1%) รวมถึงสร้างผลงานที่มีคุณภาพสูงกว่ากลุ่มควบคุมมากกว่า 40% โดยผู้เข้าร่วมกลุ่มที่มีผลงานต่ำกว่าค่าเฉลี่ยมีประสิทธิภาพเพิ่มขึ้นถึง 43% อย่างไรก็ตาม สำหรับงานที่อยู่นอกพรมแดนความสามารถ ที่ปรึกษาที่ใช้ AI มีแนวโน้มตอบคำตอบถูกต้องน้อยกว่าผู้ไม่ใช้ AI ถึง 19 จุดเปอร์เซ็นต์ นอกจากนี้ การวิเคราะห์ยังพบรูปแบบการใช้ AI ที่ประสบความสำเร็จ 2 รูปแบบ ได้แก่ กลุ่มที่ทำหน้าที่เป็น \"เซนทอร์\" (Centaurs) ที่แบ่งแยกการทำงานระหว่างตนเองกับ AI และกลุ่มที่ทำหน้าที่เป็น \"ไซบอร์ก\" (Cyborgs) ซึ่งบูรณาการขั้นตอนการทำงานเข้ากับ AI อย่างสมบูรณ์และต่อเนื่อง",
+    "sub": []
+   }
+  },
+  "3": {
+   "en": {
+    "fields": [
+     [
+      "Title",
+      "The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers"
+     ],
+     [
+      "Authors",
+      "Kevin Zheyuan Cui, Mert Demirer, Sonia Jaffe, Leon Musolff, Sida Peng, and Tobias Salz"
+     ],
+     [
+      "Journal/Issue",
+      "Working Paper / AEA RCT Registry (AEARCTR-0014530), 2025"
+     ]
+    ],
+    "abstract": "This study evaluates the effect of generative AI on software developer productivity via randomized controlled trials at Microsoft, Accenture, and an anonymous Fortune 100 company. These field experiments, run by the companies as part of their ordinary course of business, provided a random subset of developers with access to an AI-based coding assistant suggesting intelligent code completions. Though each experiment is noisy and results vary across experiments, when data is combined across three experiments and 4,867 developers, our analysis reveals a 26.08% increase (SE: 10.3%) in completed tasks among developers using the AI tool. Notably, less experienced developers had higher adoption rates and greater productivity gains.",
+    "sub": []
+   },
+   "th": {
+    "fields": [
+     [
+      "ชื่อบทความ",
+      "ผลกระทบของ AI เชิงสร้างสรรค์ต่องานทักษะสูง: หลักฐานจากการทดลองภาคสนาม 3 ชุดกับนักพัฒนาซอฟต์แวร์ (The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers)"
+     ],
+     [
+      "ชื่อผู้แต่ง",
+      "Kevin Zheyuan Cui, Mert Demirer, Sonia Jaffe, Leon Musolff, Sida Peng, และ Tobias Salz"
+     ],
+     [
+      "วารสาร/ฉบับที่",
+      "Working Paper / AEA RCT Registry (AEARCTR-0014530), 2025"
+     ]
+    ],
+    "abstract": "การศึกษานี้ประเมินผลกระทบของ AI เชิงสร้างสรรค์ต่อผลผลิตของนักพัฒนาซอฟต์แวร์ผ่านการทดลองแบบสุ่มและมีกลุ่มควบคุม (RCTs) ณ บริษัท Microsoft, Accenture และบริษัท Fortune 100 ที่ไม่เปิดเผยนาม การทดลองสุ่มให้สิทธิ์แก่นักพัฒนากลุ่มหนึ่งในการเข้าถึงเครื่องมือช่วยเขียนโค้ดด้วย AI (เช่น GitHub Copilot) ที่ช่วยแนะนำการเติมโค้ดอย่างชาญฉลาด เมื่อรวบรวมข้อมูลจากการทดลองทั้ง 3 ชุดที่มีนักพัฒนารวม 4,867 คน การวิเคราะห์พบว่านักพัฒนาที่ใช้เครื่องมือ AI สามารถทำงานเสร็จเพิ่มขึ้น 26.08% (SE: 10.3%) ที่น่าสังเกตคือ นักพัฒนาที่มีประสบการณ์น้อยกว่ามีอัตราการเปิดรับใช้งาน (Adoption rate) ที่สูงกว่า และได้รับผลตอบแทนด้านการเพิ่มผลผลิต (Productivity gains) ที่มากกว่าอย่างเห็นได้ชัด",
+    "sub": []
+   }
+  },
+  "4": {
+   "en": {
+    "fields": [
+     [
+      "Title",
+      "Human vs. robot baristas during the COVID-19 pandemic: Effects of masks and vaccines on perceived safety and visit intention"
+     ],
+     [
+      "Authors",
+      "M. Choi, Y. Choi, S. S. Kim, and F. Badu-Baiden"
+     ],
+     [
+      "Journal/Issue",
+      "International Journal of Contemporary Hospitality Management, Vol. 35, No. 2, pp. 469–491, 2023"
+     ]
+    ],
+    "abstract": "",
+    "sub": [
+     [
+      "Purpose",
+      "This study aims to (1) compare the effect of barista type (human vs. robot) on perceived safety and (2) examine the role of two moderators (mask-wearing and Coronavirus vaccination) on the effects of barista type on perceived safety and visit intention."
+     ],
+     [
+      "Design/methodology/approach",
+      "The research design consists of three studies. Three experiments were sequentially designed and conducted to address research questions."
+     ],
+     [
+      "Findings",
+      "Study 1 found that perceived safety mediates the effect of barista type on customers' visit intention. Study 2 revealed that the mask-wearing of human baristas and robot baristas differently influences perceived safety. Study 3 showed that customers, especially where robot baristas are used, perceive the effect of mask-wearing differently depending on their coronavirus vaccination status."
+     ],
+     [
+      "Research limitations/implications",
+      "Given that the levels of restrictions vary worldwide, together with the extent of countries' vaccination rollouts, caution is required when generalising the research findings."
+     ],
+     [
+      "Practical implications",
+      "Findings have practical implications for the hospitality industry, where the roles of face masks and coronavirus vaccines in shaping consumer psychology and behaviour have been underexplored."
+     ],
+     [
+      "Originality/value",
+      "Coronavirus vaccination is considered one of the most important driving forces for the recovery of hospitality businesses. As a heuristic-systematic model postulated, this study identified that vaccination status (fully vaccinated vs. not vaccinated) changes the level of involvement when customers assess the level of risk in service environments. By pinpointing the function of service robots in safeguarding customers from the potential spread of the disease, this study broadens the scope of human-robot interaction research in hospitality."
+     ]
+    ]
+   },
+   "th": {
+    "fields": [
+     [
+      "ชื่อบทความ",
+      "บาริสต้ามนุษย์เทียบกับบาริสต้าหุ่นยนต์ในช่วงการแพร่ระบาดของ COVID-19: ผลกระทบของการสวมหน้ากากอนามัยและการฉีดวัคซีนต่อความรู้สึกปลอดภัยและความตั้งใจในการเข้าใช้บริการ (Human vs. robot baristas during the COVID-19 pandemic: Effects of masks and vaccines on perceived safety and visit intention)"
+     ],
+     [
+      "ชื่อผู้แต่ง",
+      "M. Choi, Y. Choi, S. S. Kim, และ F. Badu-Baiden"
+     ],
+     [
+      "วารสาร/ฉบับที่",
+      "International Journal of Contemporary Hospitality Management, Vol. 35, No. 2, pp. 469–491, 2023"
+     ]
+    ],
+    "abstract": "",
+    "sub": [
+     [
+      "วัตถุประสงค์",
+      "การศึกษานี้มีวัตถุประสงค์เพื่อ (1) เปรียบเทียบผลของประเภทบาริสต้า (มนุษย์ เทียบกับ หุ่นยนต์) ต่อความรู้สึกปลอดภัย และ (2) ตรวจสอบบทบาทของปัจจัยส่งผ่าน/ตัวแปรปรับ 2 ประการ (การสวมหน้ากากอนามัยและการฉีดวัคซีนป้องกัน COVID-19) ต่อความรู้สึกปลอดภัยและความตั้งใจในการเข้าใช้บริการ"
+     ],
+     [
+      "การออกแบบ/ระเบียบวิธีวิจัย",
+      "การวิจัยประกอบด้วยการศึกษาทดลอง 3 ชุดที่ดำเนินการตามลำดับเพื่อตอบคำถามการวิจัย"
+     ],
+     [
+      "ผลการศึกษา",
+      "การศึกษาที่ 1 พบว่าความรู้สึกปลอดภัยทำหน้าที่เป็นตัวแปรส่งผ่าน (Mediator) ส่งผลต่อความตั้งใจเข้าใช้บริการ การศึกษาที่ 2 เผยว่าการสวมหน้ากากอนามัยของบาริสต้ามนุษย์และหุ่นยนต์ส่งผลต่อความรู้สึกปลอดภัยแตกต่างกัน การศึกษาที่ 3 แสดงว่าลูกค้า (โดยเฉพาะร้านที่ใช้บาริสต้าหุ่นยนต์) รับรู้ผลของการสวมหน้ากากอนามัยแตกต่างกันตามสถานะการฉีดวัคซีนของตนเอง"
+     ],
+     [
+      "ข้อจำกัดการวิจัย",
+      "เนื่องจากระดับข้อจำกัดและอัตราการฉีดวัคซีนมีความแตกต่างกันทั่วโลก จึงต้องระมัดระวังในการสรุปอ้างอิงผลการวิจัยในบริบททั่วไป"
+     ],
+     [
+      "ผลกระทบเชิงปฏิบัติ",
+      "ข้อค้นพบมีประโยชน์เชิงปฏิบัติสำหรับอุตสาหกรรมการบริการ ซึ่งบทบาทของหน้ากากอนามัยและวัคซีนในการหล่อหลอมจิตวิทยาผู้บริโภคยังไม่ได้รับการศึกษาอย่างแพร่หลาย"
+     ],
+     [
+      "คุณค่าและความแปลกใหม่",
+      "ตามโมเดล Heuristic-Systematic งานวิจัยระบุว่าสถานะการฉีดวัคซีนเปลี่ยนแปลงระดับความใส่ใจเมื่อประเมินความเสี่ยง และช่วยขยายขอบเขตปฏิสัมพันธ์ระหว่างมนุษย์กับหุ่นยนต์ (HRI) ในธุรกิจบริการ"
+     ]
+    ]
+   }
+  },
+  "5": {
+   "en": {
+    "fields": [
+     [
+      "Title",
+      "The Uneven Impact of Generative Artificial Intelligence on Entrepreneurial Performance: Evidence from a Field Experiment in Kenya"
+     ],
+     [
+      "Authors",
+      "Nicholas G. Otis, Rowan Clarke, Solène Delecourt, David Holtz, and Rembrand Koning"
+     ],
+     [
+      "Journal/Issue",
+      "Management Science, Vol. 72, No. 7, 2026 (DOI: 10.1287/mnsc.2024.06909)"
+     ]
+    ],
+    "abstract": "Scalable and low-cost AI assistance has the potential to improve firm decision-making and economic performance, particularly in emerging markets. However, running a business involves a wide range of open-ended problems, making it unclear whether and how recent advances in AI can help business owners around the world make better decisions. In a field experiment with Kenyan entrepreneurs, we evaluated the impact of AI advice on small business revenues and profits by randomizing access to a GPT-4-powered AI business assistant. While we are unable to reject the null hypothesis of no average treatment effect on firm revenues and profits, we find that the effect for entrepreneurs who were low-performing at baseline is over 0.20 standard deviations lower than for initial high performers. Subsample analyses show that low performers did nearly 10% worse due to the AI assistant, whereas high performers may have benefited by over 15%. This differential impact does not appear to result from differences in the questions posed to the AI or the advice it provided, but rather from the advice entrepreneurs chose to implement. More broadly, these results show that generative AI is already capable of impacting real-world business performance though in uneven and sometimes unexpected ways.",
+    "sub": []
+   },
+   "th": {
+    "fields": [
+     [
+      "ชื่อบทความ",
+      "ผลกระทบที่ไม่เท่าเทียมกันของปัญญาประดิษฐ์เชิงสร้างสรรค์ต่อผลการดำเนินงานของผู้ประกอบการ: หลักฐานจากการทดลองภาคสนามในเคนยา (The Uneven Impact of Generative Artificial Intelligence on Entrepreneurial Performance: Evidence from a Field Experiment in Kenya)"
+     ],
+     [
+      "ชื่อผู้แต่ง",
+      "Nicholas G. Otis, Rowan Clarke, Solène Delecourt, David Holtz, และ Rembrand Koning"
+     ],
+     [
+      "วารสาร/ฉบับที่",
+      "Management Science, Vol. 72, No. 7, 2026 (DOI: 10.1287/mnsc.2024.06909)"
+     ]
+    ],
+    "abstract": "ผู้ช่วย AI ที่มีต้นทุนต่ำมีศักยภาพในการปรับปรุงการตัดสินใจและผลการดำเนินงานทางเศรษฐกิจของธุรกิจ โดยเฉพาะในตลาดเกิดใหม่ ในการทดลองภาคสนามกับผู้ประกอบการชาวเคนยา คณะผู้ศึกษาประเมินผลกระทบของคำแนะนำจาก AI ต่อรายได้และกำไรของธุรกิจขนาดเล็กโดยการสุ่มให้สิทธิ์เข้าถึงผู้ช่วยธุรกิจ AI ที่ขับเคลื่อนด้วย GPT-4 แม้จะไม่พบผลกระทบเฉลี่ยรวมอย่างมีนัยสำคัญ แต่พบว่าผลกระทบต่อผู้ประกอบการที่มีผลงานต่ำในระดับเริ่มต้น (Baseline) นั้นต่ำกว่ากลุ่มที่มีผลงานสูงในระดับเริ่มต้นมากกว่า 0.20 ส่วนเบี่ยงเบนมาตรฐาน การวิเคราะห์กลุ่มย่อยแสดงว่ากลุ่มผลงานต่ำมีผลงานแย่ลงเกือบ 10% เนื่องจากการใช้ AI ในขณะที่กลุ่มผลงานสูงได้รับประโยชน์เพิ่มขึ้นมากกว่า 15% ผลกระทบที่ต่างกันนี้เกิดจากคำแนะนำที่ผู้ประกอบการเลือกนำไปปฏิบัติจริง การวิเคราะห์ในภาพรวมแสดงว่า AI เชิงสร้างสรรค์สามารถส่งผลต่อผลการดำเนินงานทางธุรกิจในโลกจริงได้แล้ว แม้ผลกระทบจะเกิดขึ้นอย่างไม่เท่าเทียมกันก็ตาม",
+    "sub": []
+   }
+  }
+ },
+ "refs": [
+  {
+   "cite": "Matz et al. (2024) ชื่อเรื่อง: The potential of generative AI for personalized persuasion at scale",
+   "doi": "10.1038/s41598-024-53755-0"
+  },
+  {
+   "cite": "Dell'Acqua et al. (2023) ชื่อเรื่อง: Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of AI on Knowledge Worker Productivity and Quality",
+   "doi": "HBS Working Paper 24-013 / 10.1287/orsc.2025.21838"
+  },
+  {
+   "cite": "Cui et al. (2025) ชื่อเรื่อง: The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers",
+   "doi": "AEARCTR-0014530 / 10.2139/ssrn.4945566"
+  },
+  {
+   "cite": "Choi et al. (2023) ชื่อเรื่อง: Human vs. robot baristas during the COVID-19 pandemic: Effects of masks and vaccines on perceived safety and visit intention",
+   "doi": "10.1108/IJCHM-05-2022-0588"
+  },
+  {
+   "cite": "Otis et al. (2026) ชื่อเรื่อง: The Uneven Impact of Generative Artificial Intelligence on Entrepreneurial Performance: Evidence from a Field Experiment in Kenya",
+   "doi": "10.1287/mnsc.2024.06909"
+  }
+ ]
+}
