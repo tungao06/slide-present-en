@@ -302,6 +302,7 @@ async function main() {
 
   await pres.writeFile({ fileName: OUT });
   if (APPLY_THEME) { const { applyTheme } = require(APPLY_THEME); await applyTheme(OUT, THEME); }
+  await require("./animate").animate(OUT); // click-builds + fade transitions (see animate.js)
   console.log("wrote", OUT);
 }
 main().catch((e) => { console.error(e); process.exit(1); });
