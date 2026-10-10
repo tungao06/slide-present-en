@@ -7,30 +7,30 @@
 <meta name="description" content="MBA group presentation: the Starbucks brand and storytelling journey, from a Seattle bean store to a global cultural icon.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Pridi:wght@400;500;600&family=Sarabun:ital,wght@0,400;0,500;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap">
 <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 <script>
   tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          forest: "#006241",   // primary
-          latte: "#F7F5F0",    // background
-          mint: "#D4E9E2",     // soft accent
-          gold: "#CBA258",     // warm accent
-          charcoal: "#191919", // text
-          ink: "#3A3A36",      // softened body text
-          muted: "#6B6A63",    // captions
-          line: "#E6E2D6",     // hairlines on cream
-        },
-        fontFamily: {
-          display: ["Fraunces", "Georgia", "serif"],
-          sans: ["'DM Sans'", "system-ui", "Segoe UI", "Arial", "sans-serif"],
-        },
+    theme: { extend: {
+      colors: {
+        // Notion-style palette: ink on white, warm greys, pastel tags; green kept only for emphasis
+        forest: "#448361",   // emphasis text (Notion green)
+        latte: "#F7F7F5",    // block / callout background
+        mint: "#DBEDDB",     // green tag
+        gold: "#FDECC8",     // yellow tag (hand-off chip)
+        charcoal: "#37352F", // ink
+        ink: "#37352F",
+        muted: "#787774",
+        line: "#E9E9E7",
+        tagtext: "#402C1B",
       },
-    },
+      fontFamily: {
+        display: ["Inter", "system-ui", "Segoe UI", "Arial", "sans-serif"],
+        sans: ["Inter", "system-ui", "Segoe UI", "Arial", "sans-serif"],
+      },
+    } },
   };
-</script>
+  </script>
 <style>
   /* Layout: one-screen app. Top bar (progress), stage (one slide at a time), bottom control bar. */
   html, body { height: 100%; }
@@ -64,18 +64,19 @@
 
 
   /* Thai slides (9–16): Thai faces, no tracking on labels, taller line boxes for tone marks. */
-  .lang-th { font-family: 'Sarabun', 'DM Sans', system-ui, sans-serif; }
-  .lang-th .font-display { font-family: 'Pridi', 'Fraunces', Georgia, serif; }
+  .lang-th { font-family: 'Noto Sans Thai', 'Inter', system-ui, sans-serif; }
+  .lang-th .font-display { font-family: 'Noto Sans Thai', 'Inter', system-ui, sans-serif; }
   .lang-th [class*="tracking-"] { letter-spacing: 0; }
-  .lang-th .leading-tight { line-height: 1.3; }
+  .lang-th .leading-tight { line-height: 1.25; }
   .lang-th .leading-snug { line-height: 1.5; }
-  .lang-th .leading-relaxed { line-height: 1.8; }
+  .lang-th .leading-relaxed { line-height: 1.65; }
   .lang-th .leading-\[1\.05\] { line-height: 1.25; }
+  @media (min-width: 1024px) { .lang-th h1 { font-size: 3.6rem !important; line-height: 1.2 !important; } }
   .dot { transition: all 300ms ease; }
   .bar-safe { padding-bottom: max(0.75rem, env(safe-area-inset-bottom, 0px)); }
   .top-safe { padding-top: max(0px, env(safe-area-inset-top, 0px)); }
 
-  :focus-visible { outline: 3px solid #CBA258; outline-offset: 3px; border-radius: 10px; }
+  :focus-visible { outline: 2px solid #37352F; outline-offset: 3px; border-radius: 10px; }
 
   @media (prefers-reduced-motion: reduce) {
     .slide, .slide.is-active { transition: opacity 200ms linear, visibility 0s; transform: none !important; }
@@ -83,21 +84,21 @@
   }
 </style>
 </head>
-<body class="h-full font-sans">
+<body class="h-full font-sans bg-white text-charcoal">
 <div id="app" class="h-full flex flex-col">
 
   <!-- Top bar: progress + counter -->
   <header class="top-safe shrink-0 bg-latte/90 backdrop-blur border-b border-line">
-    <div class="h-1 w-full bg-mint">
-      <div id="progress" class="h-full bg-forest transition-all duration-500 ease-out" style="width:12.5%"></div>
+    <div class="h-1 w-full bg-line">
+      <div id="progress" class="h-full bg-charcoal transition-all duration-500 ease-out" style="width:12.5%"></div>
     </div>
     <div class="mx-auto max-w-6xl px-4 sm:px-8 h-12 flex items-center justify-between gap-4">
-      <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest truncate">
+      <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted truncate">
         The Starbucks Story <span class="hidden sm:inline text-muted font-medium normal-case tracking-normal">· MBA Group Presentation</span>
       </p>
       <div class="flex items-center gap-3">
         <p id="counter" class="text-sm text-muted tabular-nums whitespace-nowrap" aria-live="polite">Slide 1 of 8</p>
-        <button id="fs" type="button" class="hidden sm:inline-flex items-center gap-2 rounded-full border border-line bg-white px-3 py-1.5 text-sm text-ink shadow-sm transition-all duration-300 hover:border-forest hover:text-forest" aria-label="Toggle full screen (F)">
+        <button id="fs" type="button" class="hidden sm:inline-flex items-center gap-2 rounded-md border border-line bg-white px-3 py-1.5 text-sm text-ink transition-all duration-300 hover:border-forest hover:text-forest" aria-label="Toggle full screen (F)">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
           Full screen
         </button>
@@ -111,38 +112,38 @@
     <!-- ===================== PART 1 ===================== -->
 
     <!-- Slide 1 -->
-    <section class="slide bg-forest text-latte" data-part="1" data-chapter="Introduction" data-title="Crafting a Global Culture" aria-roledescription="slide" aria-label="Slide 1 of 16">
+    <section class="slide bg-white text-charcoal" data-part="1" data-chapter="Introduction" data-title="Crafting a Global Culture" aria-roledescription="slide" aria-label="Slide 1 of 16">
       <div class="mx-auto max-w-6xl min-h-full px-4 sm:px-8 py-8 sm:py-12 flex flex-col justify-center gap-8">
-        <p class="reveal text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-mint/90" style="--i:0">MBA Business Class · Group Presentation</p>
+        <p class="reveal text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted" style="--i:0">MBA Business Class · Group Presentation</p>
         <div class="reveal flex flex-col-reverse md:flex-row md:items-center gap-6 md:gap-10" style="--i:1">
           <div class="min-w-0 flex-1">
             <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-semibold leading-[1.05] max-w-4xl">Crafting a Global Culture: The Starbucks Storytelling Masterclass</h1>
-            <p class="mt-5 text-lg sm:text-2xl text-mint max-w-3xl">How Narrative, Experience, and Identity Built a Multi-Billion Dollar Empire</p>
+            <p class="mt-5 text-lg sm:text-2xl text-muted max-w-3xl">How Narrative, Experience, and Identity Built a Multi-Billion Dollar Empire</p>
           </div>
-          <div class="shrink-0 self-start md:self-center grid place-items-center h-28 w-28 sm:h-40 sm:w-40 lg:h-48 lg:w-48 rounded-full bg-latte shadow-lg">
+          <div class="shrink-0 self-start md:self-center grid place-items-center h-28 w-28 sm:h-40 sm:w-40 lg:h-48 lg:w-48 rounded-full bg-latte border border-line">
             <img src="assets/starbucks-logo.png" alt="Starbucks siren logo" class="h-[88%] w-[88%] object-contain">
           </div>
         </div>
         <div class="grid gap-4 sm:gap-6 md:grid-cols-3">
-          <article class="reveal rounded-2xl bg-white p-6 sm:p-8 text-charcoal shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" style="--i:2">
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-8 text-charcoal transition-all duration-300" style="--i:2">
             <div class="text-4xl" aria-hidden="true">🌿</div>
-            <p class="mt-4 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Origins · 1971</p>
+            <p class="mt-4 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Origins · 1971</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Pike Place Market, Seattle</h3>
           </article>
-          <article class="reveal rounded-2xl bg-white p-6 sm:p-8 text-charcoal shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" style="--i:3">
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-8 text-charcoal transition-all duration-300" style="--i:3">
             <div class="text-4xl" aria-hidden="true">☕</div>
-            <p class="mt-4 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">The Product</p>
+            <p class="mt-4 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">The Product</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Whole-Bean Gourmet Coffee</h3>
           </article>
-          <article class="reveal rounded-2xl bg-white p-6 sm:p-8 text-charcoal shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" style="--i:4">
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-8 text-charcoal transition-all duration-300" style="--i:4">
             <div class="text-4xl" aria-hidden="true">🧜‍♀️</div>
-            <p class="mt-4 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">The Symbol</p>
+            <p class="mt-4 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">The Symbol</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">The Norse Twin-Tailed Siren</h3>
           </article>
         </div>
         <div class="reveal flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6" style="--i:5">
-          <p class="flex-1 min-w-0 flex items-baseline gap-3 text-base sm:text-lg italic text-latte/95"><span class="not-italic text-xs font-bold uppercase tracking-[0.16em] text-gold">Next</span>Now, let's look at where it all began in 1971…</p>
-          <span class="chip chip-out self-start sm:self-auto rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="1971 · Pike Place, Seattle">1971 · Pike Place, Seattle →</span>
+          <p class="flex-1 min-w-0 flex items-baseline gap-3 text-base sm:text-lg italic text-ink"><span class="not-italic text-base" aria-hidden="true">➡️</span>Now, let's look at where it all began in 1971…</p>
+          <span class="chip chip-out self-start sm:self-auto rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="1971 · Pike Place, Seattle">1971 · Pike Place, Seattle →</span>
         </div>
       </div>
     </section>
@@ -151,20 +152,18 @@
     <section class="slide" data-part="1" data-chapter="Chapter 1 · Brand Origin" data-title="Coffee Beans & Seattle Roots" aria-roledescription="slide" aria-label="Slide 2 of 16">
       <div class="mx-auto max-w-6xl min-h-full px-4 sm:px-8 py-8 sm:py-12 flex flex-col justify-center gap-7">
         <div class="reveal flex flex-wrap items-center justify-between gap-3" style="--i:0">
-          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-forest">Part 1 · The Foundation &amp; Origin</p>
-          <span class="chip chip-in rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="1971 · Pike Place, Seattle">1971 · Pike Place, Seattle</span>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-muted">Part 1 · The Foundation &amp; Origin</p>
+          <span class="chip chip-in rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="1971 · Pike Place, Seattle">1971 · Pike Place, Seattle</span>
         </div>
         <div class="reveal" style="--i:1">
           <h2 class="font-display text-3xl sm:text-5xl font-semibold leading-tight">Chapter 1: Coffee Beans &amp; Seattle Roots</h2>
           <p class="mt-2 text-lg sm:text-2xl text-ink">Before the Lattes: A High-End Bean &amp; Spice Retailer</p>
         </div>
         <div class="grid gap-4 sm:gap-6 md:grid-cols-2">
-          <article class="reveal rounded-2xl border border-line bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-md" style="--i:3">
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-8 transition-all duration-300" style="--i:3">
             <div class="flex items-center gap-3">
-              <span class="grid h-11 w-11 place-items-center rounded-xl bg-mint text-forest" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.5a5 5 0 0 1 5.5 5.5"/></svg>
-              </span>
-              <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">The Founders &amp; Mission</p>
+              <span class="text-3xl leading-none" aria-hidden="true">👥</span>
+              <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">The Founders &amp; Mission</p>
             </div>
             <p class="mt-6 text-xs font-medium uppercase tracking-[0.14em] text-muted">Founded by</p>
             <ul class="mt-2 flex flex-wrap gap-2">
@@ -175,24 +174,24 @@
             <p class="mt-6 text-xs font-medium uppercase tracking-[0.14em] text-muted">Mission</p>
             <p class="mt-1 text-base sm:text-lg leading-relaxed text-ink">Teach Americans how to brew fine <strong class="text-charcoal">dark-roast coffee</strong> at home.</p>
           </article>
-          <article class="reveal rounded-2xl border border-line bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-md" style="--i:4">
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-8 transition-all duration-300" style="--i:4">
             <div class="flex items-center justify-between gap-3">
-              <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">The Siren Mythos</p>
+              <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">The Siren Mythos</p>
               <img src="assets/starbucks-logo.png" alt="Starbucks siren logo" class="h-16 w-16 sm:h-24 sm:w-24 object-contain">
             </div>
             <p class="mt-6 text-xs font-medium uppercase tracking-[0.14em] text-muted">Inspired by</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">A 16th-century Norse woodcut siren</h3>
             <p class="mt-6 text-xs font-medium uppercase tracking-[0.14em] text-muted">What it symbolized</p>
             <ul class="mt-2 space-y-2 text-base sm:text-lg text-ink">
-              <li class="flex items-center gap-3"><span class="h-2.5 w-2.5 shrink-0 rounded-full bg-gold"></span>Seattle's nautical tradition</li>
-              <li class="flex items-center gap-3"><span class="h-2.5 w-2.5 shrink-0 rounded-full bg-gold"></span>The irresistible pull of fine coffee</li>
+              <li class="flex items-center gap-3"><span class="text-ink" aria-hidden="true">•</span>Seattle's nautical tradition</li>
+              <li class="flex items-center gap-3"><span class="text-ink" aria-hidden="true">•</span>The irresistible pull of fine coffee</li>
             </ul>
           </article>
         </div>
-        <aside class="reveal handoff flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 rounded-2xl bg-forest px-5 py-4 sm:px-8 sm:py-5 text-latte" style="--i:5">
-          <span class="text-xs font-bold uppercase tracking-[0.16em] text-gold">Next</span>
-          <p class="flex-1 min-w-0 text-base sm:text-lg leading-relaxed">The stage was set, but Starbucks was still missing its biggest magic ingredient… until <strong class="text-mint">1983</strong>, and a trip to <strong class="text-mint">Milan</strong>.</p>
-          <span class="chip chip-out self-start sm:self-auto rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="1983 · The trip to Milan">1983 · The trip to Milan →</span>
+        <aside class="reveal handoff flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 rounded-lg bg-latte px-5 py-4 sm:px-8 sm:py-5 text-ink" style="--i:5">
+          <span class="text-xl leading-none" aria-hidden="true">➡️</span>
+          <p class="flex-1 min-w-0 text-base sm:text-lg leading-relaxed">The stage was set, but Starbucks was still missing its biggest magic ingredient… until <strong class="text-forest">1983</strong>, and a trip to <strong class="text-forest">Milan</strong>.</p>
+          <span class="chip chip-out self-start sm:self-auto rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="1983 · The trip to Milan">1983 · The trip to Milan →</span>
         </aside>
       </div>
     </section>
@@ -203,8 +202,8 @@
     <section class="slide" data-part="2" data-chapter="Chapter 2 · The Turning Point" data-title="The Italian Inspiration" aria-roledescription="slide" aria-label="Slide 3 of 16">
       <div class="mx-auto max-w-6xl min-h-full px-4 sm:px-8 py-8 sm:py-12 flex flex-col justify-center gap-7">
         <div class="reveal flex flex-wrap items-center justify-between gap-3" style="--i:0">
-          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-forest">Part 2 · The Turning Point</p>
-          <span class="chip chip-in rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="1983 · The trip to Milan">1983 · The trip to Milan</span>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-muted">Part 2 · The Turning Point</p>
+          <span class="chip chip-in rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="1983 · The trip to Milan">1983 · The trip to Milan</span>
         </div>
         <div class="reveal flex items-start justify-between gap-6" style="--i:1">
           <div class="min-w-0">
@@ -213,32 +212,32 @@
         </div>
         </div>
         <ol class="relative grid gap-4 sm:gap-6 md:grid-cols-3">
-          <span class="pointer-events-none absolute left-[16.6%] right-[16.6%] top-[17px] hidden h-1 rounded-full bg-gold/70 md:block" aria-hidden="true"></span>
+          <span class="pointer-events-none absolute left-[16.6%] right-[16.6%] top-[17px] hidden h-0.5 rounded-full bg-line md:block" aria-hidden="true"></span>
           <li class="reveal relative flex flex-col items-start md:items-center gap-4" style="--i:2">
-            <span class="relative rounded-full bg-forest px-4 py-1.5 text-sm font-bold tracking-wider text-latte tabular-nums">1983</span>
-            <article class="w-full flex-1 rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+            <span class="relative rounded-md bg-line px-4 py-1.5 text-sm font-bold tracking-wider text-ink tabular-nums">1983</span>
+            <article class="w-full flex-1 rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300">
               <h3 class="font-display text-2xl font-semibold">The Discovery</h3>
               <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">Howard Schultz visits Milan's espresso bars. He notices they aren't just selling drinks: they serve as vibrant <strong class="text-charcoal">community living rooms</strong>.</p>
             </article>
           </li>
           <li class="reveal relative flex flex-col items-start md:items-center gap-4" style="--i:3">
-            <span class="relative rounded-full bg-gold px-4 py-1.5 text-sm font-bold tracking-wider text-charcoal">The Idea</span>
-            <article class="w-full flex-1 rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+            <span class="relative rounded-md bg-gold px-4 py-1.5 text-sm font-bold tracking-wider text-tagtext">The Idea</span>
+            <article class="w-full flex-1 rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300">
               <h3 class="font-display text-2xl font-semibold">The Vision</h3>
               <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">America needs an authentic espresso culture built around <strong class="text-charcoal">human connection, speed, and craftsmanship</strong>.</p>
             </article>
           </li>
           <li class="reveal relative flex flex-col items-start md:items-center gap-4" style="--i:4">
-            <span class="relative rounded-full bg-forest px-4 py-1.5 text-sm font-bold tracking-wider text-latte tabular-nums">1987</span>
-            <article class="w-full flex-1 rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+            <span class="relative rounded-md bg-line px-4 py-1.5 text-sm font-bold tracking-wider text-ink tabular-nums">1987</span>
+            <article class="w-full flex-1 rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300">
               <h3 class="font-display text-2xl font-semibold">The Acquisition</h3>
               <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">Schultz buys Starbucks for <strong class="text-forest">$3.8M</strong>, merging his Il Giornale cafe concept into it to launch the modern coffeehouse era.</p>
             </article>
           </li>
         </ol>
         <div class="reveal flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6" style="--i:5">
-          <p class="flex-1 min-w-0 flex items-baseline gap-3 text-base sm:text-lg italic text-ink"><span class="not-italic text-xs font-bold uppercase tracking-[0.16em] text-forest">Next</span>Schultz didn't just want to sell coffee; he wanted to create a new space in human life…</p>
-          <span class="chip chip-out self-start sm:self-auto rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="The Third Place">The Third Place →</span>
+          <p class="flex-1 min-w-0 flex items-baseline gap-3 text-base sm:text-lg italic text-ink"><span class="not-italic text-xs font-bold uppercase tracking-[0.16em] text-muted">Next</span>Schultz didn't just want to sell coffee; he wanted to create a new space in human life…</p>
+          <span class="chip chip-out self-start sm:self-auto rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="The Third Place">The Third Place →</span>
         </div>
       </div>
     </section>
@@ -247,8 +246,8 @@
     <section class="slide" data-part="2" data-chapter="Chapter 3 · The Third Place" data-title="The Third Place Framework" aria-roledescription="slide" aria-label="Slide 4 of 16">
       <div class="mx-auto max-w-6xl min-h-full px-4 sm:px-8 py-8 sm:py-10 flex flex-col justify-center gap-6">
         <div class="reveal flex flex-wrap items-center justify-between gap-3" style="--i:0">
-          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-forest">Part 2 · Concept Development</p>
-          <span class="chip chip-in rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="The Third Place">The Third Place</span>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-muted">Part 2 · Concept Development</p>
+          <span class="chip chip-in rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="The Third Place">The Third Place</span>
         </div>
         <div class="reveal flex items-start justify-between gap-6" style="--i:1">
           <div class="min-w-0">
@@ -256,50 +255,50 @@
           <p class="mt-2 text-lg sm:text-2xl text-ink">The Core Brand Philosophy</p>
         </div>
         </div>
-        <article class="reveal rounded-2xl border border-line bg-white p-5 sm:p-7 shadow-sm" style="--i:2">
+        <article class="reveal rounded-lg border border-line bg-white p-5 sm:p-7" style="--i:2">
           <div class="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-8">
             <div class="flex flex-col sm:flex-row sm:items-center gap-3" role="list" aria-label="Home, then work, then Starbucks">
-              <div role="listitem" class="rounded-xl bg-latte px-5 py-3 sm:w-40">
-                <p class="text-xs font-bold uppercase tracking-[0.14em] text-forest">1st Place</p>
+              <div role="listitem" class="rounded-lg bg-latte px-5 py-3 sm:w-40">
+                <p class="text-xs font-bold uppercase tracking-[0.14em] text-muted">1st Place</p>
                 <p class="font-display text-2xl font-semibold">Home</p>
               </div>
-              <span class="self-center text-2xl text-gold rotate-90 sm:rotate-0" aria-hidden="true">➔</span>
-              <div role="listitem" class="rounded-xl bg-latte px-5 py-3 sm:w-40">
-                <p class="text-xs font-bold uppercase tracking-[0.14em] text-forest">2nd Place</p>
+              <span class="self-center text-2xl text-line rotate-90 sm:rotate-0" aria-hidden="true">➔</span>
+              <div role="listitem" class="rounded-lg bg-latte px-5 py-3 sm:w-40">
+                <p class="text-xs font-bold uppercase tracking-[0.14em] text-muted">2nd Place</p>
                 <p class="font-display text-2xl font-semibold">Work</p>
               </div>
-              <span class="self-center text-2xl text-gold rotate-90 sm:rotate-0" aria-hidden="true">➔</span>
-              <div role="listitem" class="rounded-xl bg-forest px-5 py-3 sm:w-44 shadow-sm">
-                <p class="text-xs font-bold uppercase tracking-[0.14em] text-mint">3rd Place</p>
-                <p class="font-display text-2xl font-semibold text-latte">Starbucks</p>
+              <span class="self-center text-2xl text-line rotate-90 sm:rotate-0" aria-hidden="true">➔</span>
+              <div role="listitem" class="rounded-lg bg-mint px-5 py-3 sm:w-44 text-[#1C3829]">
+                <p class="text-xs font-bold uppercase tracking-[0.14em] text-[#1C3829]/80">3rd Place</p>
+                <p class="font-display text-2xl font-semibold">Starbucks</p>
               </div>
             </div>
             <div class="min-w-0 flex-1">
-              <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Pillar 1 · The Third Place</p>
+              <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Pillar 1 · The Third Place</p>
               <p class="mt-1 text-base sm:text-lg leading-relaxed text-ink">A comforting, pressure-free sanctuary between home and work.</p>
             </div>
           </div>
         </article>
         <div class="grid gap-4 sm:gap-6 md:grid-cols-2">
-          <article class="reveal rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:shadow-md" style="--i:3">
-            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Pillar 2 · Emotional Connection</p>
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300" style="--i:3">
+            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Pillar 2 · Emotional Connection</p>
             <blockquote class="mt-3 font-display text-xl sm:text-2xl italic leading-snug">“We aren't in the coffee business serving people; we're in the people business serving coffee.”</blockquote>
             <p class="mt-3 text-sm text-muted">Howard Schultz</p>
           </article>
-          <article class="reveal rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:shadow-md" style="--i:4">
-            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Pillar 3 · Atmosphere as a Product</p>
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300" style="--i:4">
+            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Pillar 3 · Atmosphere as a Product</p>
             <ul class="mt-4 flex flex-wrap gap-2">
-              <li class="rounded-full bg-mint px-4 py-1.5 text-base">Warm lighting</li>
-              <li class="rounded-full bg-mint px-4 py-1.5 text-base">Wooden textures</li>
-              <li class="rounded-full bg-mint px-4 py-1.5 text-base">Acoustic music</li>
-              <li class="rounded-full bg-mint px-4 py-1.5 text-base">Welcoming aroma</li>
+              <li class="rounded-md bg-gold text-tagtext px-3 py-1 text-base">Warm lighting</li>
+              <li class="rounded-md bg-[#E8DEEE] text-[#412454] px-3 py-1 text-base">Wooden textures</li>
+              <li class="rounded-md bg-[#D3E5EF] text-[#183347] px-3 py-1 text-base">Acoustic music</li>
+              <li class="rounded-md bg-mint text-[#1C3829] px-3 py-1 text-base">Welcoming aroma</li>
             </ul>
           </article>
         </div>
-        <aside class="reveal handoff flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 rounded-2xl bg-forest px-5 py-4 sm:px-8 sm:py-5 text-latte" style="--i:5">
-          <span class="text-xs font-bold uppercase tracking-[0.16em] text-gold">Next</span>
-          <p class="flex-1 min-w-0 text-base sm:text-lg leading-relaxed">Now that we understand the strategic concept of the Third Place, how did Starbucks <strong class="text-mint">scale this human experience</strong> to thousands of stores?</p>
-          <span class="chip chip-out self-start sm:self-auto rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="Human experience, at scale">Human experience, at scale →</span>
+        <aside class="reveal handoff flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 rounded-lg bg-latte px-5 py-4 sm:px-8 sm:py-5 text-ink" style="--i:5">
+          <span class="text-xl leading-none" aria-hidden="true">➡️</span>
+          <p class="flex-1 min-w-0 text-base sm:text-lg leading-relaxed">Now that we understand the strategic concept of the Third Place, how did Starbucks <strong class="text-forest">scale this human experience</strong> to thousands of stores?</p>
+          <span class="chip chip-out self-start sm:self-auto rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="Human experience, at scale">Human experience, at scale →</span>
         </aside>
       </div>
     </section>
@@ -310,8 +309,8 @@
     <section class="slide" data-part="3" data-chapter="Chapter 4 · Touchpoints" data-title="Storytelling Through Touchpoints" aria-roledescription="slide" aria-label="Slide 5 of 16">
       <div class="mx-auto max-w-6xl min-h-full px-4 sm:px-8 py-8 sm:py-12 flex flex-col justify-center gap-7">
         <div class="reveal flex flex-wrap items-center justify-between gap-3" style="--i:0">
-          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-forest">Part 3 · Operationalizing Experience</p>
-          <span class="chip chip-in rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="Human experience, at scale">Human experience, at scale</span>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-muted">Part 3 · Operationalizing Experience</p>
+          <span class="chip chip-in rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="Human experience, at scale">Human experience, at scale</span>
         </div>
         <div class="reveal flex items-start justify-between gap-6" style="--i:1">
           <div class="min-w-0">
@@ -320,34 +319,28 @@
         </div>
         </div>
         <div class="grid gap-4 sm:gap-6 md:grid-cols-3">
-          <article class="reveal group rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-forest/40 hover:shadow-md" style="--i:2">
-            <span class="grid h-12 w-12 place-items-center rounded-xl bg-mint text-forest transition-all duration-300 group-hover:bg-forest group-hover:text-latte" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h11v6a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"/><path d="M16 9h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 4.5c0 1 1 1 1 2M12 4.5c0 1 1 1 1 2"/></svg>
-            </span>
-            <p class="mt-5 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Touchpoint 1</p>
+          <article class="reveal group rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300" style="--i:2">
+            <span class="text-3xl leading-none" aria-hidden="true">👥</span>
+            <p class="mt-5 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Touchpoint 1</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Personalization &amp; Connection</h3>
             <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">Customer names on cups, eye-contact barista service, and customizable handcrafted beverages.</p>
           </article>
-          <article class="reveal group rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-forest/40 hover:shadow-md" style="--i:3">
-            <span class="grid h-12 w-12 place-items-center rounded-xl bg-mint text-forest transition-all duration-300 group-hover:bg-forest group-hover:text-latte" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>
-            </span>
-            <p class="mt-5 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Touchpoint 2</p>
+          <article class="reveal group rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300" style="--i:3">
+            <span class="text-3xl leading-none" aria-hidden="true">✅</span>
+            <p class="mt-5 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Touchpoint 2</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Sensory Consistency</h3>
             <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">Consistent ambient design, signature scents, and curated music playlists across global stores.</p>
           </article>
-          <article class="reveal group rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-forest/40 hover:shadow-md" style="--i:4">
-            <span class="grid h-12 w-12 place-items-center rounded-xl bg-mint text-forest transition-all duration-300 group-hover:bg-forest group-hover:text-latte" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg>
-            </span>
-            <p class="mt-5 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Touchpoint 3</p>
+          <article class="reveal group rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300" style="--i:4">
+            <span class="text-3xl leading-none" aria-hidden="true">🏠</span>
+            <p class="mt-5 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Touchpoint 3</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Community Customization</h3>
             <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">Store architecture that reflects neighborhood heritage while keeping core brand values.</p>
           </article>
         </div>
         <div class="reveal flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6" style="--i:5">
-          <p class="flex-1 min-w-0 flex items-baseline gap-3 text-base sm:text-lg italic text-ink"><span class="not-italic text-xs font-bold uppercase tracking-[0.16em] text-forest">Next</span>As customer lifestyles changed, Starbucks had to bring "The Third Place" into the digital age…</p>
-          <span class="chip chip-out self-start sm:self-auto rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="The digital Third Place">The digital Third Place →</span>
+          <p class="flex-1 min-w-0 flex items-baseline gap-3 text-base sm:text-lg italic text-ink"><span class="not-italic text-xs font-bold uppercase tracking-[0.16em] text-muted">Next</span>As customer lifestyles changed, Starbucks had to bring "The Third Place" into the digital age…</p>
+          <span class="chip chip-out self-start sm:self-auto rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="The digital Third Place">The digital Third Place →</span>
         </div>
       </div>
     </section>
@@ -356,8 +349,8 @@
     <section class="slide" data-part="3" data-chapter="Chapter 5 · Digital Third Place" data-title="The Digital Third Place" aria-roledescription="slide" aria-label="Slide 6 of 16">
       <div class="mx-auto max-w-6xl min-h-full px-4 sm:px-8 py-8 sm:py-10 flex flex-col justify-center gap-6">
         <div class="reveal flex flex-wrap items-center justify-between gap-3" style="--i:0">
-          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-forest">Part 3 · Modern Evolution</p>
-          <span class="chip chip-in rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="The digital Third Place">The digital Third Place</span>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-muted">Part 3 · Modern Evolution</p>
+          <span class="chip chip-in rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="The digital Third Place">The digital Third Place</span>
         </div>
         <div class="reveal flex items-start justify-between gap-6" style="--i:1">
           <div class="min-w-0">
@@ -367,39 +360,39 @@
           <img src="assets/phone-app.png" alt="Phone showing the Starbucks Rewards app" class="hidden md:block shrink-0 h-32 sm:h-44 object-contain">
         </div>
         <div class="grid gap-4 sm:gap-5 sm:grid-cols-2">
-          <article class="reveal flex gap-4 rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md" style="--i:2">
-            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-mint font-bold text-forest">A</span>
+          <article class="reveal flex gap-4 rounded-lg border border-line bg-white p-6 transition-all duration-300" style="--i:2">
+            <span class="text-3xl leading-none" aria-hidden="true">⭐</span>
             <div class="min-w-0">
               <h3 class="font-display text-xl sm:text-2xl font-semibold">Starbucks Rewards App</h3>
               <p class="mt-1 text-base sm:text-lg leading-relaxed text-ink">Gamified loyalty program driving <strong class="text-forest">over 30M active members</strong>.</p>
             </div>
           </article>
-          <article class="reveal flex gap-4 rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md" style="--i:3">
-            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-mint font-bold text-forest">B</span>
+          <article class="reveal flex gap-4 rounded-lg border border-line bg-white p-6 transition-all duration-300" style="--i:3">
+            <span class="text-3xl leading-none" aria-hidden="true">⚡</span>
             <div class="min-w-0">
               <h3 class="font-display text-xl sm:text-2xl font-semibold">Mobile Order &amp; Pay</h3>
               <p class="mt-1 text-base sm:text-lg leading-relaxed text-ink">Seamless, friction-free customer convenience.</p>
             </div>
           </article>
-          <article class="reveal flex gap-4 rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md" style="--i:4">
-            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-mint font-bold text-forest">C</span>
+          <article class="reveal flex gap-4 rounded-lg border border-line bg-white p-6 transition-all duration-300" style="--i:4">
+            <span class="text-3xl leading-none" aria-hidden="true">💡</span>
             <div class="min-w-0">
               <h3 class="font-display text-xl sm:text-2xl font-semibold">Digital Personalization</h3>
               <p class="mt-1 text-base sm:text-lg leading-relaxed text-ink">AI-driven recommendation engine tailoring offers to individual tastes.</p>
             </div>
           </article>
-          <article class="reveal flex gap-4 rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md" style="--i:5">
-            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-mint font-bold text-forest">D</span>
+          <article class="reveal flex gap-4 rounded-lg border border-line bg-white p-6 transition-all duration-300" style="--i:5">
+            <span class="text-3xl leading-none" aria-hidden="true">🌍</span>
             <div class="min-w-0">
               <h3 class="font-display text-xl sm:text-2xl font-semibold">Modern Omnichannel</h3>
               <p class="mt-1 text-base sm:text-lg leading-relaxed text-ink">Human connection preserved through drive-thru and delivery channels.</p>
             </div>
           </article>
         </div>
-        <aside class="reveal handoff flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 rounded-2xl bg-forest px-5 py-4 sm:px-8 sm:py-5 text-latte" style="--i:6">
-          <span class="text-xs font-bold uppercase tracking-[0.16em] text-gold">Next</span>
-          <p class="flex-1 min-w-0 text-base sm:text-lg leading-relaxed">Having mastered both physical experience and digital innovation, what is the <strong class="text-mint">global business impact</strong>?</p>
-          <span class="chip chip-out self-start sm:self-auto rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="Global reach &amp; scale">Global reach &amp; scale →</span>
+        <aside class="reveal handoff flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 rounded-lg bg-latte px-5 py-4 sm:px-8 sm:py-5 text-ink" style="--i:6">
+          <span class="text-xl leading-none" aria-hidden="true">➡️</span>
+          <p class="flex-1 min-w-0 text-base sm:text-lg leading-relaxed">Having mastered both physical experience and digital innovation, what is the <strong class="text-forest">global business impact</strong>?</p>
+          <span class="chip chip-out self-start sm:self-auto rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="Global reach &amp; scale">Global reach &amp; scale →</span>
         </aside>
       </div>
     </section>
@@ -410,8 +403,8 @@
     <section class="slide" data-part="4" data-chapter="Chapter 6 · Global Reach" data-title="Global Reach & Scale" aria-roledescription="slide" aria-label="Slide 7 of 16">
       <div class="mx-auto max-w-6xl min-h-full px-4 sm:px-8 py-8 sm:py-10 flex flex-col justify-center gap-6">
         <div class="reveal flex flex-wrap items-center justify-between gap-3" style="--i:0">
-          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-forest">Part 4 · Global Impact</p>
-          <span class="chip chip-in rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="Global reach &amp; scale">Global reach &amp; scale</span>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-muted">Part 4 · Global Impact</p>
+          <span class="chip chip-in rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="Global reach &amp; scale">Global reach &amp; scale</span>
         </div>
         <div class="reveal flex items-start justify-between gap-6" style="--i:1">
           <div class="min-w-0">
@@ -422,42 +415,36 @@
         </div>
         <div class="grid gap-4 sm:gap-6 lg:grid-cols-5">
           <div class="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-1 lg:col-span-2">
-            <article class="reveal rounded-2xl bg-forest p-6 sm:p-8 text-latte shadow-sm" style="--i:2">
+            <article class="reveal rounded-lg border border-line bg-latte p-6 sm:p-8 text-charcoal" style="--i:2">
               <p class="font-display text-5xl sm:text-7xl font-semibold leading-none tabular-nums" data-count="38000" data-suffix="+">38,000+</p>
-              <p class="mt-3 text-base sm:text-lg text-mint">Stores worldwide</p>
+              <p class="mt-3 text-base sm:text-lg text-muted">Stores worldwide</p>
             </article>
-            <article class="reveal rounded-2xl bg-forest p-6 sm:p-8 text-latte shadow-sm" style="--i:3">
+            <article class="reveal rounded-lg border border-line bg-latte p-6 sm:p-8 text-charcoal" style="--i:3">
               <p class="font-display text-5xl sm:text-7xl font-semibold leading-none tabular-nums" data-count="80" data-suffix="+">80+</p>
-              <p class="mt-3 text-base sm:text-lg text-mint">Global markets</p>
+              <p class="mt-3 text-base sm:text-lg text-muted">Global markets</p>
             </article>
           </div>
-          <article class="reveal lg:col-span-3 rounded-2xl border border-line bg-white p-6 sm:p-8 shadow-sm" style="--i:4">
-            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Key growth strategy</p>
+          <article class="reveal lg:col-span-3 rounded-lg border border-line bg-white p-6 sm:p-8" style="--i:4">
+            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Key growth strategy</p>
             <ul class="mt-5 space-y-5">
               <li class="flex gap-4">
-                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-mint text-forest" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12l3 3 5-6"/><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/></svg>
-                </span>
+                <span class="text-3xl leading-none" aria-hidden="true">👥</span>
                 <div class="min-w-0"><h3 class="font-display text-xl sm:text-2xl font-semibold">Strategic joint ventures</h3><p class="text-base sm:text-lg text-ink">Local partners to enter and grow in new markets.</p></div>
               </li>
               <li class="flex gap-4">
-                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-mint text-forest" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-                </span>
+                <span class="text-3xl leading-none" aria-hidden="true">🌍</span>
                 <div class="min-w-0"><h3 class="font-display text-xl sm:text-2xl font-semibold">Market customization</h3><p class="text-base sm:text-lg text-ink">Local menus, for example Teavana and matcha drinks in Asia.</p></div>
               </li>
               <li class="flex gap-4">
-                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-mint text-forest" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg>
-                </span>
+                <span class="text-3xl leading-none" aria-hidden="true">⭐</span>
                 <div class="min-w-0"><h3 class="font-display text-xl sm:text-2xl font-semibold">Reserve Roasteries</h3><p class="text-base sm:text-lg text-ink">High-end flagships that act as the brand's storytellers.</p></div>
               </li>
             </ul>
           </article>
         </div>
         <div class="reveal flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6" style="--i:5">
-          <p class="flex-1 min-w-0 flex items-baseline gap-3 text-base sm:text-lg italic text-ink"><span class="not-italic text-xs font-bold uppercase tracking-[0.16em] text-forest">Next</span>So what can business leaders learn from this story?</p>
-          <span class="chip chip-out self-start sm:self-auto rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="Lessons for business leaders">Lessons for business leaders →</span>
+          <p class="flex-1 min-w-0 flex items-baseline gap-3 text-base sm:text-lg italic text-ink"><span class="not-italic text-xs font-bold uppercase tracking-[0.16em] text-muted">Next</span>So what can business leaders learn from this story?</p>
+          <span class="chip chip-out self-start sm:self-auto rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="Lessons for business leaders">Lessons for business leaders →</span>
         </div>
       </div>
     </section>
@@ -466,37 +453,37 @@
     <section class="slide" data-part="4" data-chapter="Conclusion · MBA Takeaways" data-title="Key Business Lessons & Summary" aria-roledescription="slide" aria-label="Slide 8 of 16">
       <div class="mx-auto max-w-6xl min-h-full px-4 sm:px-8 py-8 sm:py-12 flex flex-col justify-center gap-7">
         <div class="reveal flex flex-wrap items-center justify-between gap-3" style="--i:0">
-          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-forest">Part 4 · Conclusion &amp; MBA Takeaways</p>
-          <span class="chip chip-in rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="Lessons for business leaders">Lessons for business leaders</span>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-muted">Part 4 · Conclusion &amp; MBA Takeaways</p>
+          <span class="chip chip-in rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="Lessons for business leaders">Lessons for business leaders</span>
         </div>
         <div class="reveal" style="--i:1">
           <h2 class="font-display text-3xl sm:text-5xl font-semibold leading-tight">Key Business Lessons &amp; Summary</h2>
           <p class="mt-2 text-lg sm:text-2xl text-ink">What Business Leaders Can Learn from Starbucks</p>
         </div>
         <div class="grid gap-4 sm:gap-6 md:grid-cols-3">
-          <article class="reveal rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="--i:2">
-            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Lesson 1</p>
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300" style="--i:2">
+            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Lesson 1</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Product vs. Experience</h3>
             <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">Products can be commoditized; brand experience builds competitive moats.</p>
           </article>
-          <article class="reveal rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="--i:3">
-            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Lesson 2</p>
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300" style="--i:3">
+            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Lesson 2</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Authenticity &amp; Consistency</h3>
             <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">Core brand values must stay consistent, even during rapid global expansion.</p>
           </article>
-          <article class="reveal rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="--i:4">
-            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Lesson 3</p>
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300" style="--i:4">
+            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Lesson 3</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Strategic Adaptability</h3>
             <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">Merge the physical third-place atmosphere with a cutting-edge digital ecosystem.</p>
           </article>
         </div>
-        <figure class="reveal relative overflow-hidden rounded-2xl bg-forest px-6 py-7 sm:px-10 sm:py-9 text-latte" style="--i:5">
-          <span class="absolute -top-6 left-4 font-display text-[120px] leading-none text-gold/80 select-none" aria-hidden="true">“</span>
+        <figure class="reveal relative overflow-hidden rounded-r-lg border-l-4 border-charcoal bg-latte px-6 py-7 sm:px-10 sm:py-9 text-charcoal" style="--i:5">
+          <span class="absolute -top-6 left-4 font-display text-[120px] leading-none text-line select-none" aria-hidden="true">“</span>
           <div class="relative flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
             <blockquote class="min-w-0 flex-1 font-display text-xl sm:text-3xl italic leading-snug pl-6 sm:pl-10">In a world that is increasingly digital and isolated, the hunger for authentic human connection has never been greater.</blockquote>
           </div>
         </figure>
-        <p class="reveal inline-flex items-center gap-3 self-start rounded-full bg-mint px-5 py-2.5 text-base sm:text-lg font-bold text-forest" style="--i:6">
+        <p class="reveal inline-flex items-center gap-3 self-start rounded-md bg-latte px-5 py-2.5 text-base sm:text-lg font-bold text-charcoal" style="--i:6">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
           Thank you! We welcome any questions from the class.
         </p>
@@ -505,38 +492,38 @@
 
     <!-- ===================== ฉบับภาษาไทย · THAI VERSION ===================== -->
     <!-- Slide 9 · Thai -->
-    <section lang="th" class="slide lang-th bg-forest text-latte" data-part="1" data-chapter="บทนำ" data-title="Crafting a Global Culture" aria-roledescription="slide" aria-label="Slide 9 of 16 (ภาษาไทย)">
+    <section lang="th" class="slide lang-th bg-white text-charcoal" data-part="1" data-chapter="บทนำ" data-title="Crafting a Global Culture" aria-roledescription="slide" aria-label="Slide 9 of 16 (ภาษาไทย)">
       <div class="mx-auto max-w-6xl min-h-full px-4 sm:px-8 py-8 sm:py-12 flex flex-col justify-center gap-8">
-        <p class="reveal text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-mint/90" style="--i:0">MBA Business Class · Group Presentation</p>
+        <p class="reveal text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted" style="--i:0">MBA Business Class · Group Presentation</p>
         <div class="reveal flex flex-col-reverse md:flex-row md:items-center gap-6 md:gap-10" style="--i:1">
           <div class="min-w-0 flex-1">
             <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-semibold leading-[1.05] max-w-4xl">สร้างวัฒนธรรมระดับโลก: Storytelling Masterclass ของ Starbucks</h1>
-            <p class="mt-5 text-lg sm:text-2xl text-mint max-w-3xl">Narrative, Experience และ Identity สร้างอาณาจักรมูลค่าหลายพันล้านดอลลาร์ได้อย่างไร</p>
+            <p class="mt-5 text-lg sm:text-2xl text-muted max-w-3xl">Narrative, Experience และ Identity สร้างอาณาจักรมูลค่าหลายพันล้านดอลลาร์ได้อย่างไร</p>
           </div>
-          <div class="shrink-0 self-start md:self-center grid place-items-center h-28 w-28 sm:h-40 sm:w-40 lg:h-48 lg:w-48 rounded-full bg-latte shadow-lg">
+          <div class="shrink-0 self-start md:self-center grid place-items-center h-28 w-28 sm:h-40 sm:w-40 lg:h-48 lg:w-48 rounded-full bg-latte border border-line">
             <img src="assets/starbucks-logo.png" alt="Starbucks siren logo" class="h-[88%] w-[88%] object-contain">
           </div>
         </div>
         <div class="grid gap-4 sm:gap-6 md:grid-cols-3">
-          <article class="reveal rounded-2xl bg-white p-6 sm:p-8 text-charcoal shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" style="--i:2">
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-8 text-charcoal transition-all duration-300" style="--i:2">
             <div class="text-4xl" aria-hidden="true">🌿</div>
-            <p class="mt-4 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">จุดเริ่มต้น · 1971</p>
+            <p class="mt-4 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">จุดเริ่มต้น · 1971</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Pike Place Market, Seattle</h3>
           </article>
-          <article class="reveal rounded-2xl bg-white p-6 sm:p-8 text-charcoal shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" style="--i:3">
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-8 text-charcoal transition-all duration-300" style="--i:3">
             <div class="text-4xl" aria-hidden="true">☕</div>
-            <p class="mt-4 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">ผลิตภัณฑ์</p>
+            <p class="mt-4 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">ผลิตภัณฑ์</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Whole-Bean Gourmet Coffee</h3>
           </article>
-          <article class="reveal rounded-2xl bg-white p-6 sm:p-8 text-charcoal shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" style="--i:4">
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-8 text-charcoal transition-all duration-300" style="--i:4">
             <div class="text-4xl" aria-hidden="true">🧜‍♀️</div>
-            <p class="mt-4 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">สัญลักษณ์</p>
+            <p class="mt-4 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">สัญลักษณ์</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Siren สองหางจากตำนาน Norse</h3>
           </article>
         </div>
         <div class="reveal flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6" style="--i:5">
-          <p class="flex-1 min-w-0 flex items-baseline gap-3 text-base sm:text-lg italic text-latte/95"><span class="not-italic text-xs font-bold uppercase tracking-[0.16em] text-gold">ถัดไป</span>ต่อไป มาดูกันว่าทุกอย่างเริ่มต้นที่ไหนในปี 1971…</p>
-          <span class="chip chip-out self-start sm:self-auto rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="1971 · Pike Place, Seattle">1971 · Pike Place, Seattle →</span>
+          <p class="flex-1 min-w-0 flex items-baseline gap-3 text-base sm:text-lg italic text-ink"><span class="not-italic text-base" aria-hidden="true">➡️</span>ต่อไป มาดูกันว่าทุกอย่างเริ่มต้นที่ไหนในปี 1971…</p>
+          <span class="chip chip-out self-start sm:self-auto rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="1971 · Pike Place, Seattle">1971 · Pike Place, Seattle →</span>
         </div>
       </div>
     </section>
@@ -545,20 +532,18 @@
     <section lang="th" class="slide lang-th" data-part="1" data-chapter="บทที่ 1 · Brand Origin" data-title="Coffee Beans & Seattle Roots" aria-roledescription="slide" aria-label="Slide 10 of 16 (ภาษาไทย)">
       <div class="mx-auto max-w-6xl min-h-full px-4 sm:px-8 py-8 sm:py-12 flex flex-col justify-center gap-7">
         <div class="reveal flex flex-wrap items-center justify-between gap-3" style="--i:0">
-          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-forest">Part 1 · รากฐานและจุดกำเนิดของแบรนด์</p>
-          <span class="chip chip-in rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="1971 · Pike Place, Seattle">1971 · Pike Place, Seattle</span>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-muted">Part 1 · รากฐานและจุดกำเนิดของแบรนด์</p>
+          <span class="chip chip-in rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="1971 · Pike Place, Seattle">1971 · Pike Place, Seattle</span>
         </div>
         <div class="reveal" style="--i:1">
           <h2 class="font-display text-3xl sm:text-5xl font-semibold leading-tight">บทที่ 1: Coffee Beans &amp; Seattle Roots</h2>
           <p class="mt-2 text-lg sm:text-2xl text-ink">ก่อนยุค Latte: ร้านขายเมล็ดกาแฟและเครื่องเทศระดับ High-End</p>
         </div>
         <div class="grid gap-4 sm:gap-6 md:grid-cols-2">
-          <article class="reveal rounded-2xl border border-line bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-md" style="--i:3">
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-8 transition-all duration-300" style="--i:3">
             <div class="flex items-center gap-3">
-              <span class="grid h-11 w-11 place-items-center rounded-xl bg-mint text-forest" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.5a5 5 0 0 1 5.5 5.5"/></svg>
-              </span>
-              <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">ผู้ก่อตั้ง &amp; Mission</p>
+              <span class="text-3xl leading-none" aria-hidden="true">👥</span>
+              <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">ผู้ก่อตั้ง &amp; Mission</p>
             </div>
             <p class="mt-6 text-xs font-medium uppercase tracking-[0.14em] text-muted">ก่อตั้งโดย</p>
             <ul class="mt-2 flex flex-wrap gap-2">
@@ -569,24 +554,24 @@
             <p class="mt-6 text-xs font-medium uppercase tracking-[0.14em] text-muted">Mission</p>
             <p class="mt-1 text-base sm:text-lg leading-relaxed text-ink">สอนให้คนอเมริกันชงกาแฟ <strong class="text-charcoal">Dark Roast</strong> ชั้นดีได้เองที่บ้าน</p>
           </article>
-          <article class="reveal rounded-2xl border border-line bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-md" style="--i:4">
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-8 transition-all duration-300" style="--i:4">
             <div class="flex items-center justify-between gap-3">
-              <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">ตำนาน Siren</p>
+              <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">ตำนาน Siren</p>
               <img src="assets/starbucks-logo.png" alt="Starbucks siren logo" class="h-16 w-16 sm:h-24 sm:w-24 object-contain">
             </div>
             <p class="mt-6 text-xs font-medium uppercase tracking-[0.14em] text-muted">แรงบันดาลใจจาก</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">ภาพแกะไม้ Siren แบบ Norse สมัยศตวรรษที่ 16</h3>
             <p class="mt-6 text-xs font-medium uppercase tracking-[0.14em] text-muted">สิ่งที่สื่อความหมาย</p>
             <ul class="mt-2 space-y-2 text-base sm:text-lg text-ink">
-              <li class="flex items-center gap-3"><span class="h-2.5 w-2.5 shrink-0 rounded-full bg-gold"></span>ประเพณีการเดินเรือของ Seattle</li>
-              <li class="flex items-center gap-3"><span class="h-2.5 w-2.5 shrink-0 rounded-full bg-gold"></span>เสน่ห์ของกาแฟชั้นดีที่ยากจะต้านทาน</li>
+              <li class="flex items-center gap-3"><span class="text-ink" aria-hidden="true">•</span>ประเพณีการเดินเรือของ Seattle</li>
+              <li class="flex items-center gap-3"><span class="text-ink" aria-hidden="true">•</span>เสน่ห์ของกาแฟชั้นดีที่ยากจะต้านทาน</li>
             </ul>
           </article>
         </div>
-        <aside class="reveal handoff flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 rounded-2xl bg-forest px-5 py-4 sm:px-8 sm:py-5 text-latte" style="--i:5">
-          <span class="text-xs font-bold uppercase tracking-[0.16em] text-gold">ถัดไป</span>
-          <p class="flex-1 min-w-0 text-base sm:text-lg leading-relaxed">เวทีพร้อมแล้ว แต่ Starbucks ยังขาดส่วนผสมวิเศษที่สำคัญที่สุด… จนกระทั่งปี <strong class="text-mint">1983</strong> กับทริปไป <strong class="text-mint">Milan</strong></p>
-          <span class="chip chip-out self-start sm:self-auto rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="1983 · ทริปไป Milan">1983 · ทริปไป Milan →</span>
+        <aside class="reveal handoff flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 rounded-lg bg-latte px-5 py-4 sm:px-8 sm:py-5 text-ink" style="--i:5">
+          <span class="text-xl leading-none" aria-hidden="true">➡️</span>
+          <p class="flex-1 min-w-0 text-base sm:text-lg leading-relaxed">เวทีพร้อมแล้ว แต่ Starbucks ยังขาดส่วนผสมวิเศษที่สำคัญที่สุด… จนกระทั่งปี <strong class="text-forest">1983</strong> กับทริปไป <strong class="text-forest">Milan</strong></p>
+          <span class="chip chip-out self-start sm:self-auto rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="1983 · ทริปไป Milan">1983 · ทริปไป Milan →</span>
         </aside>
       </div>
     </section>
@@ -597,8 +582,8 @@
     <section lang="th" class="slide lang-th" data-part="2" data-chapter="บทที่ 2 · Turning Point" data-title="The Italian Inspiration" aria-roledescription="slide" aria-label="Slide 11 of 16 (ภาษาไทย)">
       <div class="mx-auto max-w-6xl min-h-full px-4 sm:px-8 py-8 sm:py-12 flex flex-col justify-center gap-7">
         <div class="reveal flex flex-wrap items-center justify-between gap-3" style="--i:0">
-          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-forest">Part 2 · จุดเปลี่ยน (Turning Point)</p>
-          <span class="chip chip-in rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="1983 · ทริปไป Milan">1983 · ทริปไป Milan</span>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-muted">Part 2 · จุดเปลี่ยน (Turning Point)</p>
+          <span class="chip chip-in rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="1983 · ทริปไป Milan">1983 · ทริปไป Milan</span>
         </div>
         <div class="reveal flex items-start justify-between gap-6" style="--i:1">
           <div class="min-w-0">
@@ -607,32 +592,32 @@
         </div>
         </div>
         <ol class="relative grid gap-4 sm:gap-6 md:grid-cols-3">
-          <span class="pointer-events-none absolute left-[16.6%] right-[16.6%] top-[17px] hidden h-1 rounded-full bg-gold/70 md:block" aria-hidden="true"></span>
+          <span class="pointer-events-none absolute left-[16.6%] right-[16.6%] top-[17px] hidden h-0.5 rounded-full bg-line md:block" aria-hidden="true"></span>
           <li class="reveal relative flex flex-col items-start md:items-center gap-4" style="--i:2">
-            <span class="relative rounded-full bg-forest px-4 py-1.5 text-sm font-bold tracking-wider text-latte tabular-nums">1983</span>
-            <article class="w-full flex-1 rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+            <span class="relative rounded-md bg-line px-4 py-1.5 text-sm font-bold tracking-wider text-ink tabular-nums">1983</span>
+            <article class="w-full flex-1 rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300">
               <h3 class="font-display text-2xl font-semibold">The Discovery</h3>
               <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">Howard Schultz ไปเยือน Espresso Bar ใน Milan และสังเกตว่าร้านเหล่านั้นไม่ได้แค่ขายเครื่องดื่ม แต่เป็น <strong class="text-charcoal">Community Living Room</strong> ที่มีชีวิตชีวา</p>
             </article>
           </li>
           <li class="reveal relative flex flex-col items-start md:items-center gap-4" style="--i:3">
-            <span class="relative rounded-full bg-gold px-4 py-1.5 text-sm font-bold tracking-wider text-charcoal">The Idea</span>
-            <article class="w-full flex-1 rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+            <span class="relative rounded-md bg-gold px-4 py-1.5 text-sm font-bold tracking-wider text-tagtext">The Idea</span>
+            <article class="w-full flex-1 rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300">
               <h3 class="font-display text-2xl font-semibold">The Vision</h3>
               <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">อเมริกาต้องการวัฒนธรรม Espresso แท้ ๆ ที่สร้างจาก <strong class="text-charcoal">Human Connection, Speed และ Craftsmanship</strong></p>
             </article>
           </li>
           <li class="reveal relative flex flex-col items-start md:items-center gap-4" style="--i:4">
-            <span class="relative rounded-full bg-forest px-4 py-1.5 text-sm font-bold tracking-wider text-latte tabular-nums">1987</span>
-            <article class="w-full flex-1 rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+            <span class="relative rounded-md bg-line px-4 py-1.5 text-sm font-bold tracking-wider text-ink tabular-nums">1987</span>
+            <article class="w-full flex-1 rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300">
               <h3 class="font-display text-2xl font-semibold">The Acquisition</h3>
               <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">Schultz ซื้อ Starbucks ในราคา <strong class="text-forest">$3.8M</strong> และรวม Concept ร้าน Il Giornale ของเขาเข้าไป เปิดศักราช Coffeehouse ยุคใหม่</p>
             </article>
           </li>
         </ol>
         <div class="reveal flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6" style="--i:5">
-          <p class="flex-1 min-w-0 flex items-baseline gap-3 text-base sm:text-lg italic text-ink"><span class="not-italic text-xs font-bold uppercase tracking-[0.16em] text-forest">ถัดไป</span>Schultz ไม่ได้แค่อยากขายกาแฟ เขาอยากสร้างพื้นที่ใหม่ในชีวิตของผู้คน…</p>
-          <span class="chip chip-out self-start sm:self-auto rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="The Third Place">The Third Place →</span>
+          <p class="flex-1 min-w-0 flex items-baseline gap-3 text-base sm:text-lg italic text-ink"><span class="not-italic text-xs font-bold uppercase tracking-[0.16em] text-muted">ถัดไป</span>Schultz ไม่ได้แค่อยากขายกาแฟ เขาอยากสร้างพื้นที่ใหม่ในชีวิตของผู้คน…</p>
+          <span class="chip chip-out self-start sm:self-auto rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="The Third Place">The Third Place →</span>
         </div>
       </div>
     </section>
@@ -641,8 +626,8 @@
     <section lang="th" class="slide lang-th" data-part="2" data-chapter="บทที่ 3 · The Third Place" data-title="The Third Place Framework" aria-roledescription="slide" aria-label="Slide 12 of 16 (ภาษาไทย)">
       <div class="mx-auto max-w-6xl min-h-full px-4 sm:px-8 py-8 sm:py-10 flex flex-col justify-center gap-6">
         <div class="reveal flex flex-wrap items-center justify-between gap-3" style="--i:0">
-          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-forest">Part 2 · การพัฒนา Concept</p>
-          <span class="chip chip-in rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="The Third Place">The Third Place</span>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-muted">Part 2 · การพัฒนา Concept</p>
+          <span class="chip chip-in rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="The Third Place">The Third Place</span>
         </div>
         <div class="reveal flex items-start justify-between gap-6" style="--i:1">
           <div class="min-w-0">
@@ -650,50 +635,50 @@
           <p class="mt-2 text-lg sm:text-2xl text-ink">ปรัชญาหลักของแบรนด์ (Core Brand Philosophy)</p>
         </div>
         </div>
-        <article class="reveal rounded-2xl border border-line bg-white p-5 sm:p-7 shadow-sm" style="--i:2">
+        <article class="reveal rounded-lg border border-line bg-white p-5 sm:p-7" style="--i:2">
           <div class="flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-8">
             <div class="flex flex-col sm:flex-row sm:items-center gap-3" role="list" aria-label="Home, then work, then Starbucks">
-              <div role="listitem" class="rounded-xl bg-latte px-5 py-3 sm:w-40">
-                <p class="text-xs font-bold uppercase tracking-[0.14em] text-forest">1st Place</p>
+              <div role="listitem" class="rounded-lg bg-latte px-5 py-3 sm:w-40">
+                <p class="text-xs font-bold uppercase tracking-[0.14em] text-muted">1st Place</p>
                 <p class="font-display text-2xl font-semibold">บ้าน</p>
               </div>
-              <span class="self-center text-2xl text-gold rotate-90 sm:rotate-0" aria-hidden="true">➔</span>
-              <div role="listitem" class="rounded-xl bg-latte px-5 py-3 sm:w-40">
-                <p class="text-xs font-bold uppercase tracking-[0.14em] text-forest">2nd Place</p>
+              <span class="self-center text-2xl text-line rotate-90 sm:rotate-0" aria-hidden="true">➔</span>
+              <div role="listitem" class="rounded-lg bg-latte px-5 py-3 sm:w-40">
+                <p class="text-xs font-bold uppercase tracking-[0.14em] text-muted">2nd Place</p>
                 <p class="font-display text-2xl font-semibold">ที่ทำงาน</p>
               </div>
-              <span class="self-center text-2xl text-gold rotate-90 sm:rotate-0" aria-hidden="true">➔</span>
-              <div role="listitem" class="rounded-xl bg-forest px-5 py-3 sm:w-44 shadow-sm">
-                <p class="text-xs font-bold uppercase tracking-[0.14em] text-mint">3rd Place</p>
-                <p class="font-display text-2xl font-semibold text-latte">Starbucks</p>
+              <span class="self-center text-2xl text-line rotate-90 sm:rotate-0" aria-hidden="true">➔</span>
+              <div role="listitem" class="rounded-lg bg-mint px-5 py-3 sm:w-44 text-[#1C3829]">
+                <p class="text-xs font-bold uppercase tracking-[0.14em] text-[#1C3829]/80">3rd Place</p>
+                <p class="font-display text-2xl font-semibold">Starbucks</p>
               </div>
             </div>
             <div class="min-w-0 flex-1">
-              <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Pillar 1 · The Third Place</p>
+              <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Pillar 1 · The Third Place</p>
               <p class="mt-1 text-base sm:text-lg leading-relaxed text-ink">ที่พักพิงอันอบอุ่น ไร้ความกดดัน ระหว่างบ้านกับที่ทำงาน</p>
             </div>
           </div>
         </article>
         <div class="grid gap-4 sm:gap-6 md:grid-cols-2">
-          <article class="reveal rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:shadow-md" style="--i:3">
-            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Pillar 2 · Emotional Connection</p>
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300" style="--i:3">
+            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Pillar 2 · Emotional Connection</p>
             <blockquote class="mt-3 font-display text-xl sm:text-2xl italic leading-snug">“เราไม่ได้อยู่ในธุรกิจกาแฟที่ให้บริการผู้คน แต่เราอยู่ในธุรกิจผู้คนที่ให้บริการกาแฟ”</blockquote>
             <p class="mt-3 text-sm text-muted">Howard Schultz</p>
           </article>
-          <article class="reveal rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:shadow-md" style="--i:4">
-            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Pillar 3 · Atmosphere คือ Product</p>
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300" style="--i:4">
+            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Pillar 3 · Atmosphere คือ Product</p>
             <ul class="mt-4 flex flex-wrap gap-2">
-              <li class="rounded-full bg-mint px-4 py-1.5 text-base">แสงไฟอบอุ่น</li>
-              <li class="rounded-full bg-mint px-4 py-1.5 text-base">Texture ไม้</li>
-              <li class="rounded-full bg-mint px-4 py-1.5 text-base">ดนตรี Acoustic</li>
-              <li class="rounded-full bg-mint px-4 py-1.5 text-base">กลิ่นหอมชวนต้อนรับ</li>
+              <li class="rounded-md bg-gold text-tagtext px-3 py-1 text-base">แสงไฟอบอุ่น</li>
+              <li class="rounded-md bg-[#E8DEEE] text-[#412454] px-3 py-1 text-base">Texture ไม้</li>
+              <li class="rounded-md bg-[#D3E5EF] text-[#183347] px-3 py-1 text-base">ดนตรี Acoustic</li>
+              <li class="rounded-md bg-mint text-[#1C3829] px-3 py-1 text-base">กลิ่นหอมชวนต้อนรับ</li>
             </ul>
           </article>
         </div>
-        <aside class="reveal handoff flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 rounded-2xl bg-forest px-5 py-4 sm:px-8 sm:py-5 text-latte" style="--i:5">
-          <span class="text-xs font-bold uppercase tracking-[0.16em] text-gold">ถัดไป</span>
-          <p class="flex-1 min-w-0 text-base sm:text-lg leading-relaxed">เมื่อเข้าใจ Concept เชิงกลยุทธ์ของ Third Place แล้ว Starbucks <strong class="text-mint">ขยาย Human Experience นี้</strong>ไปสู่ร้านหลายพันสาขาได้อย่างไร?</p>
-          <span class="chip chip-out self-start sm:self-auto rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="ขยาย Human Experience สู่ทุกสาขา">ขยาย Human Experience สู่ทุกสาขา →</span>
+        <aside class="reveal handoff flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 rounded-lg bg-latte px-5 py-4 sm:px-8 sm:py-5 text-ink" style="--i:5">
+          <span class="text-xl leading-none" aria-hidden="true">➡️</span>
+          <p class="flex-1 min-w-0 text-base sm:text-lg leading-relaxed">เมื่อเข้าใจ Concept เชิงกลยุทธ์ของ Third Place แล้ว Starbucks <strong class="text-forest">ขยาย Human Experience นี้</strong>ไปสู่ร้านหลายพันสาขาได้อย่างไร?</p>
+          <span class="chip chip-out self-start sm:self-auto rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="ขยาย Human Experience สู่ทุกสาขา">ขยาย Human Experience สู่ทุกสาขา →</span>
         </aside>
       </div>
     </section>
@@ -704,8 +689,8 @@
     <section lang="th" class="slide lang-th" data-part="3" data-chapter="บทที่ 4 · Touchpoints" data-title="Storytelling Through Touchpoints" aria-roledescription="slide" aria-label="Slide 13 of 16 (ภาษาไทย)">
       <div class="mx-auto max-w-6xl min-h-full px-4 sm:px-8 py-8 sm:py-12 flex flex-col justify-center gap-7">
         <div class="reveal flex flex-wrap items-center justify-between gap-3" style="--i:0">
-          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-forest">Part 3 · การนำ Experience ไปปฏิบัติจริง</p>
-          <span class="chip chip-in rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="ขยาย Human Experience สู่ทุกสาขา">ขยาย Human Experience สู่ทุกสาขา</span>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-muted">Part 3 · การนำ Experience ไปปฏิบัติจริง</p>
+          <span class="chip chip-in rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="ขยาย Human Experience สู่ทุกสาขา">ขยาย Human Experience สู่ทุกสาขา</span>
         </div>
         <div class="reveal flex items-start justify-between gap-6" style="--i:1">
           <div class="min-w-0">
@@ -714,34 +699,28 @@
         </div>
         </div>
         <div class="grid gap-4 sm:gap-6 md:grid-cols-3">
-          <article class="reveal group rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-forest/40 hover:shadow-md" style="--i:2">
-            <span class="grid h-12 w-12 place-items-center rounded-xl bg-mint text-forest transition-all duration-300 group-hover:bg-forest group-hover:text-latte" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h11v6a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"/><path d="M16 9h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 4.5c0 1 1 1 1 2M12 4.5c0 1 1 1 1 2"/></svg>
-            </span>
-            <p class="mt-5 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Touchpoint 1</p>
+          <article class="reveal group rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300" style="--i:2">
+            <span class="text-3xl leading-none" aria-hidden="true">👥</span>
+            <p class="mt-5 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Touchpoint 1</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Personalization &amp; Connection</h3>
             <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">เขียนชื่อลูกค้าบนแก้ว Barista สบตาขณะให้บริการ และเครื่องดื่ม Handcrafted ที่ Customize ได้</p>
           </article>
-          <article class="reveal group rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-forest/40 hover:shadow-md" style="--i:3">
-            <span class="grid h-12 w-12 place-items-center rounded-xl bg-mint text-forest transition-all duration-300 group-hover:bg-forest group-hover:text-latte" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>
-            </span>
-            <p class="mt-5 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Touchpoint 2</p>
+          <article class="reveal group rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300" style="--i:3">
+            <span class="text-3xl leading-none" aria-hidden="true">✅</span>
+            <p class="mt-5 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Touchpoint 2</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Sensory Consistency</h3>
             <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">Ambient Design, กลิ่น Signature และ Playlist ที่คัดสรร เหมือนกันทุกสาขาทั่วโลก</p>
           </article>
-          <article class="reveal group rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-forest/40 hover:shadow-md" style="--i:4">
-            <span class="grid h-12 w-12 place-items-center rounded-xl bg-mint text-forest transition-all duration-300 group-hover:bg-forest group-hover:text-latte" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg>
-            </span>
-            <p class="mt-5 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Touchpoint 3</p>
+          <article class="reveal group rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300" style="--i:4">
+            <span class="text-3xl leading-none" aria-hidden="true">🏠</span>
+            <p class="mt-5 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Touchpoint 3</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Community Customization</h3>
             <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">สถาปัตยกรรมร้านที่สะท้อน Heritage ของย่านนั้น ๆ โดยยังคง Core Values ของแบรนด์</p>
           </article>
         </div>
         <div class="reveal flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6" style="--i:5">
-          <p class="flex-1 min-w-0 flex items-baseline gap-3 text-base sm:text-lg italic text-ink"><span class="not-italic text-xs font-bold uppercase tracking-[0.16em] text-forest">ถัดไป</span>เมื่อ Lifestyle ของลูกค้าเปลี่ยนไป Starbucks ต้องพา "The Third Place" เข้าสู่ยุค Digital…</p>
-          <span class="chip chip-out self-start sm:self-auto rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="Digital Third Place">Digital Third Place →</span>
+          <p class="flex-1 min-w-0 flex items-baseline gap-3 text-base sm:text-lg italic text-ink"><span class="not-italic text-xs font-bold uppercase tracking-[0.16em] text-muted">ถัดไป</span>เมื่อ Lifestyle ของลูกค้าเปลี่ยนไป Starbucks ต้องพา "The Third Place" เข้าสู่ยุค Digital…</p>
+          <span class="chip chip-out self-start sm:self-auto rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="Digital Third Place">Digital Third Place →</span>
         </div>
       </div>
     </section>
@@ -750,8 +729,8 @@
     <section lang="th" class="slide lang-th" data-part="3" data-chapter="บทที่ 5 · Digital Third Place" data-title="The Digital Third Place" aria-roledescription="slide" aria-label="Slide 14 of 16 (ภาษาไทย)">
       <div class="mx-auto max-w-6xl min-h-full px-4 sm:px-8 py-8 sm:py-10 flex flex-col justify-center gap-6">
         <div class="reveal flex flex-wrap items-center justify-between gap-3" style="--i:0">
-          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-forest">Part 3 · วิวัฒนาการยุคใหม่</p>
-          <span class="chip chip-in rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="Digital Third Place">Digital Third Place</span>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-muted">Part 3 · วิวัฒนาการยุคใหม่</p>
+          <span class="chip chip-in rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="Digital Third Place">Digital Third Place</span>
         </div>
         <div class="reveal flex items-start justify-between gap-6" style="--i:1">
           <div class="min-w-0">
@@ -761,39 +740,39 @@
           <img src="assets/phone-app.png" alt="Phone showing the Starbucks Rewards app" class="hidden md:block shrink-0 h-32 sm:h-44 object-contain">
         </div>
         <div class="grid gap-4 sm:gap-5 sm:grid-cols-2">
-          <article class="reveal flex gap-4 rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md" style="--i:2">
-            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-mint font-bold text-forest">A</span>
+          <article class="reveal flex gap-4 rounded-lg border border-line bg-white p-6 transition-all duration-300" style="--i:2">
+            <span class="text-3xl leading-none" aria-hidden="true">⭐</span>
             <div class="min-w-0">
               <h3 class="font-display text-xl sm:text-2xl font-semibold">Starbucks Rewards App</h3>
               <p class="mt-1 text-base sm:text-lg leading-relaxed text-ink">Loyalty Program แบบ Gamified มี <strong class="text-forest">Active Member กว่า 30 ล้านคน</strong></p>
             </div>
           </article>
-          <article class="reveal flex gap-4 rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md" style="--i:3">
-            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-mint font-bold text-forest">B</span>
+          <article class="reveal flex gap-4 rounded-lg border border-line bg-white p-6 transition-all duration-300" style="--i:3">
+            <span class="text-3xl leading-none" aria-hidden="true">⚡</span>
             <div class="min-w-0">
               <h3 class="font-display text-xl sm:text-2xl font-semibold">Mobile Order &amp; Pay</h3>
               <p class="mt-1 text-base sm:text-lg leading-relaxed text-ink">สั่งและจ่ายล่วงหน้า สะดวก ไร้ Friction</p>
             </div>
           </article>
-          <article class="reveal flex gap-4 rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md" style="--i:4">
-            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-mint font-bold text-forest">C</span>
+          <article class="reveal flex gap-4 rounded-lg border border-line bg-white p-6 transition-all duration-300" style="--i:4">
+            <span class="text-3xl leading-none" aria-hidden="true">💡</span>
             <div class="min-w-0">
               <h3 class="font-display text-xl sm:text-2xl font-semibold">Digital Personalization</h3>
               <p class="mt-1 text-base sm:text-lg leading-relaxed text-ink">Recommendation Engine ที่ขับเคลื่อนด้วย AI ปรับข้อเสนอให้ตรงรสนิยมของแต่ละคน</p>
             </div>
           </article>
-          <article class="reveal flex gap-4 rounded-2xl border border-line bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-md" style="--i:5">
-            <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-mint font-bold text-forest">D</span>
+          <article class="reveal flex gap-4 rounded-lg border border-line bg-white p-6 transition-all duration-300" style="--i:5">
+            <span class="text-3xl leading-none" aria-hidden="true">🌍</span>
             <div class="min-w-0">
               <h3 class="font-display text-xl sm:text-2xl font-semibold">Modern Omnichannel</h3>
               <p class="mt-1 text-base sm:text-lg leading-relaxed text-ink">รักษา Human Connection ไว้ ทั้งผ่าน Drive-thru และ Delivery</p>
             </div>
           </article>
         </div>
-        <aside class="reveal handoff flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 rounded-2xl bg-forest px-5 py-4 sm:px-8 sm:py-5 text-latte" style="--i:6">
-          <span class="text-xs font-bold uppercase tracking-[0.16em] text-gold">ถัดไป</span>
-          <p class="flex-1 min-w-0 text-base sm:text-lg leading-relaxed">เมื่อเชี่ยวชาญทั้ง Physical Experience และ Digital Innovation แล้ว <strong class="text-mint">Global Business Impact</strong> เป็นอย่างไร?</p>
-          <span class="chip chip-out self-start sm:self-auto rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="Global Reach &amp; Scale">Global Reach &amp; Scale →</span>
+        <aside class="reveal handoff flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 rounded-lg bg-latte px-5 py-4 sm:px-8 sm:py-5 text-ink" style="--i:6">
+          <span class="text-xl leading-none" aria-hidden="true">➡️</span>
+          <p class="flex-1 min-w-0 text-base sm:text-lg leading-relaxed">เมื่อเชี่ยวชาญทั้ง Physical Experience และ Digital Innovation แล้ว <strong class="text-forest">Global Business Impact</strong> เป็นอย่างไร?</p>
+          <span class="chip chip-out self-start sm:self-auto rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="Global Reach &amp; Scale">Global Reach &amp; Scale →</span>
         </aside>
       </div>
     </section>
@@ -804,8 +783,8 @@
     <section lang="th" class="slide lang-th" data-part="4" data-chapter="บทที่ 6 · Global Reach" data-title="Global Reach & Scale" aria-roledescription="slide" aria-label="Slide 15 of 16 (ภาษาไทย)">
       <div class="mx-auto max-w-6xl min-h-full px-4 sm:px-8 py-8 sm:py-10 flex flex-col justify-center gap-6">
         <div class="reveal flex flex-wrap items-center justify-between gap-3" style="--i:0">
-          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-forest">Part 4 · Global Impact</p>
-          <span class="chip chip-in rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="Global Reach &amp; Scale">Global Reach &amp; Scale</span>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-muted">Part 4 · Global Impact</p>
+          <span class="chip chip-in rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="Global Reach &amp; Scale">Global Reach &amp; Scale</span>
         </div>
         <div class="reveal flex items-start justify-between gap-6" style="--i:1">
           <div class="min-w-0">
@@ -816,42 +795,36 @@
         </div>
         <div class="grid gap-4 sm:gap-6 lg:grid-cols-5">
           <div class="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-1 lg:col-span-2">
-            <article class="reveal rounded-2xl bg-forest p-6 sm:p-8 text-latte shadow-sm" style="--i:2">
+            <article class="reveal rounded-lg border border-line bg-latte p-6 sm:p-8 text-charcoal" style="--i:2">
               <p class="font-display text-5xl sm:text-7xl font-semibold leading-none tabular-nums" data-count="38000" data-suffix="+">38,000+</p>
-              <p class="mt-3 text-base sm:text-lg text-mint">สาขาทั่วโลก</p>
+              <p class="mt-3 text-base sm:text-lg text-muted">สาขาทั่วโลก</p>
             </article>
-            <article class="reveal rounded-2xl bg-forest p-6 sm:p-8 text-latte shadow-sm" style="--i:3">
+            <article class="reveal rounded-lg border border-line bg-latte p-6 sm:p-8 text-charcoal" style="--i:3">
               <p class="font-display text-5xl sm:text-7xl font-semibold leading-none tabular-nums" data-count="80" data-suffix="+">80+</p>
-              <p class="mt-3 text-base sm:text-lg text-mint">ตลาดทั่วโลก</p>
+              <p class="mt-3 text-base sm:text-lg text-muted">ตลาดทั่วโลก</p>
             </article>
           </div>
-          <article class="reveal lg:col-span-3 rounded-2xl border border-line bg-white p-6 sm:p-8 shadow-sm" style="--i:4">
-            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">Key growth strategy</p>
+          <article class="reveal lg:col-span-3 rounded-lg border border-line bg-white p-6 sm:p-8" style="--i:4">
+            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">Key growth strategy</p>
             <ul class="mt-5 space-y-5">
               <li class="flex gap-4">
-                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-mint text-forest" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12l3 3 5-6"/><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/></svg>
-                </span>
+                <span class="text-3xl leading-none" aria-hidden="true">👥</span>
                 <div class="min-w-0"><h3 class="font-display text-xl sm:text-2xl font-semibold">Strategic joint ventures</h3><p class="text-base sm:text-lg text-ink">จับมือ Partner ท้องถิ่นเพื่อเข้าสู่และเติบโตในตลาดใหม่</p></div>
               </li>
               <li class="flex gap-4">
-                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-mint text-forest" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-                </span>
+                <span class="text-3xl leading-none" aria-hidden="true">🌍</span>
                 <div class="min-w-0"><h3 class="font-display text-xl sm:text-2xl font-semibold">Market customization</h3><p class="text-base sm:text-lg text-ink">เมนูท้องถิ่น เช่น Teavana และเครื่องดื่ม Matcha ในเอเชีย</p></div>
               </li>
               <li class="flex gap-4">
-                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-mint text-forest" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg>
-                </span>
+                <span class="text-3xl leading-none" aria-hidden="true">⭐</span>
                 <div class="min-w-0"><h3 class="font-display text-xl sm:text-2xl font-semibold">Reserve Roasteries</h3><p class="text-base sm:text-lg text-ink">Flagship ระดับ High-End ที่ทำหน้าที่เป็น Storyteller ของแบรนด์</p></div>
               </li>
             </ul>
           </article>
         </div>
         <div class="reveal flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6" style="--i:5">
-          <p class="flex-1 min-w-0 flex items-baseline gap-3 text-base sm:text-lg italic text-ink"><span class="not-italic text-xs font-bold uppercase tracking-[0.16em] text-forest">ถัดไป</span>แล้ว Business Leader เรียนรู้อะไรได้บ้างจากเรื่องราวนี้?</p>
-          <span class="chip chip-out self-start sm:self-auto rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="บทเรียนสำหรับ Business Leaders">บทเรียนสำหรับ Business Leaders →</span>
+          <p class="flex-1 min-w-0 flex items-baseline gap-3 text-base sm:text-lg italic text-ink"><span class="not-italic text-xs font-bold uppercase tracking-[0.16em] text-muted">ถัดไป</span>แล้ว Business Leader เรียนรู้อะไรได้บ้างจากเรื่องราวนี้?</p>
+          <span class="chip chip-out self-start sm:self-auto rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="บทเรียนสำหรับ Business Leaders">บทเรียนสำหรับ Business Leaders →</span>
         </div>
       </div>
     </section>
@@ -860,37 +833,37 @@
     <section lang="th" class="slide lang-th" data-part="4" data-chapter="บทสรุป · MBA Takeaways" data-title="Key Business Lessons & Summary" aria-roledescription="slide" aria-label="Slide 16 of 16 (ภาษาไทย)">
       <div class="mx-auto max-w-6xl min-h-full px-4 sm:px-8 py-8 sm:py-12 flex flex-col justify-center gap-7">
         <div class="reveal flex flex-wrap items-center justify-between gap-3" style="--i:0">
-          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-forest">Part 4 · บทสรุป &amp; MBA Takeaways</p>
-          <span class="chip chip-in rounded-full bg-gold px-4 py-1.5 text-xs sm:text-sm font-bold text-charcoal whitespace-nowrap shadow-sm" data-key="บทเรียนสำหรับ Business Leaders">บทเรียนสำหรับ Business Leaders</span>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-muted">Part 4 · บทสรุป &amp; MBA Takeaways</p>
+          <span class="chip chip-in rounded-md bg-gold px-3 py-1 text-xs sm:text-sm font-semibold text-tagtext whitespace-nowrap" data-key="บทเรียนสำหรับ Business Leaders">บทเรียนสำหรับ Business Leaders</span>
         </div>
         <div class="reveal" style="--i:1">
           <h2 class="font-display text-3xl sm:text-5xl font-semibold leading-tight">บทเรียนทางธุรกิจที่สำคัญ &amp; สรุป</h2>
           <p class="mt-2 text-lg sm:text-2xl text-ink">สิ่งที่ Business Leader เรียนรู้ได้จาก Starbucks</p>
         </div>
         <div class="grid gap-4 sm:gap-6 md:grid-cols-3">
-          <article class="reveal rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="--i:2">
-            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">บทเรียนที่ 1</p>
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300" style="--i:2">
+            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">บทเรียนที่ 1</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Product vs. Experience</h3>
             <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">Product ถูกทำให้เป็น Commodity ได้ แต่ Brand Experience สร้าง Competitive Moat</p>
           </article>
-          <article class="reveal rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="--i:3">
-            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">บทเรียนที่ 2</p>
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300" style="--i:3">
+            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">บทเรียนที่ 2</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Authenticity &amp; Consistency</h3>
             <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">Core Brand Values ต้องคงที่ แม้ขยายทั่วโลกอย่างรวดเร็ว</p>
           </article>
-          <article class="reveal rounded-2xl border border-line bg-white p-6 sm:p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md" style="--i:4">
-            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-forest">บทเรียนที่ 3</p>
+          <article class="reveal rounded-lg border border-line bg-white p-6 sm:p-7 transition-all duration-300" style="--i:4">
+            <p class="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-muted">บทเรียนที่ 3</p>
             <h3 class="mt-1 font-display text-2xl font-semibold">Strategic Adaptability</h3>
             <p class="mt-2 text-base sm:text-lg leading-relaxed text-ink">ผสานบรรยากาศ Third Place แบบ Physical เข้ากับ Digital Ecosystem ที่ล้ำสมัย</p>
           </article>
         </div>
-        <figure class="reveal relative overflow-hidden rounded-2xl bg-forest px-6 py-7 sm:px-10 sm:py-9 text-latte" style="--i:5">
-          <span class="absolute -top-6 left-4 font-display text-[120px] leading-none text-gold/80 select-none" aria-hidden="true">“</span>
+        <figure class="reveal relative overflow-hidden rounded-r-lg border-l-4 border-charcoal bg-latte px-6 py-7 sm:px-10 sm:py-9 text-charcoal" style="--i:5">
+          <span class="absolute -top-6 left-4 font-display text-[120px] leading-none text-line select-none" aria-hidden="true">“</span>
           <div class="relative flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-8">
             <blockquote class="min-w-0 flex-1 font-display text-xl sm:text-3xl italic leading-snug pl-6 sm:pl-10">ในโลกที่ Digital และโดดเดี่ยวมากขึ้นทุกที ความโหยหา Human Connection ที่แท้จริงไม่เคยยิ่งใหญ่เท่านี้มาก่อน</blockquote>
           </div>
         </figure>
-        <p class="reveal inline-flex items-center gap-3 self-start rounded-full bg-mint px-5 py-2.5 text-base sm:text-lg font-bold text-forest" style="--i:6">
+        <p class="reveal inline-flex items-center gap-3 self-start rounded-md bg-latte px-5 py-2.5 text-base sm:text-lg font-bold text-charcoal" style="--i:6">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>
           ขอบคุณครับ/ค่ะ ยินดีรับทุกคำถามจากเพื่อน ๆ ในชั้นเรียน
         </p>
@@ -902,20 +875,20 @@
   <!-- Bottom control bar -->
   <nav class="bar-safe shrink-0 border-t border-line bg-white/95 backdrop-blur" aria-label="Slide controls">
     <div class="mx-auto max-w-6xl px-4 sm:px-8 pt-3 flex items-center gap-3 sm:gap-6">
-      <button id="prev" type="button" class="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2.5 text-sm font-bold text-forest shadow-sm transition-all duration-300 hover:border-forest hover:bg-latte disabled:cursor-not-allowed disabled:opacity-40" aria-label="Previous slide (Left arrow)">
+      <button id="prev" type="button" class="inline-flex items-center gap-2 rounded-md border border-line bg-white px-4 py-2.5 text-sm font-bold text-ink transition-all duration-300 hover:bg-latte disabled:cursor-not-allowed disabled:opacity-40" aria-label="Previous slide (Left arrow)">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
         <span class="hidden sm:inline">Previous</span>
       </button>
 
       <div class="min-w-0 flex-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4">
         <div id="chapter" class="flex items-center gap-2.5 min-w-0" aria-live="polite">
-          <span id="chapterNum" class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-forest text-sm font-bold text-latte">1</span>
+          <span id="chapterNum" class="grid h-8 w-8 shrink-0 place-items-center rounded-md bg-latte text-sm font-bold text-ink">1</span>
           <p class="min-w-0 truncate text-sm"><span id="chapterName" class="font-bold">Introduction</span> <span id="chapterPart" class="text-muted">· Part 1</span></p>
         </div>
         <div id="dots" class="flex flex-wrap items-center gap-x-3 gap-y-1.5 max-w-full" role="tablist" aria-label="Go to slide"></div>
       </div>
 
-      <button id="next" type="button" class="inline-flex items-center gap-2 rounded-full bg-forest px-4 py-2.5 text-sm font-bold text-latte shadow-sm transition-all duration-300 hover:bg-[#004d33] disabled:cursor-not-allowed disabled:opacity-40" aria-label="Next slide (Right arrow)">
+      <button id="next" type="button" class="inline-flex items-center gap-2 rounded-md bg-charcoal px-4 py-2.5 text-sm font-bold text-white transition-all duration-300 hover:bg-black disabled:cursor-not-allowed disabled:opacity-40" aria-label="Next slide (Right arrow)">
         <span id="nextLabel" class="hidden sm:inline">Next</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
       </button>
@@ -947,7 +920,7 @@
     }
     const b = document.createElement("button");
     b.type = "button";
-    b.className = "dot h-2.5 w-2.5 rounded-full bg-mint hover:bg-forest/60";
+    b.className = "dot h-2.5 w-2.5 rounded-full bg-line hover:bg-muted";
     b.setAttribute("role", "tab");
     b.setAttribute("aria-label", `Slide ${i + 1}: ${s.dataset.title} (${groups[part].title})`);
     b.addEventListener("click", () => go(i));
@@ -1012,7 +985,7 @@
     counter.textContent = `Slide ${i + 1} of ${total}`;
     progress.style.width = `${((i + 1) / total) * 100}%`;
     dots.forEach((d, k) => {
-      d.className = "dot h-2.5 rounded-full " + (k === i ? "w-7 bg-gold" : k < i ? "w-2.5 bg-forest hover:bg-forest/70" : "w-2.5 bg-mint hover:bg-forest/60");
+      d.className = "dot h-2.5 rounded-full " + (k === i ? "w-7 bg-charcoal" : k < i ? "w-2.5 bg-muted hover:bg-charcoal" : "w-2.5 bg-line hover:bg-muted");
       d.setAttribute("aria-selected", k === i ? "true" : "false");
     });
     chapterNum.textContent = s.dataset.part;

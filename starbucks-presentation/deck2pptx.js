@@ -35,10 +35,8 @@ h1{font-size:96px;font-weight:600;line-height:1.1}h2{font-size:64px;font-weight:
 x-icon{display:inline-block}x-shape{display:inline-block}img{display:block}aside{display:none}
 /* Load the deck faces as web fonts so Chromium applies the variable weight axis exactly (fontconfig
    would pick a named instance). Weight 600 is laid out as 700: PowerPoint only has a bold flag. */
-@font-face{font-family:Fraunces;src:url(FONTS/Fraunces[SOFT,WONK,opsz,wght].ttf);font-weight:100 900}
-@font-face{font-family:"DM Sans";src:url(FONTS/DMSans[opsz,wght].ttf);font-weight:100 900}
-@font-face{font-family:Pridi;src:url(FONTS/Pridi-Regular.ttf);font-weight:400}@font-face{font-family:Pridi;src:url(FONTS/Pridi-SemiBold.ttf);font-weight:600 700}
-@font-face{font-family:Sarabun;src:url(FONTS/Sarabun-Regular.ttf);font-weight:400}@font-face{font-family:Sarabun;src:url(FONTS/Sarabun-Bold.ttf);font-weight:600 700}@font-face{font-family:Sarabun;src:url(FONTS/Sarabun-Italic.ttf);font-style:italic}
+@font-face{font-family:Inter;src:url(FONTS/Inter[opsz,wght].ttf);font-weight:100 900}@font-face{font-family:Inter;src:url(FONTS/Inter-Italic[opsz,wght].ttf);font-weight:100 900;font-style:italic}
+@font-face{font-family:"Noto Sans Thai";src:url(FONTS/NotoSansThai[wdth,wght].ttf);font-weight:100 900}
 [style*="font-weight:600"],[style*="font-weight:700"]{font-weight:700!important}`.replace(/FONTS\//g, "file://" + path.join(__dirname, "export", "fonts") + "/");
 
 const iconCache = new Map();

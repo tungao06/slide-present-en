@@ -31,7 +31,7 @@ T = {
   (">The Product<", ">ผลิตภัณฑ์<"),
   (">The Symbol<", ">สัญลักษณ์<"),
   ("The Norse Twin-Tailed Siren", "Siren สองหางจากตำนาน Norse"),
-  ("Now, let's look at where it all began in <span style=\"color:#CBA258\"><b>1971</b></span>…", "ต่อไป มาดูกันว่าทุกอย่างเริ่มต้นที่ไหนในปี <span style=\"color:#CBA258\"><b>1971</b></span>…"),
+  ("Now, let's look at where it all began in <span style=\"color:#448361\"><b>1971</b></span>…", "ต่อไป มาดูกันว่าทุกอย่างเริ่มต้นที่ไหนในปี <span style=\"color:#448361\"><b>1971</b></span>…"),
 ],
 "s2-origin": [
   ("Chapter 1: Coffee Beans &amp; Seattle Roots", "บทที่ 1: Coffee Beans &amp; Seattle Roots"),
@@ -44,8 +44,8 @@ T = {
   ("A 16th-century Norse woodcut siren", "ภาพแกะไม้ Siren แบบ Norse สมัยศตวรรษที่ 16"),
   ("Seattle's nautical tradition", "ประเพณีการเดินเรือของ Seattle"),
   ("The irresistible pull of fine coffee", "เสน่ห์ของกาแฟชั้นดีที่ยากจะต้านทาน"),
-  ("The stage was set, but Starbucks was still missing its biggest magic ingredient… until <span style=\"color:#D4E9E2\"><b>1983</b></span>, and a trip to <span style=\"color:#D4E9E2\"><b>Milan</b></span>.",
-   "เวทีพร้อมแล้ว แต่ Starbucks ยังขาดส่วนผสมวิเศษที่สำคัญที่สุด… จนกระทั่งปี <span style=\"color:#D4E9E2\"><b>1983</b></span> กับทริปไป <span style=\"color:#D4E9E2\"><b>Milan</b></span>"),
+  ("The stage was set, but Starbucks was still missing its biggest magic ingredient… until <span style=\"color:#448361\"><b>1983</b></span>, and a trip to <span style=\"color:#448361\"><b>Milan</b></span>.",
+   "เวทีพร้อมแล้ว แต่ Starbucks ยังขาดส่วนผสมวิเศษที่สำคัญที่สุด… จนกระทั่งปี <span style=\"color:#448361\"><b>1983</b></span> กับทริปไป <span style=\"color:#448361\"><b>Milan</b></span>"),
 ],
 "s3-milan": [
   ("Chapter 2: The Italian Inspiration", "บทที่ 2: แรงบันดาลใจจาก Italy"),
@@ -54,10 +54,10 @@ T = {
    "Howard Schultz ไปเยือน Espresso Bar ใน Milan และสังเกตว่าร้านเหล่านั้นไม่ได้แค่ขายเครื่องดื่ม แต่เป็น <b>Community Living Room</b> ที่มีชีวิตชีวา"),
   ("America needs an authentic espresso culture built around <b>human connection, speed, and craftsmanship</b>.",
    "อเมริกาต้องการวัฒนธรรม Espresso แท้ ๆ ที่สร้างจาก <b>Human Connection, Speed และ Craftsmanship</b>"),
-  ("Schultz buys Starbucks for <span style=\"color:#006241\"><b>$3.8M</b></span>, merging his Il Giornale cafe concept into it to launch the modern coffeehouse era.",
-   "Schultz ซื้อ Starbucks ในราคา <span style=\"color:#006241\"><b>$3.8M</b></span> และรวม Concept ร้าน Il Giornale ของเขาเข้าไป เปิดศักราช Coffeehouse ยุคใหม่"),
-  ("Schultz didn't just want to sell coffee; he wanted to create <span style=\"color:#006241\"><b>a new space in human life</b></span>…",
-   "Schultz ไม่ได้แค่อยากขายกาแฟ เขาอยากสร้าง<span style=\"color:#006241\"><b>พื้นที่ใหม่ในชีวิตของผู้คน</b></span>…"),
+  ("Schultz buys Starbucks for <span style=\"color:#448361\"><b>$3.8M</b></span>, merging his Il Giornale cafe concept into it to launch the modern coffeehouse era.",
+   "Schultz ซื้อ Starbucks ในราคา <span style=\"color:#448361\"><b>$3.8M</b></span> และรวม Concept ร้าน Il Giornale ของเขาเข้าไป เปิดศักราช Coffeehouse ยุคใหม่"),
+  ("Schultz didn't just want to sell coffee; he wanted to create <span style=\"color:#448361\"><b>a new space in human life</b></span>…",
+   "Schultz ไม่ได้แค่อยากขายกาแฟ เขาอยากสร้าง<span style=\"color:#448361\"><b>พื้นที่ใหม่ในชีวิตของผู้คน</b></span>…"),
 ],
 "s4-third-place": [
   ("Chapter 3: \"The Third Place\" Framework", "บทที่ 3: Framework \"The Third Place\""),
@@ -67,8 +67,8 @@ T = {
   ("\"We aren't in the coffee business serving people; we're in the people business serving coffee.\"", "\"เราไม่ได้อยู่ในธุรกิจกาแฟที่ให้บริการผู้คน แต่เราอยู่ในธุรกิจผู้คนที่ให้บริการกาแฟ\""),
   ("Pillar 3 · Atmosphere as a Product", "Pillar 3 · Atmosphere คือ Product"),
   ("Warm lighting", "แสงไฟอบอุ่น"), ("Wooden textures", "Texture ไม้"), ("Acoustic music", "ดนตรี Acoustic"), ("Welcoming aroma", "กลิ่นหอมชวนต้อนรับ"),
-  ("Now that we understand the strategic concept of the Third Place, how did Starbucks <span style=\"color:#D4E9E2\"><b>scale this human experience</b></span> to thousands of stores?",
-   "เมื่อเข้าใจ Concept เชิงกลยุทธ์ของ Third Place แล้ว Starbucks <span style=\"color:#D4E9E2\"><b>ขยาย Human Experience นี้</b></span>ไปสู่ร้านหลายพันสาขาได้อย่างไร?"),
+  ("Now that we understand the strategic concept of the Third Place, how did Starbucks <span style=\"color:#448361\"><b>scale this human experience</b></span> to thousands of stores?",
+   "เมื่อเข้าใจ Concept เชิงกลยุทธ์ของ Third Place แล้ว Starbucks <span style=\"color:#448361\"><b>ขยาย Human Experience นี้</b></span>ไปสู่ร้านหลายพันสาขาได้อย่างไร?"),
 ],
 "s5-touchpoints": [
   ("Chapter 4: Storytelling Through Touchpoints", "บทที่ 4: Storytelling ผ่าน Touchpoints"),
@@ -76,18 +76,18 @@ T = {
   ("Customer names on cups, eye-contact barista service, and customizable handcrafted beverages.", "เขียนชื่อลูกค้าบนแก้ว Barista สบตาขณะให้บริการ และเครื่องดื่ม Handcrafted ที่ Customize ได้"),
   ("Consistent ambient design, signature scents, and curated music playlists across global stores.", "Ambient Design, กลิ่น Signature และ Playlist ที่คัดสรร เหมือนกันทุกสาขาทั่วโลก"),
   ("Store architecture that reflects neighborhood heritage while keeping core brand values.", "สถาปัตยกรรมร้านที่สะท้อน Heritage ของย่านนั้น ๆ โดยยังคง Core Values ของแบรนด์"),
-  ("As customer lifestyles changed, Starbucks had to bring \"The Third Place\" into the <span style=\"color:#006241\"><b>digital age</b></span>…",
-   "เมื่อ Lifestyle ของลูกค้าเปลี่ยนไป Starbucks ต้องพา \"The Third Place\" เข้าสู่<span style=\"color:#006241\"><b>ยุค Digital</b></span>…"),
+  ("As customer lifestyles changed, Starbucks had to bring \"The Third Place\" into the <span style=\"color:#448361\"><b>digital age</b></span>…",
+   "เมื่อ Lifestyle ของลูกค้าเปลี่ยนไป Starbucks ต้องพา \"The Third Place\" เข้าสู่<span style=\"color:#448361\"><b>ยุค Digital</b></span>…"),
 ],
 "s6-digital": [
   ("Chapter 5: The Digital \"Third Place\"", "บทที่ 5: Digital \"Third Place\""),
   ("Blending Physical Hospitality with Digital Convenience", "ผสาน Physical Hospitality เข้ากับ Digital Convenience"),
-  ("Gamified loyalty program driving <span style=\"color:#006241\"><b>over 30M active members</b></span>.", "Loyalty Program แบบ Gamified มี <span style=\"color:#006241\"><b>Active Member กว่า 30 ล้านคน</b></span>"),
+  ("Gamified loyalty program driving <span style=\"color:#448361\"><b>over 30M active members</b></span>.", "Loyalty Program แบบ Gamified มี <span style=\"color:#448361\"><b>Active Member กว่า 30 ล้านคน</b></span>"),
   ("Seamless, friction-free customer convenience.", "สั่งและจ่ายล่วงหน้า สะดวก ไร้ Friction"),
   ("AI-driven recommendation engine tailoring offers to individual tastes.", "Recommendation Engine ที่ขับเคลื่อนด้วย AI ปรับข้อเสนอให้ตรงรสนิยมของแต่ละคน"),
   ("Human connection preserved through drive-thru and delivery channels.", "รักษา Human Connection ไว้ ทั้งผ่าน Drive-thru และ Delivery"),
-  ("Having mastered both physical experience and digital innovation, what is the <span style=\"color:#D4E9E2\"><b>global business impact</b></span>?",
-   "เมื่อเชี่ยวชาญทั้ง Physical Experience และ Digital Innovation แล้ว <span style=\"color:#D4E9E2\"><b>Global Business Impact</b></span> เป็นอย่างไร?"),
+  ("Having mastered both physical experience and digital innovation, what is the <span style=\"color:#448361\"><b>global business impact</b></span>?",
+   "เมื่อเชี่ยวชาญทั้ง Physical Experience และ Digital Innovation แล้ว <span style=\"color:#448361\"><b>Global Business Impact</b></span> เป็นอย่างไร?"),
 ],
 "s7-global": [
   ("Chapter 6: Global Reach &amp; Scale", "บทที่ 6: Global Reach &amp; Scale"),
@@ -96,7 +96,7 @@ T = {
   ("Local partners to enter and grow in new markets.", "จับมือ Partner ท้องถิ่นเพื่อเข้าสู่และเติบโตในตลาดใหม่"),
   ("Local menus, for example Teavana and matcha drinks in Asia.", "เมนูท้องถิ่น เช่น Teavana และเครื่องดื่ม Matcha ในเอเชีย"),
   ("High-end flagships that act as the brand's storytellers.", "Flagship ระดับ High-End ที่ทำหน้าที่เป็น Storyteller ของแบรนด์"),
-  ("So what can <span style=\"color:#006241\"><b>business leaders</b></span> learn from this story?", "แล้ว <span style=\"color:#006241\"><b>Business Leader</b></span> เรียนรู้อะไรได้บ้างจากเรื่องราวนี้?"),
+  ("So what can <span style=\"color:#448361\"><b>business leaders</b></span> learn from this story?", "แล้ว <span style=\"color:#448361\"><b>Business Leader</b></span> เรียนรู้อะไรได้บ้างจากเรื่องราวนี้?"),
 ],
 "s8-takeaways": [
   ("Key Business Lessons &amp; Summary", "บทเรียนทางธุรกิจที่สำคัญ &amp; สรุป"),
@@ -123,12 +123,11 @@ ASIDE = {
 
 # Layout tweaks for Thai glyphs: taller line boxes, no tracking, slightly smaller body copy.
 STYLE = [
-  ("'DM Sans', Arial, sans-serif", "'Sarabun', 'DM Sans', Arial, sans-serif"),
-  ("'Fraunces', Georgia, serif", "'Pridi', 'Fraunces', Georgia, serif"),
+  ("'Inter', Arial, sans-serif", "'Noto Sans Thai', 'Inter', Arial, sans-serif"),
   ("letter-spacing:3px;", ""), ("letter-spacing:2px;", ""), ("letter-spacing:1px;", ""),
   ("text-transform:uppercase;", ""),
-  ("font-size:72px;font-weight:600;line-height:1.08", "font-size:66px;font-weight:600;line-height:1.3"),
-  ("font-size:64px;font-weight:600;line-height:1.1", "font-size:58px;font-weight:600;line-height:1.3"),
+  ("font-size:72px;font-weight:700;line-height:1.12", "font-size:66px;font-weight:700;line-height:1.3"),
+  ("font-size:60px;font-weight:700;line-height:1.15", "font-size:56px;font-weight:700;line-height:1.3"),
   ("font-size:36px;font-weight:600;line-height:1.2", "font-size:34px;font-weight:600;line-height:1.4"),
   ("font-size:34px;font-weight:600;line-height:1.2", "font-size:32px;font-weight:600;line-height:1.4"),
   ("font-size:34px;line-height:1.3", "font-size:32px;line-height:1.5"),
@@ -171,7 +170,5 @@ deck = json.loads((ROOT / "deck.json").read_text(encoding="utf8"))
 deck["order"] = [o for o in deck["order"] if not o.startswith("t")] + order
 deck["sections"] = {k: v for k, v in deck["sections"].items() if not k.startswith("thai")}
 deck["sections"]["thai"] = {"description": "Thai version: slides 9-16 repeat the whole story in Thai (ฉบับภาษาไทย).", "start": "t1-title"}
-deck["faces"]["pridi"] = {"family": "Pridi", "href": "https://fonts.googleapis.com/css2?family=Pridi:wght@400;500;600&display=swap"}
-deck["faces"]["sarabun"] = {"family": "Sarabun", "href": "https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,400;0,500;0,700;1,400&display=swap"}
 (ROOT / "deck.json").write_text(json.dumps(deck, ensure_ascii=False, indent=2) + "\n", encoding="utf8")
 print("order:", deck["order"])
