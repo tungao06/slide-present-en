@@ -1,0 +1,117 @@
+// Script content. **bold** = stress this word; [CLICK] / [คลิก] = click here; [PAUSE] / [หยุด] = one-beat pause.
+// English and Thai say the same thing; English terms stay in English in the Thai text.
+module.exports = {
+  speakers: [
+    { n: 1, slides: "1–2", part: "Part 1 · The Foundation & Origin", time: "5:00", takes: null, gives: "1983 · The trip to Milan", givesTo: "Speaker 2 รับช่วงที่สไลด์ 3",
+      keys: ["Starbucks เริ่มในปี **1971** เป็นร้านขายเมล็ดกาแฟ ไม่ใช่ Cafe", "ชื่อและโลโก้ Siren เป็น **Storytelling** ตั้งแต่วันแรก", "เวทีพร้อม แต่ยังขาด \"ส่วนผสมวิเศษ\" จนถึงปี 1983"],
+      facts: ["1971 · Pike Place Market, Seattle", "ผู้ก่อตั้ง 3 คน: Jerry Baldwin, Zev Siegl, Gordon Bowker", "Siren สองหาง จากภาพแกะไม้ Norse ศตวรรษที่ 16"],
+      watch: ["อย่าเล่าเรื่อง Howard Schultz เอง — เก็บไว้ให้ Speaker 2", "ชื่อผู้ก่อตั้งพูดช้า ๆ ชัด ๆ ทั้งสามชื่อ"],
+      qa: ["Can a small business copy this? (ธุรกิจเล็กทำตามได้ไหม)"] },
+    { n: 2, slides: "3–4", part: "Part 2 · The Turning Point & The Third Place", time: "5:00", takes: "1983 · The trip to Milan", takesFrom: "จาก Speaker 1", gives: "Human experience, at scale", givesTo: "Speaker 3 รับช่วงที่สไลด์ 5",
+      keys: ["ทริป **Milan 1983** ทำให้ Schultz เห็นว่าร้านกาแฟคือ Community Living Room", "**The Third Place** = พื้นที่ที่สามระหว่างบ้านกับที่ทำงาน — เป็นเรื่อง Positioning ไม่ใช่ Product", "3 Pillars: Third Place · Emotional Connection · Atmosphere คือ Product"],
+      facts: ["1983 Milan → 1987 ซื้อ Starbucks ในราคา **$3.8M**", "ร้านของ Schultz ชื่อ Il Giornale", "Quote: \"We aren't in the coffee business serving people; we're in the people business serving coffee.\""],
+      watch: ["อ่าน Quote ช้า ๆ อย่าเร่ง — เป็นประโยคที่คนจำ", "อย่าลงรายละเอียด App / Digital — เป็นของ Speaker 3"],
+      qa: ["Isn't the Third Place just a cafe with nicer chairs?", "Why did the founders refuse Schultz's idea?"] },
+    { n: 3, slides: "5–6", part: "Part 3 · Touchpoints & the Digital Third Place", time: "5:00", takes: "Human experience, at scale", takesFrom: "จาก Speaker 2", gives: "Global reach & scale", givesTo: "Speaker 4 รับช่วงที่สไลด์ 7",
+      keys: ["Experience ถูกขยายผ่าน **Touchpoint** เล็ก ๆ ทุกวัน: ชื่อบนแก้ว กลิ่น เพลง สถาปัตยกรรม", "Digital ไม่ได้แทน Third Place แต่พามันไปอยู่ในโทรศัพท์", "**30M+ Active Members** ใน Starbucks Rewards"],
+      facts: ["3 Touchpoints: Personalization & Connection · Sensory Consistency · Community Customization", "Starbucks Rewards: Active Member กว่า 30 ล้านคน", "Mobile Order & Pay · AI Recommendation · Omnichannel (Drive-thru, Delivery)"],
+      watch: ["สไลด์ 6 มี 4 การ์ด + รูปโทรศัพท์ — คลิกให้ครบก่อนพูดบรรทัด Next", "ตัวเลข 30 ล้าน พูดเป็น \"กว่าสามสิบล้านคน\" ไม่ต้องละเอียดกว่านั้น"],
+      qa: ["Does the app weaken the Third Place?"] },
+    { n: 4, slides: "7–8", part: "Part 4 · Global Impact & MBA Takeaways", time: "5:00 + Q&A", takes: "Global reach & scale", takesFrom: "จาก Speaker 3", gives: null, givesTo: null,
+      keys: ["**38,000+ สาขา · 80+ ตลาด** — Scale ที่สร้างจากเรื่องเล่าเดียว", "3 กลยุทธ์: Joint Venture · Market Customization · Reserve Roasteries", "3 บทเรียน: Product vs Experience · Authenticity & Consistency · Strategic Adaptability"],
+      facts: ["38,000+ stores · 80+ markets", "ตัวอย่าง Localization: Teavana และ Matcha ในเอเชีย", "ประโยคปิด: \"the hunger for authentic human connection has never been greater\""],
+      watch: ["ประโยคปิดพูดช้า หยุด 2 วินาที แล้วค่อยพูดขอบคุณ", "หลังจบ ทั้ง 4 คนก้าวมาข้างหน้าพร้อมกันเพื่อ Q&A"],
+      qa: ["How does Starbucks stay consistent in 80+ markets?"] },
+  ],
+
+  slides: [
+    { no: 1, speaker: 1, title: "Title · Crafting a Global Culture", time: "2:00",
+      stage: "ยืนกลางเวที ยิ้ม รอให้ห้องเงียบก่อนเริ่ม [หยุด] พูดประโยคแรกช้ากว่าปกติเล็กน้อย",
+      rows: [
+        { click: "open", screen: "หน้าปก: ชื่อเรื่อง + โลโก้ Siren", en: "Good morning everyone. Today our group will take you through one of the most successful brand stories of the last fifty years: how **Starbucks** used **storytelling** to grow from a single shop in Seattle into a global culture. Our talk has four parts: the origin, the turning point, how the experience was scaled, and the global impact with lessons for business leaders.", th: "สวัสดีครับ/ค่ะ วันนี้กลุ่มของเราจะพาทุกคนไปดูหนึ่งใน Brand Story ที่ประสบความสำเร็จที่สุดในรอบห้าสิบปี นั่นคือ **Starbucks** ใช้ **Storytelling** อย่างไรในการเติบโตจากร้านเดียวใน Seattle สู่วัฒนธรรมระดับโลก การนำเสนอมีสี่ Part: จุดกำเนิด จุดเปลี่ยน การขยาย Experience และ Global Impact พร้อมบทเรียนสำหรับ Business Leader" },
+        { click: 1, screen: "การ์ด 3 ใบ: Origins 1971 · The Product · The Symbol (ขึ้นทีละใบ)", en: "Three things to keep in mind from the start. [CLICK] The origin: **1971**, Pike Place Market in Seattle. [CLICK] The product: whole-bean gourmet coffee, not lattes. [CLICK] And the symbol: the Norse twin-tailed **siren** that is still on every cup today.", th: "สามสิ่งที่อยากให้จำไว้ตั้งแต่ต้น [คลิก] จุดเริ่มต้น: ปี **1971** ที่ Pike Place Market ใน Seattle [คลิก] ผลิตภัณฑ์: Whole-Bean Gourmet Coffee ไม่ใช่ Latte [คลิก] และสัญลักษณ์: **Siren** สองหางจากตำนาน Norse ที่ยังอยู่บนแก้วทุกใบจนถึงวันนี้" },
+        { click: 4, screen: "บรรทัด Next + ป้ายทอง \"1971 · Pike Place, Seattle\"", en: "So let's look at where it all began, in **1971**. [NEXT]", th: "เรามาดูกันว่าทุกอย่างเริ่มต้นที่ไหน ในปี **1971** [NEXT]" },
+      ] },
+    { no: 2, speaker: 1, title: "Chapter 1 · Coffee Beans & Seattle Roots", time: "3:00",
+      stage: "ชี้ไปที่ป้ายทองมุมขวาบนที่เพิ่งบินมา แล้วค่อยหันกลับมาหาผู้ฟัง",
+      rows: [
+        { click: "open", screen: "หัวเรื่อง + ป้าย \"1971 · Pike Place, Seattle\" มุมขวาบน", en: "1971, Pike Place. Before the lattes, Starbucks was a very different company.", th: "ปี 1971 ที่ Pike Place ก่อนยุค Latte Starbucks เป็นบริษัทที่ต่างจากวันนี้มาก" },
+        { click: 1, screen: "การ์ด \"The Founders & Mission\": ชื่อผู้ก่อตั้ง 3 คน + Mission", en: "It was a high-end bean and spice retailer, founded by three partners: **Jerry Baldwin, Zev Siegl and Gordon Bowker**. Their mission was simple: teach Americans how to brew fine **dark-roast coffee** at home. [PAUSE] Notice that there was no cafe, no barista and no cup with your name on it yet.", th: "เป็นร้านขายเมล็ดกาแฟและเครื่องเทศระดับ High-End ก่อตั้งโดยหุ้นส่วนสามคน คือ **Jerry Baldwin, Zev Siegl และ Gordon Bowker** ด้วย Mission ที่เรียบง่าย: สอนให้คนอเมริกันชงกาแฟ **Dark Roast** ชั้นดีได้เองที่บ้าน [หยุด] สังเกตว่าตอนนั้นยังไม่มี Cafe ไม่มี Barista และไม่มีแก้วที่เขียนชื่อคุณ" },
+        { click: 2, screen: "การ์ด \"The Siren Mythos\" + โลโก้", en: "Even the name and the logo were storytelling from day one. The siren comes from a **16th-century Norse woodcut**. She stands for Seattle's nautical tradition and for the irresistible pull of fine coffee, the way sirens pulled sailors toward them.", th: "แม้แต่ชื่อและโลโก้ก็เป็น Storytelling ตั้งแต่วันแรก Siren มาจากภาพแกะไม้แบบ **Norse สมัยศตวรรษที่ 16** เธอสื่อถึงประเพณีการเดินเรือของ Seattle และเสน่ห์ของกาแฟชั้นดีที่ยากจะต้านทาน เหมือน Siren ที่ดึงดูดกะลาสีให้เข้ามาหา" },
+        { click: 3, screen: "แถบเขียว Next → คลิกอีกครั้ง ป้ายทอง \"1983 · The trip to Milan\"", en: "The stage was set, but Starbucks was still missing its biggest magic ingredient… [PAUSE] [CLICK] until **1983**, and a trip to **Milan**. [NEXT]", th: "เวทีพร้อมแล้ว แต่ Starbucks ยังขาดส่วนผสมวิเศษที่สำคัญที่สุด… [หยุด] [คลิก] จนกระทั่งปี **1983** กับทริปไป **Milan** [NEXT]" },
+      ], handoff: "1983 · The trip to Milan", handoffTo: 2 },
+
+    { no: 3, speaker: 2, title: "Chapter 2 · The Italian Inspiration", time: "2:30",
+      stage: "รับช่วงทันทีจากคำว่า Milan ไม่ต้องแนะนำตัว ชี้ที่ป้ายมุมขวาบนหนึ่งครั้ง",
+      rows: [
+        { click: "open", screen: "หัวเรื่อง + ป้าย \"1983 · The trip to Milan\" มุมขวาบน", en: "Thank you. **1983** is the year everything changed, and it changed because one man went on a business trip. **Howard Schultz**, then the marketing director, visited Milan.", th: "ขอบคุณครับ/ค่ะ ปี **1983** คือปีที่ทุกอย่างเปลี่ยนไป และเปลี่ยนเพราะชายคนหนึ่งไป Business Trip **Howard Schultz** ซึ่งตอนนั้นเป็น Marketing Director ได้ไปเยือน Milan" },
+        { click: 1, screen: "Timeline: 1983 · The Discovery", en: "In Milan's espresso bars he noticed something the founders had missed: the bars weren't just selling drinks. They worked as vibrant **community living rooms**, where people met, talked and came back every day.", th: "ใน Espresso Bar ของ Milan เขาสังเกตเห็นสิ่งที่ผู้ก่อตั้งมองข้ามไป: ร้านเหล่านั้นไม่ได้แค่ขายเครื่องดื่ม แต่ทำหน้าที่เป็น **Community Living Room** ที่มีชีวิตชีวา ที่ผู้คนมาพบกัน พูดคุย และกลับมาทุกวัน" },
+        { click: 2, screen: "The Idea · The Vision", en: "His vision: America needs an authentic espresso culture built around three things: **human connection, speed and craftsmanship**. The founders said no, so Schultz left and opened his own cafe, Il Giornale.", th: "Vision ของเขาคือ อเมริกาต้องการวัฒนธรรม Espresso แท้ ๆ ที่สร้างจากสามสิ่ง: **Human Connection, Speed และ Craftsmanship** ผู้ก่อตั้งปฏิเสธ Schultz จึงลาออกไปเปิด Cafe ของตัวเองชื่อ Il Giornale" },
+        { click: 3, screen: "1987 · The Acquisition ($3.8M)", en: "In 1987 he came back and bought Starbucks for **3.8 million dollars**, merged his Il Giornale concept into it, and launched the modern coffeehouse era.", th: "ในปี 1987 เขากลับมาซื้อ Starbucks ในราคา **3.8 ล้านดอลลาร์** รวม Concept ร้าน Il Giornale ของเขาเข้าไป และเปิดศักราช Coffeehouse ยุคใหม่" },
+        { click: 4, screen: "บรรทัด Next → คลิกอีกครั้ง ป้ายทอง \"The Third Place\"", en: "Schultz didn't just want to sell coffee; he wanted to create **a new space in human life**. [PAUSE] [CLICK] He called it the **Third Place**. [NEXT]", th: "Schultz ไม่ได้แค่อยากขายกาแฟ เขาอยากสร้าง**พื้นที่ใหม่ในชีวิตของผู้คน** [หยุด] [คลิก] เขาเรียกมันว่า **The Third Place** [NEXT]" },
+      ] },
+    { no: 4, speaker: 2, title: "Chapter 3 · \"The Third Place\" Framework", time: "2:30",
+      stage: "ตอนพูดถึง Home → Work → Starbucks ให้ใช้มือกวาดจากซ้ายไปขวาตามแถบบนจอ",
+      rows: [
+        { click: "open", screen: "หัวเรื่อง + ป้าย \"The Third Place\" มุมขวาบน", en: "The Third Place is the core brand philosophy. Let me show you what it means.", th: "The Third Place คือปรัชญาหลักของแบรนด์ ขออธิบายว่ามันหมายถึงอะไร" },
+        { click: 1, screen: "แถบ 1st Place Home → 2nd Place Work → 3rd Place Starbucks + Pillar 1", en: "Home is the **first place**. Work is the **second**. Starbucks positioned itself as the **third**: a comforting, pressure-free sanctuary between the two. [PAUSE] This is a **positioning** decision, not a product decision.", th: "บ้านคือ **1st Place** ที่ทำงานคือ **2nd Place** Starbucks วางตำแหน่งตัวเองเป็น **3rd Place**: ที่พักพิงอันอบอุ่น ไร้ความกดดัน ระหว่างสองที่นั้น [หยุด] นี่คือการตัดสินใจเรื่อง **Positioning** ไม่ใช่เรื่อง Product" },
+        { click: 2, screen: "Pillar 2 · Emotional Connection + Quote ของ Schultz", en: "Pillar two is **emotional connection**. In Schultz's words: [PAUSE] \"We aren't in the coffee business serving people; we're in the people business serving coffee.\"", th: "Pillar ที่สองคือ **Emotional Connection** ในคำพูดของ Schultz: [หยุด] \"เราไม่ได้อยู่ในธุรกิจกาแฟที่ให้บริการผู้คน แต่เราอยู่ในธุรกิจผู้คนที่ให้บริการกาแฟ\"" },
+        { click: 3, screen: "Pillar 3 · Atmosphere as a Product (4 แท็ก)", en: "Pillar three treats the **atmosphere itself as a product**: warm lighting, wooden textures, acoustic music and a welcoming aroma. None of these are on the menu, but all of them are part of what you pay for.", th: "Pillar ที่สามมอง **Atmosphere เป็น Product**: แสงไฟอบอุ่น Texture ไม้ ดนตรี Acoustic และกลิ่นหอมชวนต้อนรับ ไม่มีสิ่งใดอยู่ในเมนู แต่ทั้งหมดคือส่วนหนึ่งของสิ่งที่ลูกค้าจ่ายเงินซื้อ" },
+        { click: 4, screen: "แถบเขียว Next → คลิกอีกครั้ง ป้ายทอง \"Human experience, at scale\"", en: "Now that we understand the strategic concept of the Third Place, the obvious question is: [CLICK] how did Starbucks **scale this human experience** to thousands of stores? [NEXT]", th: "เมื่อเข้าใจ Concept เชิงกลยุทธ์ของ Third Place แล้ว คำถามต่อไปคือ [คลิก] Starbucks **ขยาย Human Experience นี้**ไปสู่ร้านหลายพันสาขาได้อย่างไร? [NEXT]" },
+      ], handoff: "Human experience, at scale", handoffTo: 3 },
+
+    { no: 5, speaker: 3, title: "Chapter 4 · Storytelling Through Touchpoints", time: "2:30",
+      stage: "ตอบคำถามของ Speaker 2 ทันทีในประโยคแรก — ผู้ฟังจะรู้สึกว่าเรื่องต่อเนื่อง",
+      rows: [
+        { click: "open", screen: "หัวเรื่อง + ป้าย \"Human experience, at scale\" มุมขวาบน", en: "Thank you. The answer is: through everyday **touchpoints**. A touchpoint is every small moment where the customer meets the brand, and Starbucks designed each one to tell the same story.", th: "ขอบคุณครับ/ค่ะ คำตอบคือ ผ่าน **Touchpoint** ในชีวิตประจำวัน Touchpoint คือทุกช่วงเวลาเล็ก ๆ ที่ลูกค้าได้พบกับแบรนด์ และ Starbucks ออกแบบแต่ละจุดให้เล่าเรื่องเดียวกัน" },
+        { click: 1, screen: "Touchpoint 1 · Personalization & Connection", en: "First, **personalization and connection**: your name on the cup, eye contact from the barista, and a handcrafted drink you can customize. The cup with your name is the Third Place in your hand.", th: "หนึ่ง **Personalization และ Connection**: ชื่อของคุณบนแก้ว Barista สบตาขณะให้บริการ และเครื่องดื่ม Handcrafted ที่ Customize ได้ แก้วที่มีชื่อคุณก็คือ Third Place ในมือคุณ" },
+        { click: 2, screen: "Touchpoint 2 · Sensory Consistency", en: "Second, **sensory consistency**: the same ambient design, the same signature scents, the same curated playlists in Bangkok, Seattle or Milan. Consistency is what turns a cafe into a brand.", th: "สอง **Sensory Consistency**: Ambient Design เดียวกัน กลิ่น Signature เดียวกัน Playlist ที่คัดสรรเดียวกัน ไม่ว่าจะที่กรุงเทพ Seattle หรือ Milan Consistency คือสิ่งที่เปลี่ยน Cafe ให้เป็น Brand" },
+        { click: 3, screen: "Touchpoint 3 · Community Customization", en: "Third, **community customization**: the store architecture reflects the neighborhood's heritage, while the core brand values stay the same. Same story, local accent.", th: "สาม **Community Customization**: สถาปัตยกรรมของร้านสะท้อน Heritage ของย่านนั้น ๆ ขณะที่ Core Values ของแบรนด์ยังคงเดิม เรื่องเดียวกัน แต่มีสำเนียงท้องถิ่น" },
+        { click: 4, screen: "บรรทัด Next → คลิกอีกครั้ง ป้ายทอง \"The digital Third Place\"", en: "But customer lifestyles changed. People order on their phones and drink in their cars. [CLICK] So Starbucks had to bring the Third Place into the **digital age**. [NEXT]", th: "แต่ Lifestyle ของลูกค้าเปลี่ยนไป ผู้คนสั่งผ่านโทรศัพท์และดื่มในรถ [คลิก] Starbucks จึงต้องพา Third Place เข้าสู่ยุค **Digital** [NEXT]" },
+      ] },
+    { no: 6, speaker: 3, title: "Chapter 5 · The Digital \"Third Place\"", time: "2:30",
+      stage: "สไลด์นี้คลิกเยอะ (4 การ์ด + โทรศัพท์) — คลิกตามจังหวะพูด อย่ากดรวดเดียว",
+      rows: [
+        { click: "open", screen: "หัวเรื่อง + ป้าย \"The digital Third Place\" มุมขวาบน", en: "The digital side extends the same idea: hospitality in the store, convenience on the phone.", th: "ฝั่ง Digital ต่อยอด Concept เดียวกัน: Hospitality ที่หน้าร้าน ความสะดวกบนโทรศัพท์" },
+        { click: 1, screen: "การ์ด Starbucks Rewards App → การ์ด Mobile Order & Pay", en: "The Starbucks Rewards app is a gamified loyalty program with **over 30 million active members**. [CLICK] Mobile Order and Pay removes the friction: you order before you arrive and your drink is waiting.", th: "แอป Starbucks Rewards เป็น Loyalty Program แบบ Gamified มี **Active Member กว่า 30 ล้านคน** [คลิก] Mobile Order and Pay ตัด Friction ออกไป: สั่งก่อนถึงร้าน แล้วเครื่องดื่มรอคุณอยู่แล้ว" },
+        { click: 3, screen: "การ์ด Digital Personalization → การ์ด Modern Omnichannel → รูปโทรศัพท์", en: "Digital personalization uses an **AI-driven recommendation engine** that tailors offers to your taste. [CLICK] And the omnichannel model keeps the human connection alive even through drive-thru and delivery. [CLICK] The phone has become the new front door of the Third Place.", th: "Digital Personalization ใช้ **Recommendation Engine ที่ขับเคลื่อนด้วย AI** ปรับข้อเสนอให้ตรงรสนิยมของคุณ [คลิก] และโมเดล Omnichannel รักษา Human Connection ไว้ แม้ผ่าน Drive-thru และ Delivery [คลิก] โทรศัพท์กลายเป็นประตูหน้าบานใหม่ของ Third Place" },
+        { click: 6, screen: "แถบเขียว Next → คลิกอีกครั้ง ป้ายทอง \"Global reach & scale\"", en: "Having mastered both the physical experience and digital innovation, [CLICK] what is the **global business impact**? [NEXT]", th: "เมื่อเชี่ยวชาญทั้ง Physical Experience และ Digital Innovation แล้ว [คลิก] **Global Business Impact** เป็นอย่างไร? [NEXT]" },
+      ], handoff: "Global reach & scale", handoffTo: 4 },
+
+    { no: 7, speaker: 4, title: "Chapter 6 · Global Reach & Scale", time: "2:00",
+      stage: "ตัวเลขใหญ่สองตัว พูดช้า หยุดหลังแต่ละตัวเลขให้ผู้ฟังได้อ่าน",
+      rows: [
+        { click: "open", screen: "หัวเรื่อง + ป้าย \"Global reach & scale\" มุมขวาบน", en: "Thank you. Let's talk about scale.", th: "ขอบคุณครับ/ค่ะ มาพูดถึง Scale กัน" },
+        { click: 1, screen: "กล่อง 38,000+ → กล่อง 80+ (พร้อมลูกโลก)", en: "Today this story is told in more than **38,000 stores**, [PAUSE] [CLICK] in more than **80 markets** around the world. That is the scale of a brand built on a Third Place and a name on a cup.", th: "วันนี้เรื่องราวนี้ถูกเล่าในร้านกว่า **38,000 สาขา** [หยุด] [คลิก] ในกว่า **80 ตลาด** ทั่วโลก นี่คือ Scale ของแบรนด์ที่สร้างขึ้นจาก Third Place และชื่อบนแก้ว" },
+        { click: 3, screen: "การ์ด Key growth strategy (3 ข้อ)", en: "Three moves made that scale possible. **Strategic joint ventures** with local partners opened new markets. **Market customization** adapted the menu, for example Teavana and matcha drinks in Asia. And the **Reserve Roasteries**, high-end flagships, act as storytellers for the whole brand.", th: "สามกลยุทธ์ที่ทำให้ขยายได้ขนาดนี้ **Strategic Joint Venture** กับ Partner ท้องถิ่นเปิดตลาดใหม่ **Market Customization** ปรับเมนู เช่น Teavana และเครื่องดื่ม Matcha ในเอเชีย และ **Reserve Roasteries** ร้าน Flagship ระดับ High-End ทำหน้าที่เป็น Storyteller ของทั้งแบรนด์" },
+        { click: 4, screen: "บรรทัด Next → คลิกอีกครั้ง ป้ายทอง \"Lessons for business leaders\"", en: "So what can **business leaders** learn from this story? [CLICK] Three lessons. [NEXT]", th: "แล้ว **Business Leader** เรียนรู้อะไรได้บ้างจากเรื่องราวนี้? [คลิก] สามบทเรียนครับ/ค่ะ [NEXT]" },
+      ] },
+    { no: 8, speaker: 4, title: "Key Business Lessons & Summary", time: "3:00",
+      stage: "บทเรียนละหนึ่งประโยค คลิกก่อนพูดแต่ละข้อ ประโยคปิดพูดช้า หยุด 2 วินาที แล้วทั้งทีมก้าวออกมาพร้อมกัน",
+      rows: [
+        { click: "open", screen: "หัวเรื่อง + ป้าย \"Lessons for business leaders\" มุมขวาบน", en: "Three lessons for business leaders.", th: "สามบทเรียนสำหรับ Business Leader" },
+        { click: 1, screen: "Lesson 1 · Product vs. Experience", en: "Lesson one, **product versus experience**: products can be commoditized, but a brand experience builds a **competitive moat**.", th: "บทเรียนที่หนึ่ง **Product กับ Experience**: Product ถูกทำให้เป็น Commodity ได้ แต่ Brand Experience สร้าง **Competitive Moat**" },
+        { click: 2, screen: "Lesson 2 · Authenticity & Consistency", en: "Lesson two, **authenticity and consistency**: core brand values must stay the same even during rapid global expansion.", th: "บทเรียนที่สอง **Authenticity และ Consistency**: Core Brand Values ต้องคงเดิม แม้ขยายตัวทั่วโลกอย่างรวดเร็ว" },
+        { click: 3, screen: "Lesson 3 · Strategic Adaptability", en: "Lesson three, **strategic adaptability**: Starbucks merged the physical third-place atmosphere with a cutting-edge digital ecosystem, instead of choosing one over the other.", th: "บทเรียนที่สาม **Strategic Adaptability**: Starbucks ผสานบรรยากาศ Third Place แบบ Physical เข้ากับ Digital Ecosystem ที่ล้ำสมัย แทนที่จะเลือกอย่างใดอย่างหนึ่ง" },
+        { click: 4, screen: "แถบเขียว Quote", en: "We close with this thought. [PAUSE] In a world that is increasingly digital and isolated, the hunger for **authentic human connection** has never been greater. [PAUSE] That hunger is the market Starbucks has served for fifty years.", th: "ขอปิดท้ายด้วยข้อคิดนี้ [หยุด] ในโลกที่ Digital และโดดเดี่ยวมากขึ้นทุกที ความโหยหา **Human Connection** ที่แท้จริงไม่เคยยิ่งใหญ่เท่านี้มาก่อน [หยุด] ความโหยหานั้นคือตลาดที่ Starbucks ให้บริการมาตลอดห้าสิบปี" },
+        { click: 5, screen: "บรรทัด Q&A — ทั้ง 4 คนก้าวออกมา", en: "Thank you. We welcome any questions from the class.", th: "ขอบคุณครับ/ค่ะ ยินดีรับทุกคำถามจากเพื่อน ๆ ในชั้นเรียน" },
+      ] },
+  ],
+
+  qa: [
+    { q: "Isn't the Third Place just a cafe with nicer chairs?", en: "No: it is a positioning choice. Starbucks sells the time between home and work; the coffee is the ticket in. That positioning lets it price above commodity coffee.", th: "ไม่ใช่ มันคือการวาง Positioning Starbucks ขายช่วงเวลาระหว่างบ้านกับที่ทำงาน กาแฟคือตั๋วเข้า การวางตำแหน่งนี้ทำให้ตั้งราคาสูงกว่ากาแฟทั่วไปได้", who: "Speaker 2" },
+    { q: "Why did the founders refuse Schultz's idea?", en: "They were bean retailers and saw themselves as coffee purists; serving drinks felt like a different business. Schultz proved the model with Il Giornale first, then bought the company in 1987.", th: "ผู้ก่อตั้งเป็นผู้ค้าเมล็ดกาแฟและมองตัวเองเป็นนักกาแฟสายบริสุทธิ์ การขายเครื่องดื่มดูเป็นคนละธุรกิจ Schultz จึงพิสูจน์โมเดลด้วย Il Giornale ก่อน แล้วซื้อบริษัทในปี 1987", who: "Speaker 2" },
+    { q: "Does the app weaken the Third Place?", en: "It changes it. Mobile Order removes the queue, and the app keeps the personal touch (your name, your usual drink). The risk is that stores become pick-up counters, which is why Starbucks keeps investing in store design.", th: "มันเปลี่ยนรูปแบบ Mobile Order ตัดคิว และแอปยังรักษาความเป็นส่วนตัว (ชื่อคุณ เครื่องดื่มประจำ) ความเสี่ยงคือร้านกลายเป็นจุดรับของ Starbucks จึงยังลงทุนกับการออกแบบร้าน", who: "Speaker 3" },
+    { q: "How does Starbucks stay consistent in 80+ markets?", en: "Joint ventures with local partners run the stores, but brand standards (design, service ritual, core menu) are global; only the local menu layer changes, for example matcha in Asia.", th: "ร้านดำเนินโดย Partner ร่วมทุนท้องถิ่น แต่มาตรฐานแบรนด์ (การออกแบบ พิธีการบริการ เมนูหลัก) เป็นสากล เปลี่ยนเฉพาะชั้นเมนูท้องถิ่น เช่น Matcha ในเอเชีย", who: "Speaker 4" },
+    { q: "Can a small business copy this?", en: "Yes, the principle scales down: pick one experience you can deliver consistently, name it, and design every touchpoint around it. You don't need 38,000 stores to own a Third Place in one neighborhood.", th: "ได้ หลักการย่อส่วนได้: เลือกประสบการณ์หนึ่งที่ส่งมอบได้สม่ำเสมอ ตั้งชื่อมัน และออกแบบทุก Touchpoint รอบมัน ไม่ต้องมี 38,000 สาขาก็เป็น Third Place ของย่านหนึ่งได้", who: "Speaker 1" },
+  ],
+
+  checklist: [
+    "เปิดไฟล์ **Starbucks_Storytelling_Masterclass.pptx** (หรือ .html) ทดสอบคลิกให้ครบทุกสไลด์ก่อนเริ่ม 1 ครั้ง — ดูว่าป้ายทองบินข้ามสไลด์ได้",
+    "ตกลงกันว่าใช้ภาษาเดียวทั้งทีม: สไลด์ 1–8 (English) หรือ 9–16 (ไทย)",
+    "คนกดสไลด์ = คนที่กำลังพูด หรือมอบหมายคนเดียวกดทั้งงาน (ต้องซ้อมจังหวะ [CLICK] ด้วยกัน)",
+    "ผู้พูดคนถัดไปยืนรอข้างเวทีก่อนถึงบรรทัด Next ของคนก่อนหน้า จะได้รับช่วงทันทีที่ป้ายบิน",
+    "ตัวเลขที่ต้องพูดให้ตรง: 1971 · 1983 · 1987 · $3.8M · 30M+ · 38,000+ · 80+",
+    "ซ้อมจับเวลาทั้งเรื่อง 1 รอบ: เป้าหมาย 20 นาที (±1) ไม่รวม Q&A",
+  ],
+};
