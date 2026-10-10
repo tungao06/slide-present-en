@@ -26,19 +26,19 @@
   ],
   "sections": {
     "part1": {
-      "description": "Part 1, Speaker 1: the foundation and origin of the brand in 1971 Seattle.",
+      "description": "Part 1: the foundation and origin of the brand in 1971 Seattle.",
       "start": "s1-title"
     },
     "part2": {
-      "description": "Part 2, Speaker 2: the Milan turning point and the Third Place concept.",
+      "description": "Part 2: the Milan turning point and the Third Place concept.",
       "start": "s3-milan"
     },
     "part3": {
-      "description": "Part 3, Speaker 3: scaling the experience through touchpoints and digital.",
+      "description": "Part 3: scaling the experience through touchpoints and digital.",
       "start": "s5-touchpoints"
     },
     "part4": {
-      "description": "Part 4, Speaker 4: global impact and the MBA takeaways.",
+      "description": "Part 4: global impact and the MBA takeaways.",
       "start": "s7-global"
     },
     "thai": {
