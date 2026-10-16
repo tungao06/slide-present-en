@@ -81,3 +81,17 @@ python MGT520/tools/split_video.py --out "D:/split" --recursive      # ที่
 
 ผลลัพธ์: `videos_split/<ชื่อวิดีโอ>/<ชื่อวิดีโอ> part 01 (00-00-00).mp4` เลข part เรียงตามเวลา ในวงเล็บคือเวลาเริ่มในวิดีโอต้นฉบับ
 ไฟล์ที่เล็กกว่าที่กำหนดอยู่แล้วจะถูกข้าม
+
+## เติมชื่อโฟลเดอร์หน้าชื่อไฟล์ (`prefix_rename.py`)
+
+เปลี่ยนชื่อทุกไฟล์ในโฟลเดอร์ (รวมโฟลเดอร์ย่อย) เป็น `<ชื่อโฟลเดอร์>_<ชื่อเดิม>`
+
+```bash
+python MGT520/tools/prefix_rename.py "D:/VDO/split" --dry-run    # ดูก่อนว่าจะได้ชื่ออะไร ยังไม่เปลี่ยนจริง
+python MGT520/tools/prefix_rename.py "D:/VDO/split"              # เปลี่ยนจริง: split/x/a.mp4 -> split/x/split_a.mp4
+python MGT520/tools/prefix_rename.py "D:/VDO/split" --parent     # ใช้ชื่อโฟลเดอร์ที่ไฟล์อยู่: split/x/a.mp4 -> split/x/x_a.mp4
+python MGT520/tools/prefix_rename.py "D:/VDO/split" --sep " - "  # เปลี่ยนตัวคั่น: split - a.mp4
+python MGT520/tools/prefix_rename.py "D:/VDO/split" --undo       # คืนชื่อเดิม
+```
+
+ไฟล์ที่มีชื่อโฟลเดอร์นำหน้าอยู่แล้วจะถูกข้าม รันซ้ำได้ไม่เติมซ้ำ ทุกการเปลี่ยนชื่อบันทึกไว้ใน `rename_log.tsv` ในโฟลเดอร์นั้น (ใช้กับ `--undo`)
