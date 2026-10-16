@@ -2,7 +2,7 @@
 
 สคริปต์ `extract_video.py` จะทำ 3 อย่างกับวิดีโอแต่ละไฟล์ใน `MGT520/videos/`
 
-1. ดึงรูปทุกครั้งที่สไลด์เปลี่ยน (และอย่างน้อยทุก 60 วินาที)
+1. ดึงรูปทุกครั้งที่สไลด์เปลี่ยน (และอย่างน้อยทุก 30 วินาที)
 2. ถอดเสียงภาษาไทยด้วย Whisper เป็น `transcript.srt` / `transcript.txt` พร้อมเวลา
 3. รวมเป็น `notes.md` คือรูปสไลด์แต่ละหน้าตามด้วยสิ่งที่ อ. พูดตอนสไลด์นั้น
 
@@ -35,7 +35,7 @@ Thonburian Whisper (`biodatlab/whisper-th-large-v3-combined`) คือ Whisper 
 ```bash
 pip install transformers torch
 python MGT520/tools/convert_thai_model.py
-python MGT520/tools/extract_video.py "MGT520/videos/01-วัฒนธรรมองค์กร ep3.mp4" --model thai
+python MGT520/tools/extract_video.py "MGT520/videos/01-วัฒนธรรมองค์กร ep3.mp4"   # ใช้โมเดลไทยให้อัตโนมัติ
 ```
 
 ตัวเลือก
