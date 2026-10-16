@@ -105,12 +105,28 @@ def slide_vocabulary(video, limit=60):
     return [w for w, _ in words.most_common(limit)]
 
 
+def load_audio(video, rate=16000):
+    """Decode audio with ffmpeg rather than faster-whisper's PyAV, whose API
+    breaks between versions."""
+    import numpy as np
+
+    proc = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-nostdin", "-i", str(video), "-vn",
+         "-ac", "1", "-ar", str(rate), "-f", "s16le", "-"],
+        capture_output=True,
+    )
+    if proc.returncode != 0:
+        sys.exit(f"ffmpeg could not read audio from {video}:\n"
+                 f"{proc.stderr.decode('utf-8', 'replace')[-2000:]}")
+    return np.frombuffer(proc.stdout, np.int16).astype(np.float32) / 32768.0
+
+
 def transcribe(video, model_name, language, precision, prompt):
     from faster_whisper import WhisperModel
 
     model = WhisperModel(model_name, device="auto", compute_type=precision)
     segments, _ = model.transcribe(
-        str(video),
+        load_audio(video),
         language=language,
         beam_size=5,
         best_of=5,
