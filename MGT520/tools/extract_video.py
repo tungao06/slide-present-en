@@ -24,6 +24,7 @@ import os
 import re
 import subprocess
 import sys
+import traceback
 from collections import Counter
 from pathlib import Path
 
@@ -170,38 +171,56 @@ def load_model(model_name, precision, use_cpu):
     return model
 
 
-def transcribe(model, video, language, prompt, beam, vad):
-    segments, _ = model.transcribe(
-        load_audio(video),
-        language=language,
-        beam_size=beam,
-        best_of=beam,
-        vad_filter=vad,
-        # lenient: keep quiet or hesitant speech rather than cutting it out
-        vad_parameters={"threshold": 0.3, "min_silence_duration_ms": 2000, "speech_pad_ms": 600},
-        initial_prompt=prompt or None,
-        # stops one misheard line from snowballing into repeated garbage
-        condition_on_previous_text=False,
-    )
+REPEAT = re.compile(r"(.{2,40}?)(?:\s*\1){3,}")
+
+
+def collapse_repeats(text):
+    """'สวัสดีครับ สวัสดีครับ สวัสดีครับ ...' (a Whisper loop on silence) -> one copy."""
+    return REPEAT.sub(r"\1", text)
+
+
+def transcribe(model, video, language, prompt, beam, batch, sequential):
+    """Default: cut the audio at the teacher's pauses (VAD, very lenient so quiet speech
+    stays in), then decode the pieces in GPU batches. The Thai model gives no timestamps
+    of its own, so plain decoding would cut every 30 s even mid-word."""
+    from faster_whisper import BatchedInferencePipeline
+
+    options = dict(language=language, beam_size=beam, initial_prompt=prompt or None)
+    audio = load_audio(video)
+    if sequential:
+        segments, _ = model.transcribe(audio, best_of=beam, vad_filter=False,
+                                       condition_on_previous_text=False, **options)
+    else:
+        segments, _ = BatchedInferencePipeline(model).transcribe(
+            audio, batch_size=batch, vad_filter=True,
+            vad_parameters={"threshold": 0.25, "min_silence_duration_ms": 300, "speech_pad_ms": 400},
+            **options,
+        )
     result = []
     for seg in segments:
-        text = seg.text.strip()
+        raw = seg.text.strip()
+        text = collapse_repeats(raw)
         if not text:
             continue
-        # low confidence, looping text, or likely silence: keep it, but flag for checking
-        unsure = seg.avg_logprob < -0.8 or seg.compression_ratio > 2.4 or seg.no_speech_prob > 0.5
-        result.append((seg.start, seg.end, text, unsure))
+        # low confidence or looping text: keep it, but flag for checking
+        unsure = text != raw or seg.avg_logprob < -1.0 or seg.compression_ratio > 2.4
+        result.append((seg.start, seg.end, text, unsure, round(seg.avg_logprob, 3)))
         print(f"  [{ts(seg.start)}]{' [?]' if unsure else ''} {text}", flush=True)
     return result
 
 
 def write_transcript(out_dir, segments):
     with open(out_dir / "transcript.srt", "w", encoding="utf-8") as f:
-        for i, (start, end, text, _) in enumerate(segments, 1):
+        for i, (start, end, text, *_) in enumerate(segments, 1):
             f.write(f"{i}\n{srt_ts(start)} --> {srt_ts(end)}\n{text}\n\n")
     with open(out_dir / "transcript.txt", "w", encoding="utf-8") as f:
-        for start, _, text, unsure in segments:
+        for start, _, text, unsure, _ in segments:
             f.write(f"[{ts(start)}]{' [?]' if unsure else ''} {text}\n")
+    # per-segment confidence, to tune the [?] threshold later
+    with open(out_dir / "segments.tsv", "w", encoding="utf-8") as f:
+        f.write("start\tend\tavg_logprob\tunsure\ttext\n")
+        for start, end, text, unsure, logprob in segments:
+            f.write(f"{start:.2f}\t{end:.2f}\t{logprob}\t{int(unsure)}\t{text}\n")
 
 
 def write_notes(out_dir, title, frames, segments):
@@ -218,7 +237,7 @@ def write_notes(out_dir, title, frames, segments):
         lines.append(f"![{ts(t)}]({rel.replace(' ', '%20')})")
         lines.append("")
         said = [("[?] " if unsure else "") + text
-                for start, _, text, unsure in segments if t <= start < until]
+                for start, _, text, unsure, _ in segments if t <= start < until]
         if said:
             lines.append(" ".join(said))
             lines.append("")
@@ -245,8 +264,9 @@ def main():
     ap.add_argument("--prompt", help="extra terms to help Whisper spell names/jargon")
     ap.add_argument("--no-prompt", action="store_true",
                     help="don't feed slide vocabulary to Whisper (default for --model thai)")
-    ap.add_argument("--vad", action="store_true",
-                    help="skip detected silence: faster, but quiet speech can be lost (off by default)")
+    ap.add_argument("--batch", type=int, default=8, help="pieces decoded at once on the GPU; lower if out of memory")
+    ap.add_argument("--sequential", action="store_true",
+                    help="decode the whole audio in fixed 30 s windows instead of cutting at pauses")
     ap.add_argument("--scene", type=float, default=0.1, help="slide-change sensitivity, lower = more frames")
     ap.add_argument("--min-gap", type=float, default=3, help="min seconds between slide-change frames")
     ap.add_argument("--settle", type=float, default=1.5, help="seconds after a change to grab the frame")
@@ -281,30 +301,45 @@ def main():
     videos = args.videos or sorted(
         p for p in (ROOT / "videos").iterdir() if p.suffix.lower() in VIDEO_EXTS
     )
+    failed = []
     for video in videos:
         if video.stat().st_size < 1024:
             print(f"skip {video.name}: only a Git LFS pointer, copy the real video here first")
             continue
         out_dir = args.out / video.stem
         out_dir.mkdir(parents=True, exist_ok=True)
+        (out_dir / "error.txt").unlink(missing_ok=True)
         print(f"== {video.name}")
-        frames = extract_frames(video, out_dir, args.scene, args.interval,
-                                args.min_gap, args.settle, args.width)
-        print(f"  {len(frames)} frames")
-        segments = []
-        if not args.frames_only:
-            topic = re.sub(r"^\d+-|\s*ep\d+$", "", video.stem)
-            parts = [f"วิชา MGT520 เรื่อง{topic}", *slide_vocabulary(video)] if auto_prompt else []
-            prompt = ", ".join(parts + ([args.prompt] if args.prompt else []))
-            if prompt:
-                print(f"  prompt: {prompt[:120]}...")
-            segments = transcribe(model, video, args.language, prompt, args.beam, args.vad)
-            write_transcript(out_dir, segments)
-            flagged = sum(s[3] for s in segments)
-            print(f"  {len(segments)} segments, {flagged} marked [?]")
-        write_notes(out_dir, video.stem, frames, segments)
-        print(f"  -> {out_dir}")
+        try:
+            process_video(video, out_dir, args, model, auto_prompt)
+        except (Exception, SystemExit):
+            # keep going with the other videos; the traceback is saved next to the output
+            err = traceback.format_exc()
+            (out_dir / "error.txt").write_text(err, encoding="utf-8")
+            print(f"  FAILED, see {out_dir / 'error.txt'}\n{err}", flush=True)
+            failed.append(video.name)
+    if failed:
+        sys.exit(f"{len(failed)} video(s) failed: {', '.join(failed)}")
 
+
+def process_video(video, out_dir, args, model, auto_prompt):
+    frames = extract_frames(video, out_dir, args.scene, args.interval,
+                            args.min_gap, args.settle, args.width)
+    print(f"  {len(frames)} frames")
+    segments = []
+    if not args.frames_only:
+        topic = re.sub(r"^\d+-|\s*ep\d+$", "", video.stem)
+        parts = [f"วิชา MGT520 เรื่อง{topic}", *slide_vocabulary(video)] if auto_prompt else []
+        prompt = ", ".join(parts + ([args.prompt] if args.prompt else []))
+        if prompt:
+            print(f"  prompt: {prompt[:120]}...")
+        segments = transcribe(model, video, args.language, prompt,
+                              args.beam, args.batch, args.sequential)
+        write_transcript(out_dir, segments)
+        flagged = sum(s[3] for s in segments)
+        print(f"  {len(segments)} segments, {flagged} marked [?]")
+    write_notes(out_dir, video.stem, frames, segments)
+    print(f"  -> {out_dir}")
 
 if __name__ == "__main__":
     main()
