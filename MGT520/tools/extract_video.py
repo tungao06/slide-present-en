@@ -2,7 +2,7 @@
 
 Tuned for accuracy over speed. For each video it writes MGT520/extracted/<video name>/:
   frames/NNNN_HH-MM-SS.jpg  one full-resolution frame per slide, grabbed after the
-                            slide has settled (not mid-transition); at least one per --interval s
+                            slide has settled (not mid-transition); at least one every 30 s
   transcript.srt            subtitles with timestamps
   transcript.txt            one line per segment, [HH:MM:SS]; lines Whisper is unsure of
                             are marked [?] so they can be checked against the video
@@ -188,7 +188,8 @@ def transcribe(model, video, language, prompt, beam, vad):
         text = seg.text.strip()
         if not text:
             continue
-        unsure = seg.avg_logprob < -0.8 or seg.compression_ratio > 2.4
+        # low confidence, looping text, or likely silence: keep it, but flag for checking
+        unsure = seg.avg_logprob < -0.8 or seg.compression_ratio > 2.4 or seg.no_speech_prob > 0.5
         result.append((seg.start, seg.end, text, unsure))
         print(f"  [{ts(seg.start)}]{' [?]' if unsure else ''} {text}", flush=True)
     return result
@@ -228,28 +229,35 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("videos", nargs="*", type=Path, help="default: every video in MGT520/videos")
     ap.add_argument("--out", type=Path, default=ROOT / "extracted")
-    ap.add_argument("--model", default="large-v3",
-                    help="large-v3, or 'thai' for Thonburian Whisper (run convert_thai_model.py first)")
+    ap.add_argument("--model", default="auto",
+                    help="auto (Thai model if built, else large-v3), thai, or large-v3")
     ap.add_argument("--precision", default=None,
                     help="compute type; default float16 on GPU, float32 on CPU")
-    ap.add_argument("--beam", type=int, default=5, help="beam size; higher = slower, slightly more accurate")
+    ap.add_argument("--beam", type=int, default=10, help="beam size; higher = slower, slightly more accurate")
     ap.add_argument("--cpu", action="store_true", help="run on CPU instead of the GPU (much slower)")
     ap.add_argument("--check-gpu", action="store_true", help="only test that the GPU works, then exit")
     ap.add_argument("--language", default="th")
     ap.add_argument("--prompt", help="extra terms to help Whisper spell names/jargon")
     ap.add_argument("--no-prompt", action="store_true",
                     help="don't feed slide vocabulary to Whisper (default for --model thai)")
-    ap.add_argument("--no-vad", action="store_true",
-                    help="transcribe every second instead of only detected speech (if lines go missing)")
+    ap.add_argument("--vad", action="store_true",
+                    help="skip detected silence: faster, but quiet speech can be lost (off by default)")
     ap.add_argument("--scene", type=float, default=0.1, help="slide-change sensitivity, lower = more frames")
     ap.add_argument("--min-gap", type=float, default=3, help="min seconds between slide-change frames")
     ap.add_argument("--settle", type=float, default=1.5, help="seconds after a change to grab the frame")
-    ap.add_argument("--interval", type=float, default=60, help="max seconds between frames")
+    ap.add_argument("--interval", type=float, default=30, help="max seconds between frames")
     ap.add_argument("--width", type=int, default=0, help="max frame width in px (0 = original)")
     ap.add_argument("--frames-only", action="store_true")
     args = ap.parse_args()
 
     auto_prompt = not args.no_prompt
+    if args.model == "auto":
+        if (THAI_MODEL / "model.bin").exists():
+            args.model = "thai"
+        else:
+            args.model = "large-v3"
+            print("note: Thai model not built, using large-v3. For better Thai run once:\n"
+                  "  pip install transformers torch && python MGT520/tools/convert_thai_model.py")
     if args.model == "thai":
         if not (THAI_MODEL / "model.bin").exists():
             sys.exit("Thai model not built yet. Run once:\n"
@@ -285,7 +293,7 @@ def main():
             prompt = ", ".join(parts + ([args.prompt] if args.prompt else []))
             if prompt:
                 print(f"  prompt: {prompt[:120]}...")
-            segments = transcribe(model, video, args.language, prompt, args.beam, not args.no_vad)
+            segments = transcribe(model, video, args.language, prompt, args.beam, args.vad)
             write_transcript(out_dir, segments)
             flagged = sum(s[3] for s in segments)
             print(f"  {len(segments)} segments, {flagged} marked [?]")
