@@ -31,6 +31,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]  # MGT520/
 THAI_MODEL = ROOT / "models" / "whisper-th-large-v3-ct2"  # built by convert_thai_model.py
 VIDEO_EXTS = {".mp4", ".mov", ".mkv", ".m4v", ".webm"}
+AUDIO_EXTS = {".m4a", ".mp3", ".wav", ".aac", ".ogg", ".flac"}  # class recordings: transcript only
 COMMON_WORDS = {"that", "this", "with", "from", "have", "your", "they", "will", "what",
                 "when", "which", "their", "there", "about", "into", "more", "than", "http",
                 "https", "www", "html", "slide"}
@@ -231,6 +232,9 @@ def write_notes(out_dir, title, frames, segments):
         lines += ["_[?] = ช่วงที่ระบบถอดเสียงไม่มั่นใจ ควรเทียบกับวิดีโอ_", ""]
     else:
         lines += ["_No transcript (run without --frames-only to add one)._", ""]
+    if not frames:  # audio recording: timestamped text only
+        lines += [f"**[{ts(start)}]** {'[?] ' if unsure else ''}{text}\n"
+                  for start, _, text, unsure, _ in segments]
     bounds = [t for t, _ in frames[1:]] + [float("inf")]
     for (t, path), until in zip(frames, bounds):
         rel = path.relative_to(out_dir).as_posix()
@@ -303,7 +307,7 @@ def main():
         return
 
     videos = args.videos or sorted(
-        p for p in (ROOT / "videos").iterdir() if p.suffix.lower() in VIDEO_EXTS
+        p for p in (ROOT / "videos").iterdir() if p.suffix.lower() in VIDEO_EXTS | AUDIO_EXTS
     )
     failed = []
     for video in videos:
@@ -326,11 +330,22 @@ def main():
         sys.exit(f"{len(failed)} video(s) failed: {', '.join(failed)}")
 
 
+def has_video(path):
+    out = run(["ffprobe", "-v", "error", "-select_streams", "v", "-show_entries",
+               "stream=codec_type,disposition=attached_pic", "-of", "csv=p=0", str(path)]).stdout
+    # cover art in an .m4a shows up as a video stream marked attached_pic
+    return any(line.startswith("video") and not line.endswith(",1") for line in out.splitlines())
+
+
 def process_video(video, out_dir, args, model, auto_prompt):
-    print("  finding slide changes (reads the whole video, a few minutes) ...", flush=True)
-    frames = extract_frames(video, out_dir, args.scene, args.interval,
-                            args.min_gap, args.settle, args.width)
-    print(f"  {len(frames)} frames")
+    frames = []
+    if has_video(video):
+        print("  finding slide changes (reads the whole video, a few minutes) ...", flush=True)
+        frames = extract_frames(video, out_dir, args.scene, args.interval,
+                                args.min_gap, args.settle, args.width)
+        print(f"  {len(frames)} frames")
+    else:
+        print("  audio only: no frames, transcript only", flush=True)
     segments = []
     if not args.frames_only:
         print("  transcribing ...", flush=True)
