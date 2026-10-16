@@ -10,6 +10,7 @@ Writes MGT520/models/whisper-th-large-v3-ct2/ (about 3 GB, git-ignored). Then us
 
 import argparse
 import shutil
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]  # MGT520/
@@ -19,6 +20,8 @@ NEEDED = ("model.bin", "preprocessor_config.json", "tokenizer.json")
 
 
 def main():
+    for stream in (sys.stdout, sys.stderr):
+        stream.reconfigure(encoding="utf-8", errors="replace")
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--repo", default=REPO, help="Hugging Face model to convert")
     ap.add_argument("--out", type=Path, default=OUT)

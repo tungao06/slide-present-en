@@ -250,6 +250,9 @@ def thai_model_ready():
 
 
 def main():
+    # Windows writes piped output (e.g. `| tee log.txt`) as cp1252, which has no Thai
+    for stream in (sys.stdout, sys.stderr):
+        stream.reconfigure(encoding="utf-8", errors="replace")
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("videos", nargs="*", type=Path, help="default: every video in MGT520/videos")
     ap.add_argument("--out", type=Path, default=ROOT / "extracted")
