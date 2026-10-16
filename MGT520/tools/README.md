@@ -14,6 +14,7 @@
 winget install Gyan.FFmpeg      # แล้วปิดเปิด PowerShell ใหม่
 winget install Python.Python.3.12
 pip install faster-whisper pypdf
+pip install nvidia-cublas-cu12 nvidia-cudnn-cu12   # ถ้ามีการ์ดจอ NVIDIA (ไม่มีก็ข้ามได้)
 ```
 
 ## รัน

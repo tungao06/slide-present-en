@@ -20,6 +20,7 @@ Needs ffmpeg on PATH (Windows: `winget install Gyan.FFmpeg`).
 """
 
 import argparse
+import os
 import re
 import subprocess
 import sys
@@ -121,12 +122,38 @@ def load_audio(video, rate=16000):
     return np.frombuffer(proc.stdout, np.int16).astype(np.float32) / 32768.0
 
 
+def add_nvidia_dlls():
+    """On Windows, `pip install nvidia-cublas-cu12 nvidia-cudnn-cu12` puts the CUDA DLLs
+    under site-packages/nvidia/*/bin, which Windows does not search by itself."""
+    if os.name != "nt":
+        return
+    for base in sys.path:
+        for bin_dir in Path(base).glob("nvidia/*/bin"):
+            os.add_dll_directory(str(bin_dir))
+            os.environ["PATH"] = f"{bin_dir}{os.pathsep}{os.environ['PATH']}"
+
+
 def transcribe(video, model_name, language, precision, prompt):
+    audio = load_audio(video)
+    try:
+        return _transcribe(audio, model_name, language, "auto", precision, prompt)
+    except RuntimeError as err:
+        if not re.search(r"cublas|cudnn|cuda", str(err), re.I):
+            raise
+        print(f"  GPU unavailable ({err}).\n"
+              "  Falling back to CPU, which is much slower. To use the GPU:\n"
+              "    pip install nvidia-cublas-cu12 nvidia-cudnn-cu12", flush=True)
+        cpu_precision = "int8" if precision == "int8" else "float32"
+        return _transcribe(audio, model_name, language, "cpu", cpu_precision, prompt)
+
+
+def _transcribe(audio, model_name, language, device, precision, prompt):
+    add_nvidia_dlls()
     from faster_whisper import WhisperModel
 
-    model = WhisperModel(model_name, device="auto", compute_type=precision)
+    model = WhisperModel(model_name, device=device, compute_type=precision)
     segments, _ = model.transcribe(
-        load_audio(video),
+        audio,
         language=language,
         beam_size=5,
         best_of=5,
