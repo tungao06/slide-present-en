@@ -7,14 +7,18 @@ keyframe, so neighbouring pieces can overlap by a second or two, but nothing is 
   python MGT520/tools/split_video.py                          # MGT520/videos -> MGT520/videos_split
   python MGT520/tools/split_video.py "D:/some/folder" --max-mb 50
   python MGT520/tools/split_video.py --out "D:/split" --recursive
+  python MGT520/tools/split_video.py "D:/folder/one video.mp4"   # just one file
 
 Output: <out>/<video name>/<video name> part 01 (00-00-00).mp4, numbered in time order.
 Needs ffmpeg/ffprobe on PATH.
 """
 
 import argparse
+import shutil
 import subprocess
 import sys
+import tempfile
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]  # MGT520/
@@ -36,6 +40,18 @@ def run(cmd):
 def duration(video):
     return float(run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
                       "-of", "csv=p=0", str(video)]).strip())
+
+
+def retry(action, what, tries=10):
+    """Cloud-synced folders (iCloud, OneDrive) briefly lock files they are uploading."""
+    for attempt in range(tries):
+        try:
+            return action()
+        except PermissionError:
+            if attempt == tries - 1:
+                raise
+            print(f"  {what} is locked (cloud sync?), retrying ...", flush=True)
+            time.sleep(min(2 ** attempt, 15))
 
 
 def cut(video, start, length, dest):
@@ -75,16 +91,19 @@ def process(video, out_root, limit):
     out_dir = out_root / video.stem
     out_dir.mkdir(parents=True, exist_ok=True)
     for old in out_dir.glob("*.mp4"):
-        old.unlink()
+        retry(old.unlink, old.name)
     print(f"== {video.name} ({size / 1e6:.0f} MB, {ts(total, ':')})", flush=True)
 
-    pieces = []
-    split(video, 0.0, total, limit, size / total, out_dir, pieces)
-    width = max(2, len(str(len(pieces))))
-    for i, (start, tmp) in enumerate(pieces, 1):
-        final = out_dir / f"{video.stem} part {i:0{width}d} ({ts(start)}).mp4"
-        tmp.rename(final)
-        print(f"  {final.name}  {final.stat().st_size / 1e6:.1f} MB", flush=True)
+    # cut in a local temp folder: the output may be in iCloud/OneDrive, which locks
+    # each new file while uploading it and would block the trial cuts
+    with tempfile.TemporaryDirectory(prefix="split_video_") as work:
+        pieces = []
+        split(video, 0.0, total, limit, size / total, Path(work), pieces)
+        width = max(2, len(str(len(pieces))))
+        for i, (start, tmp) in enumerate(pieces, 1):
+            final = out_dir / f"{video.stem} part {i:0{width}d} ({ts(start)}).mp4"
+            retry(lambda: shutil.move(str(tmp), str(final)), final.name)
+            print(f"  {final.name}  {final.stat().st_size / 1e6:.1f} MB", flush=True)
     print(f"  {len(pieces)} pieces -> {out_dir}")
 
 
@@ -93,19 +112,22 @@ def main():
     for stream in (sys.stdout, sys.stderr):
         stream.reconfigure(encoding="utf-8", errors="replace")
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("folder", nargs="?", type=Path, default=ROOT / "videos", help="folder to scan")
+    ap.add_argument("folder", nargs="?", type=Path, default=ROOT / "videos", help="folder to scan, or a single .mp4")
     ap.add_argument("--max-mb", type=float, default=20, help="each piece must be smaller than this")
     ap.add_argument("--out", type=Path, default=ROOT / "videos_split", help="where the pieces go")
     ap.add_argument("--recursive", action="store_true", help="also scan sub-folders")
     args = ap.parse_args()
 
-    if not args.folder.is_dir():
-        sys.exit(f"not a folder: {args.folder}")
     out_root = args.out.resolve()
-    pattern = "**/*" if args.recursive else "*"
-    videos = sorted(p for p in args.folder.glob(pattern)
-                    if p.is_file() and p.suffix.lower() == ".mp4"
-                    and out_root not in p.resolve().parents)
+    if args.folder.is_file():
+        videos = [args.folder]
+    elif args.folder.is_dir():
+        pattern = "**/*" if args.recursive else "*"
+        videos = sorted(p for p in args.folder.glob(pattern)
+                        if p.is_file() and p.suffix.lower() == ".mp4"
+                        and out_root not in p.resolve().parents)
+    else:
+        sys.exit(f"not found: {args.folder}")
     if not videos:
         sys.exit(f"no .mp4 files in {args.folder}")
 
