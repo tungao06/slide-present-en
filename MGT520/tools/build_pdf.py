@@ -112,6 +112,8 @@ figcaption { font-size: 9pt; color: var(--soft); margin-top: 5px; }
 .toc li { font-family: Head, HeadL; font-size: 14pt; padding: 10px 16px; margin: 9px 0; border-radius: 14px; background: var(--lilac); }
 .toc li:nth-child(2) { background: var(--pink); } .toc li:nth-child(3) { background: var(--blue); }
 .toc li:nth-child(4) { background: var(--green); } .toc li:nth-child(5) { background: var(--yellow); }
+.task-list-item { list-style: none; margin-left: -1.2em; }
+.task-list-item input { width: 1.05em; height: 1.05em; margin-right: .5em; vertical-align: -2px; accent-color: #8c74c9; }
 .toc li small { display: block; font-family: BodyT, BodyL; font-size: 10pt; color: var(--soft); }
 """
 
@@ -171,15 +173,15 @@ def chapter_html(md_file):
 
     text = md_file.read_text(encoding="utf-8")
     body = markdown.markdown(text, extensions=["tables", "fenced_code", "sane_lists", "attr_list",
-                                                "pymdownx.tilde", "pymdownx.magiclink"])
+                                                "pymdownx.tilde", "pymdownx.tasklist"])
     body = figures(body, md_file.parent)
     return f'<section class="chapter">{classify_quotes(body)}</section>'
 
 
-def build(out_pdf, fonts, chromium):
+def build(out_pdf, fonts, chromium, chapters=None, subtitle="สรุปเตรียมสอบปลายภาค"):
     from playwright.sync_api import sync_playwright
 
-    chapters = sorted(GUIDE.glob("0*.md"))
+    chapters = chapters or sorted(GUIDE.glob("0*.md"))
     if not chapters:
         sys.exit(f"no chapters in {GUIDE}")
     titles = []
@@ -191,7 +193,7 @@ def build(out_pdf, fonts, chromium):
 <section class="cover">
   <div class="deco">🌸📘🥑💛🍊</div>
   <div class="t1">MGT520<br>พฤติกรรมองค์การ</div>
-  <div class="t2">สรุปเตรียมสอบปลายภาค</div>
+  <div class="t2">{html.escape(subtitle)}</div>
   <div class="t3">วัฒนธรรมองค์กร · พฤติกรรมกลุ่ม · ภาวะผู้นำ · การบริหารความขัดแย้ง<br>
   เทคนิคเขียนตอบอัตนัย และข้อสอบจำลองพร้อมแนวคำตอบ</div>
 </section>
@@ -234,8 +236,10 @@ def main():
     ap.add_argument("--fonts", type=Path, required=True, help="folder with the .woff2 font files")
     ap.add_argument("--out", type=Path, default=GUIDE / "MGT520-สรุปเตรียมสอบ.pdf")
     ap.add_argument("--chromium", help="path to a Chromium binary (default: Playwright's)")
+    ap.add_argument("--files", nargs="+", type=Path, help="markdown files to include (default: study-guide/0*.md)")
+    ap.add_argument("--subtitle", default="สรุปเตรียมสอบปลายภาค", help="cover subtitle")
     args = ap.parse_args()
-    build(args.out, args.fonts, args.chromium)
+    build(args.out, args.fonts, args.chromium, args.files, args.subtitle)
 
 
 if __name__ == "__main__":
