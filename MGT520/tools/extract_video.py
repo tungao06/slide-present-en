@@ -252,7 +252,7 @@ def thai_model_ready():
 def main():
     # Windows writes piped output (e.g. `| tee log.txt`) as cp1252, which has no Thai
     for stream in (sys.stdout, sys.stderr):
-        stream.reconfigure(encoding="utf-8", errors="replace")
+        stream.reconfigure(encoding="utf-8", errors="replace", line_buffering=True)
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("videos", nargs="*", type=Path, help="default: every video in MGT520/videos")
     ap.add_argument("--out", type=Path, default=ROOT / "extracted")
@@ -326,11 +326,13 @@ def main():
 
 
 def process_video(video, out_dir, args, model, auto_prompt):
+    print("  finding slide changes (reads the whole video, a few minutes) ...", flush=True)
     frames = extract_frames(video, out_dir, args.scene, args.interval,
                             args.min_gap, args.settle, args.width)
     print(f"  {len(frames)} frames")
     segments = []
     if not args.frames_only:
+        print("  transcribing ...", flush=True)
         topic = re.sub(r"^\d+-|\s*ep\d+$", "", video.stem)
         parts = [f"วิชา MGT520 เรื่อง{topic}", *slide_vocabulary(video)] if auto_prompt else []
         prompt = ", ".join(parts + ([args.prompt] if args.prompt else []))

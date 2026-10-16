@@ -110,7 +110,7 @@ def process(video, out_root, limit):
 def main():
     # Windows writes piped output as cp1252, which has no Thai
     for stream in (sys.stdout, sys.stderr):
-        stream.reconfigure(encoding="utf-8", errors="replace")
+        stream.reconfigure(encoding="utf-8", errors="replace", line_buffering=True)
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("folder", nargs="?", type=Path, default=ROOT / "videos", help="folder to scan, or a single .mp4")
     ap.add_argument("--max-mb", type=float, default=20, help="each piece must be smaller than this")

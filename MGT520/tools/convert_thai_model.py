@@ -21,7 +21,7 @@ NEEDED = ("model.bin", "preprocessor_config.json", "tokenizer.json")
 
 def main():
     for stream in (sys.stdout, sys.stderr):
-        stream.reconfigure(encoding="utf-8", errors="replace")
+        stream.reconfigure(encoding="utf-8", errors="replace", line_buffering=True)
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--repo", default=REPO, help="Hugging Face model to convert")
     ap.add_argument("--out", type=Path, default=OUT)

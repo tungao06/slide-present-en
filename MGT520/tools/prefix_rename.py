@@ -86,7 +86,7 @@ def undo(root, dry_run):
 def main():
     # Windows writes piped output as cp1252, which has no Thai
     for stream in (sys.stdout, sys.stderr):
-        stream.reconfigure(encoding="utf-8", errors="replace")
+        stream.reconfigure(encoding="utf-8", errors="replace", line_buffering=True)
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("folder", type=Path)
     ap.add_argument("--sep", default="_", help="text between the folder name and the old name (default _)")
