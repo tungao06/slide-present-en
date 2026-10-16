@@ -225,6 +225,11 @@ def write_notes(out_dir, title, frames, segments):
     (out_dir / "notes.md").write_text("\n".join(lines), encoding="utf-8")
 
 
+def thai_model_ready():
+    return all((THAI_MODEL / f).exists()
+               for f in ("model.bin", "preprocessor_config.json", "tokenizer.json"))
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("videos", nargs="*", type=Path, help="default: every video in MGT520/videos")
@@ -252,15 +257,15 @@ def main():
 
     auto_prompt = not args.no_prompt
     if args.model == "auto":
-        if (THAI_MODEL / "model.bin").exists():
+        if thai_model_ready():
             args.model = "thai"
         else:
             args.model = "large-v3"
             print("note: Thai model not built, using large-v3. For better Thai run once:\n"
                   "  pip install transformers torch && python MGT520/tools/convert_thai_model.py")
     if args.model == "thai":
-        if not (THAI_MODEL / "model.bin").exists():
-            sys.exit("Thai model not built yet. Run once:\n"
+        if not thai_model_ready():
+            sys.exit("Thai model not built (or incomplete). Run once:\n"
                      "  pip install transformers torch\n"
                      "  python MGT520/tools/convert_thai_model.py")
         args.model = str(THAI_MODEL)
