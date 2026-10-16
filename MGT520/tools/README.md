@@ -27,11 +27,24 @@ python MGT520/tools/extract_video.py "MGT520/videos/01-วัฒนธรรม�
 python MGT520/tools/extract_video.py                                             # ทำทุกไฟล์
 ```
 
+## โมเดลภาษาไทย (แนะนำ ถ้า large-v3 ถอดผิดเยอะ)
+
+Thonburian Whisper (`biodatlab/whisper-th-large-v3-combined`) คือ Whisper large-v3 ที่ฝึกเพิ่มด้วยเสียงภาษาไทย
+ต้องแปลงเป็นรูปแบบของ faster-whisper ครั้งเดียว (ดาวน์โหลดหลาย GB เก็บไว้ที่ `MGT520/models/` ไม่ขึ้น Git)
+
+```bash
+pip install transformers torch
+python MGT520/tools/convert_thai_model.py
+python MGT520/tools/extract_video.py "MGT520/videos/01-วัฒนธรรมองค์กร ep3.mp4" --model thai
+```
+
 ตัวเลือก
 
 | ตัวเลือก | ใช้เมื่อ |
 |---|---|
 | `--prompt "ชื่อคน, ศัพท์"` | อ. พูดชื่อหรือศัพท์เฉพาะที่ระบบสะกดผิด |
+| `--no-vad` | เนื้อหาบางช่วงหายไป: ถอดทุกวินาที ไม่ตัดช่วงที่คิดว่าเงียบ |
+| `--no-prompt` | ไม่ส่งศัพท์จากสไลด์ให้ Whisper (ถ้าสงสัยว่าทำให้ข้ามหรือซ้ำ) |
 | `--beam 10` | อยากให้ถอดเสียงละเอียดขึ้นอีก (ช้าลงประมาณ 2 เท่า) |
 | `--precision float32` | การ์ดจอมี VRAM 10 GB ขึ้นไป: ความละเอียดตัวเลขเต็ม |
 | `--frames-only` | เอาแค่รูป ไม่ถอดเสียง |

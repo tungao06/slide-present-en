@@ -2,3 +2,4 @@ papers/*.pdf
 presentation/*.zip
 presentation/*_classic.pptx
 __pycache__/
+MGT520/models/

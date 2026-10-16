@@ -28,6 +28,7 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]  # MGT520/
+THAI_MODEL = ROOT / "models" / "whisper-th-large-v3-ct2"  # built by convert_thai_model.py
 VIDEO_EXTS = {".mp4", ".mov", ".mkv", ".m4v", ".webm"}
 COMMON_WORDS = {"that", "this", "with", "from", "have", "your", "they", "will", "what",
                 "when", "which", "their", "there", "about", "into", "more", "than", "http",
@@ -169,14 +170,15 @@ def load_model(model_name, precision, use_cpu):
     return model
 
 
-def transcribe(model, video, language, prompt, beam):
+def transcribe(model, video, language, prompt, beam, vad):
     segments, _ = model.transcribe(
         load_audio(video),
         language=language,
         beam_size=beam,
         best_of=beam,
-        vad_filter=True,
-        vad_parameters={"min_silence_duration_ms": 500},
+        vad_filter=vad,
+        # lenient: keep quiet or hesitant speech rather than cutting it out
+        vad_parameters={"threshold": 0.3, "min_silence_duration_ms": 2000, "speech_pad_ms": 600},
         initial_prompt=prompt or None,
         # stops one misheard line from snowballing into repeated garbage
         condition_on_previous_text=False,
@@ -226,7 +228,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("videos", nargs="*", type=Path, help="default: every video in MGT520/videos")
     ap.add_argument("--out", type=Path, default=ROOT / "extracted")
-    ap.add_argument("--model", default="large-v3", help="whisper model: small/medium/large-v3")
+    ap.add_argument("--model", default="large-v3",
+                    help="large-v3, or 'thai' for Thonburian Whisper (run convert_thai_model.py first)")
     ap.add_argument("--precision", default=None,
                     help="compute type; default float16 on GPU, float32 on CPU")
     ap.add_argument("--beam", type=int, default=5, help="beam size; higher = slower, slightly more accurate")
@@ -234,6 +237,10 @@ def main():
     ap.add_argument("--check-gpu", action="store_true", help="only test that the GPU works, then exit")
     ap.add_argument("--language", default="th")
     ap.add_argument("--prompt", help="extra terms to help Whisper spell names/jargon")
+    ap.add_argument("--no-prompt", action="store_true",
+                    help="don't feed slide vocabulary to Whisper (default for --model thai)")
+    ap.add_argument("--no-vad", action="store_true",
+                    help="transcribe every second instead of only detected speech (if lines go missing)")
     ap.add_argument("--scene", type=float, default=0.1, help="slide-change sensitivity, lower = more frames")
     ap.add_argument("--min-gap", type=float, default=3, help="min seconds between slide-change frames")
     ap.add_argument("--settle", type=float, default=1.5, help="seconds after a change to grab the frame")
@@ -241,6 +248,16 @@ def main():
     ap.add_argument("--width", type=int, default=0, help="max frame width in px (0 = original)")
     ap.add_argument("--frames-only", action="store_true")
     args = ap.parse_args()
+
+    auto_prompt = not args.no_prompt
+    if args.model == "thai":
+        if not (THAI_MODEL / "model.bin").exists():
+            sys.exit("Thai model not built yet. Run once:\n"
+                     "  pip install transformers torch\n"
+                     "  python MGT520/tools/convert_thai_model.py")
+        args.model = str(THAI_MODEL)
+        # fine-tuned without prompts; a prompt tends to make it skip or repeat text
+        auto_prompt = False
 
     model = None
     if not args.frames_only or args.check_gpu:
@@ -264,10 +281,11 @@ def main():
         segments = []
         if not args.frames_only:
             topic = re.sub(r"^\d+-|\s*ep\d+$", "", video.stem)
-            terms = slide_vocabulary(video)
-            prompt = ", ".join([f"วิชา MGT520 เรื่อง{topic}", *terms, *([args.prompt] if args.prompt else [])])
-            print(f"  prompt: {prompt[:120]}...")
-            segments = transcribe(model, video, args.language, prompt, args.beam)
+            parts = [f"วิชา MGT520 เรื่อง{topic}", *slide_vocabulary(video)] if auto_prompt else []
+            prompt = ", ".join(parts + ([args.prompt] if args.prompt else []))
+            if prompt:
+                print(f"  prompt: {prompt[:120]}...")
+            segments = transcribe(model, video, args.language, prompt, args.beam, not args.no_vad)
             write_transcript(out_dir, segments)
             flagged = sum(s[3] for s in segments)
             print(f"  {len(segments)} segments, {flagged} marked [?]")
