@@ -202,8 +202,9 @@ def transcribe(model, video, language, prompt, beam, batch, sequential):
         text = collapse_repeats(raw)
         if not text:
             continue
-        # low confidence or looping text: keep it, but flag for checking
-        unsure = text != raw or seg.avg_logprob < -1.0 or seg.compression_ratio > 2.4
+        # low confidence or looping text: keep it, but flag for checking. (Not
+        # compression_ratio: Thai text compresses well and trips it on almost every line.)
+        unsure = text != raw or seg.avg_logprob < -1.0
         result.append((seg.start, seg.end, text, unsure, round(seg.avg_logprob, 3)))
         print(f"  [{ts(seg.start)}]{' [?]' if unsure else ''} {text}", flush=True)
     return result
