@@ -67,3 +67,17 @@ git add MGT520/extracted
 git commit -m "MGT520: extracted frames and transcripts"
 git push
 ```
+
+## แบ่งวิดีโอเป็นไฟล์เล็ก (`split_video.py`)
+
+สแกนไฟล์ `.mp4` ในโฟลเดอร์ แล้วแบ่งครึ่งไปเรื่อยๆ จนทุกชิ้นเล็กกว่าที่กำหนด (ค่าเริ่มต้น 20 MB)
+ตัดแบบไม่ encode ใหม่ จึงเร็วและคุณภาพเท่าเดิม แต่จุดตัดจะขยับไปตรง keyframe ที่ใกล้ที่สุด ชิ้นที่ติดกันอาจซ้อนกัน 1–2 วินาที (ไม่มีส่วนไหนหาย)
+
+```bash
+python MGT520/tools/split_video.py                                  # MGT520/videos -> MGT520/videos_split
+python MGT520/tools/split_video.py "D:/โฟลเดอร์อื่น" --max-mb 50     # โฟลเดอร์อื่น / ขนาดอื่น
+python MGT520/tools/split_video.py --out "D:/split" --recursive      # ที่เก็บผลลัพธ์ / รวมโฟลเดอร์ย่อย
+```
+
+ผลลัพธ์: `videos_split/<ชื่อวิดีโอ>/<ชื่อวิดีโอ> part 01 (00-00-00).mp4` เลข part เรียงตามเวลา ในวงเล็บคือเวลาเริ่มในวิดีโอต้นฉบับ
+ไฟล์ที่เล็กกว่าที่กำหนดอยู่แล้วจะถูกข้าม
