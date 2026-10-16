@@ -13,7 +13,7 @@ Usage:
   pip install faster-whisper pypdf
   python MGT520/tools/extract_video.py                      # all videos in MGT520/videos
   python MGT520/tools/extract_video.py "MGT520/videos/03-ภาวะผู้นำ ep1.mp4"
-  python MGT520/tools/extract_video.py --fast               # much faster, a bit less accurate
+  python MGT520/tools/extract_video.py --check-gpu          # test the GPU setup only
   python MGT520/tools/extract_video.py --frames-only        # skip transcription
 
 Needs ffmpeg on PATH (Windows: `winget install Gyan.FFmpeg`).
@@ -133,30 +133,48 @@ def add_nvidia_dlls():
             os.environ["PATH"] = f"{bin_dir}{os.pathsep}{os.environ['PATH']}"
 
 
-def transcribe(video, model_name, language, precision, prompt):
-    audio = load_audio(video)
-    try:
-        return _transcribe(audio, model_name, language, "auto", precision, prompt)
-    except RuntimeError as err:
-        if not re.search(r"cublas|cudnn|cuda", str(err), re.I):
-            raise
-        print(f"  GPU unavailable ({err}).\n"
-              "  Falling back to CPU, which is much slower. To use the GPU:\n"
-              "    pip install nvidia-cublas-cu12 nvidia-cudnn-cu12", flush=True)
-        cpu_precision = "int8" if precision == "int8" else "float32"
-        return _transcribe(audio, model_name, language, "cpu", cpu_precision, prompt)
+GPU_HELP = """\
+  Fix (in this order, re-run with --check-gpu after each step):
+    1. pip install -U faster-whisper ctranslate2 nvidia-cublas-cu12 "nvidia-cudnn-cu12>=9,<10"
+    2. Update the NVIDIA driver (GeForce Experience / nvidia.com/drivers); CUDA 12 needs driver 525+
+    3. Check the card shows up: nvidia-smi
+  Or run on CPU (hours instead of minutes) with --cpu"""
 
 
-def _transcribe(audio, model_name, language, device, precision, prompt):
+def load_model(model_name, precision, use_cpu):
+    """Load Whisper on the GPU and prove CUDA really works before any long job starts."""
+    import numpy as np
+
     add_nvidia_dlls()
+    import ctranslate2
     from faster_whisper import WhisperModel
 
-    model = WhisperModel(model_name, device=device, compute_type=precision)
+    if use_cpu:
+        device, precision = "cpu", precision or "float32"
+    else:
+        if ctranslate2.get_cuda_device_count() == 0:
+            sys.exit("No CUDA GPU found by ctranslate2.\n" + GPU_HELP)
+        device, precision = "cuda", precision or "float16"
+    print(f"loading {model_name} on {device} ({precision}) ...", flush=True)
+    try:
+        model = WhisperModel(model_name, device=device, compute_type=precision)
+        # the CUDA libraries load lazily on the first encode, so run one now
+        noise = np.random.default_rng(0).normal(0, 0.01, 16000 * 2).astype(np.float32)
+        list(model.transcribe(noise, language="th", vad_filter=False)[0])
+    except RuntimeError as err:
+        if device == "cuda":
+            sys.exit(f"GPU failed: {err}\n" + GPU_HELP)
+        raise
+    print(f"{device} OK", flush=True)
+    return model
+
+
+def transcribe(model, video, language, prompt, beam):
     segments, _ = model.transcribe(
-        audio,
+        load_audio(video),
         language=language,
-        beam_size=5,
-        best_of=5,
+        beam_size=beam,
+        best_of=beam,
         vad_filter=True,
         vad_parameters={"min_silence_duration_ms": 500},
         initial_prompt=prompt or None,
@@ -210,8 +228,10 @@ def main():
     ap.add_argument("--out", type=Path, default=ROOT / "extracted")
     ap.add_argument("--model", default="large-v3", help="whisper model: small/medium/large-v3")
     ap.add_argument("--precision", default=None,
-                    help="compute type; default float16 on GPU, float32 on CPU (most accurate)")
-    ap.add_argument("--fast", action="store_true", help="int8 precision: ~2-3x faster on CPU")
+                    help="compute type; default float16 on GPU, float32 on CPU")
+    ap.add_argument("--beam", type=int, default=5, help="beam size; higher = slower, slightly more accurate")
+    ap.add_argument("--cpu", action="store_true", help="run on CPU instead of the GPU (much slower)")
+    ap.add_argument("--check-gpu", action="store_true", help="only test that the GPU works, then exit")
     ap.add_argument("--language", default="th")
     ap.add_argument("--prompt", help="extra terms to help Whisper spell names/jargon")
     ap.add_argument("--scene", type=float, default=0.1, help="slide-change sensitivity, lower = more frames")
@@ -222,14 +242,11 @@ def main():
     ap.add_argument("--frames-only", action="store_true")
     args = ap.parse_args()
 
-    precision = args.precision
-    if not precision:
-        try:
-            import ctranslate2
-            gpu = ctranslate2.get_cuda_device_count() > 0
-        except Exception:
-            gpu = False
-        precision = "int8" if args.fast else ("float16" if gpu else "float32")
+    model = None
+    if not args.frames_only or args.check_gpu:
+        model = load_model(args.model, args.precision, args.cpu)
+    if args.check_gpu:
+        return
 
     videos = args.videos or sorted(
         p for p in (ROOT / "videos").iterdir() if p.suffix.lower() in VIDEO_EXTS
@@ -249,8 +266,8 @@ def main():
             topic = re.sub(r"^\d+-|\s*ep\d+$", "", video.stem)
             terms = slide_vocabulary(video)
             prompt = ", ".join([f"วิชา MGT520 เรื่อง{topic}", *terms, *([args.prompt] if args.prompt else [])])
-            print(f"  precision={precision}, prompt: {prompt[:120]}...")
-            segments = transcribe(video, args.model, args.language, precision, prompt)
+            print(f"  prompt: {prompt[:120]}...")
+            segments = transcribe(model, video, args.language, prompt, args.beam)
             write_transcript(out_dir, segments)
             flagged = sum(s[3] for s in segments)
             print(f"  {len(segments)} segments, {flagged} marked [?]")

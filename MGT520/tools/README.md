@@ -8,43 +8,42 @@
 
 ผลลัพธ์อยู่ที่ `MGT520/extracted/<ชื่อวิดีโอ>/`
 
-## ติดตั้ง (Windows, ครั้งเดียว)
+## ติดตั้ง (Windows + การ์ดจอ NVIDIA, ครั้งเดียว)
 
-```powershell
-winget install Gyan.FFmpeg      # แล้วปิดเปิด PowerShell ใหม่
-winget install Python.Python.3.12
-pip install faster-whisper pypdf
-pip install nvidia-cublas-cu12 nvidia-cudnn-cu12   # ถ้ามีการ์ดจอ NVIDIA (ไม่มีก็ข้ามได้)
+```bash
+winget install Gyan.FFmpeg
+pip install -U faster-whisper ctranslate2 pypdf nvidia-cublas-cu12 "nvidia-cudnn-cu12>=9,<10"
+python MGT520/tools/extract_video.py --check-gpu     # ต้องขึ้น "cuda OK"
 ```
+
+ถ้าไม่ขึ้น `cuda OK` ให้อัปเดตไดรเวอร์การ์ดจอ (ต้อง 525 ขึ้นไป เช็กด้วย `nvidia-smi`) แล้วรัน `--check-gpu` ใหม่
+สคริปต์จะหยุดทันทีถ้าใช้การ์ดจอไม่ได้ ไม่แอบไปใช้ CPU ที่ช้ากว่ามาก (ถ้าต้องการใช้ CPU จริงๆ ให้ใส่ `--cpu`)
 
 ## รัน
 
-```powershell
-cd slide-present-en
+```bash
 # ต้องมีไฟล์วิดีโอจริงใน MGT520/videos (ถ้าเป็นแค่ pointer ให้ copy จาก iCloud มาทับ)
-python MGT520/tools/extract_video.py           # ทำทุกไฟล์
-python MGT520/tools/extract_video.py "MGT520/videos/03-ภาวะผู้นำ ep1.mp4"   # ไฟล์เดียว
+python MGT520/tools/extract_video.py "MGT520/videos/01-วัฒนธรรมองค์กร ep3.mp4"   # ลองไฟล์เดียวก่อน
+python MGT520/tools/extract_video.py                                             # ทำทุกไฟล์
 ```
 
-ตัวเลือกที่ใช้บ่อย
+ตัวเลือก
 
 | ตัวเลือก | ใช้เมื่อ |
 |---|---|
-| `--fast` | เร็วขึ้น 2–3 เท่าบน CPU ความแม่นยำลดลงเล็กน้อย |
-| `--model small` | เร็วขึ้นมากแต่ถอดเสียงแม่นน้อยลงชัดเจน ไม่แนะนำ (ค่าเริ่มต้น `large-v3`) |
 | `--prompt "ชื่อคน, ศัพท์"` | อ. พูดชื่อหรือศัพท์เฉพาะที่ระบบสะกดผิด |
+| `--beam 10` | อยากให้ถอดเสียงละเอียดขึ้นอีก (ช้าลงประมาณ 2 เท่า) |
+| `--precision float32` | การ์ดจอมี VRAM 10 GB ขึ้นไป: ความละเอียดตัวเลขเต็ม |
 | `--frames-only` | เอาแค่รูป ไม่ถอดเสียง |
 | `--scene 0.05` | สไลด์เปลี่ยนแล้วไม่ได้รูป: จับละเอียดขึ้น |
 | `--scene 0.2` | ได้รูปซ้ำเยอะเกิน (เช่นมีกล้องหน้า อ. ซ้อนอยู่) |
 
-## ตั้งค่าเพื่อความแม่นยำ (ค่าเริ่มต้น)
+## ค่าเริ่มต้นเน้นความแม่นยำ
 
-- โมเดล `large-v3` ความละเอียดเต็ม (float32 บน CPU / float16 บนการ์ดจอ NVIDIA) และ beam search 5
+- Whisper `large-v3` (รุ่นที่แม่นที่สุด) บนการ์ดจอแบบ float16 และ beam search 5
 - ดึงศัพท์ภาษาอังกฤษจาก PDF สไลด์เรื่องเดียวกัน (เลข `01-` `02-` ...) ไปช่วยให้สะกดชื่อและศัพท์ถูก
 - ประโยคที่ระบบไม่มั่นใจจะมี `[?]` นำหน้า ให้เทียบกับวิดีโอตามเวลาที่ระบุ
 - รูปเก็บความละเอียดเต็มของวิดีโอ และจับหลังสไลด์เปลี่ยน 1.5 วินาที เพื่อไม่ให้ได้ภาพที่กำลังเปลี่ยนสไลด์
-
-บน CPU อย่างเดียวใช้เวลาประมาณ 1–3 เท่าของความยาววิดีโอ ปล่อยรันข้ามคืนได้
 
 ## เสร็จแล้ว push ขึ้น Git
 
