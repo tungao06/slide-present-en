@@ -180,7 +180,7 @@ def collapse_repeats(text):
     return REPEAT.sub(r"\1", text)
 
 
-def transcribe(model, video, language, prompt, beam, batch, sequential):
+def transcribe(model, video, language, prompt, beam, batch, sequential, chunk):
     """Default: cut the audio at the teacher's pauses (VAD, very lenient so quiet speech
     stays in), then decode the pieces in GPU batches. The Thai model gives no timestamps
     of its own, so plain decoding would cut every 30 s even mid-word."""
@@ -193,7 +193,9 @@ def transcribe(model, video, language, prompt, beam, batch, sequential):
                                        condition_on_previous_text=False, **options)
     else:
         segments, _ = BatchedInferencePipeline(model).transcribe(
-            audio, batch_size=batch, vad_filter=True,
+            # Whisper emits at most ~440 tokens per piece; Thai needs roughly one token per
+            # character, so a fast-talking 30 s piece got its end cut off. Shorter pieces fit.
+            audio, batch_size=batch, vad_filter=True, chunk_length=chunk,
             vad_parameters={"threshold": 0.25, "min_silence_duration_ms": 300, "speech_pad_ms": 400},
             **options,
         )
@@ -205,7 +207,8 @@ def transcribe(model, video, language, prompt, beam, batch, sequential):
             continue
         # low confidence or looping text: keep it, but flag for checking. (Not
         # compression_ratio: Thai text compresses well and trips it on almost every line.)
-        unsure = text != raw or seg.avg_logprob < -1.0
+        # near the token cap the decoder may have stopped before the speech did
+        unsure = text != raw or seg.avg_logprob < -1.0 or len(seg.tokens) >= 400
         result.append((seg.start, seg.end, text, unsure, round(seg.avg_logprob, 3)))
         print(f"  [{ts(seg.start)}]{' [?]' if unsure else ''} {text}", flush=True)
     return result
@@ -273,6 +276,8 @@ def main():
     ap.add_argument("--no-prompt", action="store_true",
                     help="don't feed slide vocabulary to Whisper (default for --model thai)")
     ap.add_argument("--batch", type=int, default=8, help="pieces decoded at once on the GPU; lower if out of memory")
+    ap.add_argument("--chunk", type=int, default=15,
+                    help="max seconds per piece; keep it short so fast Thai speech isn't cut off")
     ap.add_argument("--sequential", action="store_true",
                     help="decode the whole audio in fixed 30 s windows instead of cutting at pauses")
     ap.add_argument("--scene", type=float, default=0.1, help="slide-change sensitivity, lower = more frames")
@@ -355,7 +360,7 @@ def process_video(video, out_dir, args, model, auto_prompt):
         if prompt:
             print(f"  prompt: {prompt[:120]}...")
         segments = transcribe(model, video, args.language, prompt,
-                              args.beam, args.batch, args.sequential)
+                              args.beam, args.batch, args.sequential, args.chunk)
         write_transcript(out_dir, segments)
         flagged = sum(s[3] for s in segments)
         print(f"  {len(segments)} segments, {flagged} marked [?]")
